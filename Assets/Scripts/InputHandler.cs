@@ -15,14 +15,23 @@ public class InputHandler
         return Input.GetKey(key);
     }
 
-    public float GetLeftStickXAxis() // Since WASD and controller rely on these axes, it'd work better to rename the joy stickaxes in proj settings
-                                       // And then replace "Horizontal" and "Vertical" with those new names
+    //public float GetRawXJoystickAxis()                                       
+    //{
+    //    return Input.GetAxisRaw("Horizontal");
+    //}
+
+    //public float GetRawYJoystickAxis()
+    //{
+    //    return Input.GetAxisRaw("Vertical");
+    //}
+
+    public float GetLeftJoystickAxis()
     {
-        return Input.GetAxisRaw("JLeftHorizontal");
+        return Input.GetAxis("LeftJ");
     }
 
-    public float GetLeftStickYAxis()
+    public float GetRightJoystickAxis()
     {
-        return Input.GetAxisRaw("JLeftVertical");
+        return Input.GetAxis("RightJ");
     }
 }
