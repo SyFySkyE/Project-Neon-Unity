@@ -4,35 +4,44 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("Standard Movement")]
-    [SerializeField] private float speed = 5f;
+    [Header("Ground Speed")]
+    [SerializeField] private float speed = 2f;
 
     private Rigidbody playerRb;
 
-    private float xInput;
-    private float yInput;
+    private Vector3 input;
+    private Vector3 inputVelocity;
+
+    private Camera mainCamera;
 
     // Start is called before the first frame update
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
+        mainCamera = Camera.main;
     }
 
     // Update is called once per frame
     void Update()
     {
-        xInput = Input.GetAxis("Horizontal");
-        yInput = Input.GetAxis("Vertical");
+        input = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
+        inputVelocity = input * speed;
+
+        Ray cameraRay = mainCamera.ScreenPointToRay(Input.mousePosition);
+        Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
+        float rayLength;
+
+        if(groundPlane.Raycast(cameraRay, out rayLength))
+        {
+            Vector3 pointToLook = cameraRay.GetPoint(rayLength);
+            Debug.DrawLine(cameraRay.origin, pointToLook, Color.cyan);
+
+            transform.LookAt(new Vector3(pointToLook.x, transform.position.y, pointToLook.z));
+        }
     }
 
     private void FixedUpdate()
     {
-        MovePlayer();
-    }
-
-    private void MovePlayer()
-    {
-        playerRb.AddForce(Vector3.forward * yInput * speed, ForceMode.Acceleration);
-        playerRb.AddForce(Vector3.right * xInput * speed, ForceMode.Acceleration);
+        playerRb.velocity = inputVelocity;
     }
 }
