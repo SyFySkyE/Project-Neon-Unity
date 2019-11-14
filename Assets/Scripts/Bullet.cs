@@ -1,12 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
     [Header("Move Speed")]
     [SerializeField] private float speed = 5f;
-    public float Speed { get { return this.speed; }
+    public float Speed
+    {
+        get { return this.speed; }
         set
         {
             if (value != this.speed)
@@ -15,7 +15,7 @@ public class Bullet : MonoBehaviour
             }
         }
     }
-    
+
     // Update is called once per frame
     void Update()
     {

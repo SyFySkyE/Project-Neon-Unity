@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -11,7 +9,12 @@ public class PlayerMovement : MonoBehaviour
     private Camera mainCamera;
 
     private Vector3 input;
-    private Vector3 inputVelocity;    
+    private Vector3 inputVelocity;
+    
+    [Header("Depend on controller or mouse")]
+    [Tooltip("Whether to use DualShock 4 Right stick or mouse to look")]
+    [SerializeField] private bool usingController = true; // TODO Update this so bool switches based on what player is inputting. Should be in different class?
+    // TODO Controller only works with DS4, add support for XB1, X360
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +27,14 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         UpdateInput();
-        MakeCameraRay();
+        if (!usingController)
+        {
+            MakeCameraRay();
+        }
+        else
+        {
+            LookUsingController();
+        }
     }
 
     private void UpdateInput()
@@ -50,6 +60,15 @@ public class PlayerMovement : MonoBehaviour
         Vector3 pointToLook = cameraRay.GetPoint(rayLength);
         Debug.DrawLine(cameraRay.origin, pointToLook, Color.cyan);
         transform.LookAt(new Vector3(pointToLook.x, transform.position.y, pointToLook.z));
+    }
+
+    private void LookUsingController()
+    {
+        Vector3 playerDir = Vector3.right * Input.GetAxis("RStickHorizontal") + Vector3.forward * -Input.GetAxis("RStickVertical"); // RStickVertical needs to be negative
+        if (playerDir.sqrMagnitude > 0f) // If controller is receiving input
+        {
+            transform.rotation = Quaternion.LookRotation(playerDir, Vector3.up);
+        }
     }
 
     private void FixedUpdate()
