@@ -16,6 +16,11 @@ public class Bullet : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        Destroy(this.gameObject, 5f); // TODO If this becomes a rigibody, change this to destory whenever it collides (with enemy, barriers)
+    }
+
     // Update is called once per frame
     void Update()
     {
