@@ -5,9 +5,11 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Ground Speed")]
     [SerializeField] private float speed = 2f;
+    [SerializeField] private GameObject aimObject;
 
     private Rigidbody playerRb;
     private Camera mainCamera;
+    private Animator playerAnim;
 
     private Vector3 input;
     private Vector3 inputVelocity;
@@ -22,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     {
         playerRb = GetComponent<Rigidbody>();
         mainCamera = Camera.main;
+        playerAnim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -42,6 +45,15 @@ public class PlayerMovement : MonoBehaviour
     {
         input = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
         inputVelocity = input * speed;
+        if (input != Vector3.zero)
+        {
+            playerAnim.SetBool("IsMoving", true);
+        }
+        else
+        {
+            playerAnim.SetBool("IsMoving", false);
+        }
+        
     }
 
     private void MakeCameraRay()

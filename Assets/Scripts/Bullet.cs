@@ -5,7 +5,7 @@ public class Bullet : MonoBehaviour
     [Header("Move Speed")]
     [SerializeField] private float speed = 5f;
 
-    private float secBeforeDestroy = 5f;
+    private float secBeforeDestroy = 10f;
     public float Speed
     {
         get { return this.speed; }

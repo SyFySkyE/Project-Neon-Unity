@@ -31,6 +31,11 @@ public class PlayerHealth : MonoBehaviour
         {
             if (isVulnerable) HurtPlayer();
         }
+        else if (other.CompareTag("Bullet"))
+        {
+            if (isVulnerable) HurtPlayer();
+            Destroy(other.gameObject);
+        }
     }
 
     private void HurtPlayer()
@@ -45,7 +50,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    public void EnablePlayerVulnerability() // To be triggered via Animator
+    public void EnablePlayerVulnerability() // Is triggered via Animator (end of HurtAnim)
     {
         isVulnerable = true;
     }
