@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Ground Speed")]
@@ -64,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void LookUsingController()
     {
-        Vector3 playerDir = Vector3.right * Input.GetAxis("RStickHorizontal") + Vector3.forward * -Input.GetAxis("RStickVertical"); // RStickVertical needs to be negative
+        Vector3 playerDir = Vector3.right * Input.GetAxisRaw("RStickHorizontal") + Vector3.forward * -Input.GetAxisRaw("RStickVertical"); // RStickVertical needs to be negative
         if (playerDir.sqrMagnitude > 0f) // If controller is receiving input
         {
             transform.rotation = Quaternion.LookRotation(playerDir, Vector3.up);
@@ -73,6 +74,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        playerRb.velocity = inputVelocity;
+        //playerRb.velocity = inputVelocity;
+        playerRb.AddForce(inputVelocity, ForceMode.Impulse);
     }
 }
