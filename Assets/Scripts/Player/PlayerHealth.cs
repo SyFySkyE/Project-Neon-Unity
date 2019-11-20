@@ -10,7 +10,7 @@ public class PlayerHealth : MonoBehaviour
     private Animator playerAnim;
     private Rigidbody playerRb;
 
-    private bool isVulnerable = true;
+    [SerializeField] private bool isVulnerable = true;
 
     // Start is called before the first frame update
     void Start()
@@ -53,5 +53,10 @@ public class PlayerHealth : MonoBehaviour
     public void EnablePlayerVulnerability() // Is triggered via Animator (end of HurtAnim)
     {
         isVulnerable = true;
+    }
+
+    public void DisablePlayerVulnerability()
+    {
+        isVulnerable = false;
     }
 }
