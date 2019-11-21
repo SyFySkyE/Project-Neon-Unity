@@ -13,10 +13,8 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 input;
     private Vector3 inputVelocity;
+    private bool usingController;
     
-    [Header("Depend on controller or mouse")]
-    [Tooltip("Whether to use DualShock 4 Right stick or mouse to look")]
-    [SerializeField] private bool usingController = true; // TODO Update this so bool switches based on what player is inputting. Should be in different class?
     // TODO Controller only works with DS4, add support for XB1, X360
 
     // Start is called before the first frame update
@@ -31,6 +29,12 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         UpdateInput();
+        UpdateMovement();
+    }
+
+    private void UpdateMovement()
+    {
+        UpdateControlMethod();
         if (!usingController)
         {
             MakeCameraRay();
@@ -38,6 +42,18 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             LookUsingController();
+        }
+    }
+
+    private void UpdateControlMethod()
+    {
+        if (Input.GetAxisRaw("Mouse Y") > 0.2f || Input.GetAxisRaw("Mouse X") > 0.2f)
+        {
+            usingController = false;
+        }
+        else if (Input.GetAxisRaw("RStickVertical") > 0f || Input.GetAxisRaw("RStickHorizontal") > 0f)
+        {
+            usingController = true;
         }
     }
 
@@ -52,8 +68,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             playerAnim.SetBool("IsMoving", false);
-        }
-        
+        }        
     }
 
     private void MakeCameraRay()
@@ -80,13 +95,13 @@ public class PlayerMovement : MonoBehaviour
         Vector3 playerDir = Vector3.right * Input.GetAxisRaw("RStickHorizontal") + Vector3.forward * -Input.GetAxisRaw("RStickVertical"); // RStickVertical needs to be negative
         if (playerDir.sqrMagnitude > 0f) // If controller is receiving input
         {
+            usingController = true;
             transform.rotation = Quaternion.LookRotation(playerDir, Vector3.up);
         }
     }
 
     private void FixedUpdate()
     {
-        //playerRb.velocity = inputVelocity;
         playerRb.AddForce(inputVelocity, ForceMode.Impulse);
     }
 }

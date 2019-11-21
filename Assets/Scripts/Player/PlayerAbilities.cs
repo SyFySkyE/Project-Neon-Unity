@@ -46,7 +46,7 @@ public class PlayerAbilities : MonoBehaviour
         {
             dashParticles.Play();
             anim.SetTrigger("Dash");
-            playerRb.AddForce(playerRb.velocity * dashForce, ForceMode.Impulse);
+            playerRb.AddForce(playerRb.velocity * dashForce, ForceMode.VelocityChange);
             numberOfDashes--;
             StartCoroutine(DashRecharge());
         }
@@ -60,7 +60,7 @@ public class PlayerAbilities : MonoBehaviour
 
     private void Crash()
     {
-        if (numberOfCrashes == 0)
+        if (numberOfCrashes > 0)
         {
             crashParticles.Play();
             anim.SetTrigger("Crash");
