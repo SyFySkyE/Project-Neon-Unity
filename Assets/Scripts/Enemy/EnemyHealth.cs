@@ -32,5 +32,10 @@ public class EnemyHealth : MonoBehaviour
             enemyAnim.SetTrigger("HurtTrigger");
             Destroy(other.gameObject);
         }
+        else if (other.CompareTag("Player Ability"))
+        {
+            healthPoints--;
+            enemyAnim.SetTrigger("HurtTrigger");
+        }
     }
 }
