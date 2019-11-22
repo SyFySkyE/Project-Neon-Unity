@@ -2222,13 +2222,33 @@ PrefabInstance:
       propertyPath: TriggerModule.exit
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 376588660, guid: b9c13b5424e395946be4b107fdc11c1f, type: 3}
+      propertyPath: TriggerModule.collisionShape0
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 376588660, guid: b9c13b5424e395946be4b107fdc11c1f, type: 3}
+      propertyPath: TriggerModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 376588660, guid: b9c13b5424e395946be4b107fdc11c1f, type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 376588660, guid: b9c13b5424e395946be4b107fdc11c1f, type: 3}
+      propertyPath: CollisionModule.type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 376588660, guid: b9c13b5424e395946be4b107fdc11c1f, type: 3}
+      propertyPath: CollisionModule.collisionMessages
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2090910317, guid: b9c13b5424e395946be4b107fdc11c1f, type: 3}
       propertyPath: m_TagString
       value: Player Ability
       objectReference: {fileID: 0}
     - target: {fileID: 2090910320, guid: b9c13b5424e395946be4b107fdc11c1f, type: 3}
       propertyPath: TriggerModule.enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2090910320, guid: b9c13b5424e395946be4b107fdc11c1f, type: 3}
       propertyPath: TriggerModule.inside
@@ -2245,6 +2265,14 @@ PrefabInstance:
     - target: {fileID: 2090910320, guid: b9c13b5424e395946be4b107fdc11c1f, type: 3}
       propertyPath: TriggerModule.exit
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2090910320, guid: b9c13b5424e395946be4b107fdc11c1f, type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2090910320, guid: b9c13b5424e395946be4b107fdc11c1f, type: 3}
+      propertyPath: CollisionModule.collisionMessages
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9c13b5424e395946be4b107fdc11c1f, type: 3}
