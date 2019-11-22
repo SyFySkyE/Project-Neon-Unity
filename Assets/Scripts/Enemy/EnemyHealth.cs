@@ -38,4 +38,9 @@ public class EnemyHealth : MonoBehaviour
             enemyAnim.SetTrigger("HurtTrigger");
         }
     }
+
+    private void OnParticleCollision(GameObject other)
+    {
+        Debug.Log("dwdawdwad");
+    }
 }
