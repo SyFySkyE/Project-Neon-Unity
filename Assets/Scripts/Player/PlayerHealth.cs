@@ -10,19 +10,16 @@ public class PlayerHealth : MonoBehaviour
     private Animator playerAnim;
     private Rigidbody playerRb;
 
-    [SerializeField] private bool isVulnerable = true;
+    [SerializeField] private bool isVulnerable = true; // TODO Take out serialization
+
+    public event System.Action<int> OnHealthChange;
 
     // Start is called before the first frame update
     void Start()
     {
         playerAnim = GetComponent<Animator>();
         playerRb = GetComponent<Rigidbody>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        OnHealthChange(healthPoints);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -41,6 +38,7 @@ public class PlayerHealth : MonoBehaviour
     private void HurtPlayer()
     {
         healthPoints--;
+        OnHealthChange(healthPoints);
         playerAnim.SetTrigger("HurtTrigger");
         isVulnerable = false;
         playerRb.AddForce(-transform.forward * flinchBlowback, ForceMode.Impulse);

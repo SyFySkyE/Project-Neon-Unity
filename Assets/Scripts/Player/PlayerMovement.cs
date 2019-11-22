@@ -109,8 +109,23 @@ public class PlayerMovement : MonoBehaviour
         }        
     }
 
-    public void ToggleCanMove()
+    public void EnableMove()
     {
-        canMove = !canMove;
+        canMove = true; // Can't be a toggle otherwise spamming it may enable move only when crashing
+    }
+
+    public void DisableMove()
+    {
+        canMove = false;
+    }
+
+    private void OverdriveStart()
+    {
+        speed *= 2;
+    }
+
+    private void OverdriveStop()
+    {
+        speed = speed / 2;
     }
 }

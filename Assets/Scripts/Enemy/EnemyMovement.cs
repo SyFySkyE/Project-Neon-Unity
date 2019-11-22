@@ -6,25 +6,37 @@ public class EnemyMovement : MonoBehaviour
 {
     [Header("Movement stats and dependencies")]
     [SerializeField] private float moveSpeed = 5f;
-    [Tooltip("Enemies depend on player")]
-    [SerializeField] private PlayerMovement player;
 
+    private PlayerMovement player;
     private Rigidbody enemyRb;
     
     // Start is called before the first frame update
     void Start()
     {
+        player = FindObjectOfType<PlayerMovement>();
         enemyRb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(player.transform); // Looks at player Y, if player Y changes this can get borked
+        if (player) // Null check if player died
+        {
+            transform.LookAt(player.transform); // Looks at player Y, if player Y changes this can get borked
+        }        
     }
 
     private void FixedUpdate()
     {
         enemyRb.velocity = transform.forward * moveSpeed;
+    }
+
+    private void OnDestroy() // TODO Should this be in enemyHealth? It's in here because this script knows Player
+    {
+        if (player)
+        {
+            player.GetComponent<PlayerComboSystem>().AddToCombo();
+            player.GetComponent<PlayerPoints>().IncrementPoints();
+        }        
     }
 }

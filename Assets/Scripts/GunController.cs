@@ -34,4 +34,20 @@ public class GunController : MonoBehaviour
             shotCounter = 0f;
         }
     }
+
+    private void OverdriveStart()
+    {
+        if (this.CompareTag("Player"))
+        {
+            secondsBetweenShots = secondsBetweenShots / 2;
+        }
+    }
+
+    private void OverdriveStop()
+    {
+        if (this.CompareTag("Player"))
+        {
+            secondsBetweenShots = secondsBetweenShots * 2;
+        }
+    }
 }

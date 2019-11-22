@@ -22,7 +22,7 @@ public class PlayerAbilities : MonoBehaviour
     [SerializeField] private float overdriveRechargeTime = 10f;
     [SerializeField] private ParticleSystem overdriveParticles;
 
-    private bool canCharge = true;
+    private bool isOverdriveActive = false;
 
     private Rigidbody playerRb;
     private Animator anim;
@@ -52,13 +52,19 @@ public class PlayerAbilities : MonoBehaviour
 
     private void Dash()
     {
-        if (numberOfDashes > 0)
+        if (numberOfDashes > 0 && !isOverdriveActive) 
         {
             dashParticles.Play();
             anim.SetTrigger("Dash");
             playerRb.AddForce(playerRb.velocity * dashForce, ForceMode.VelocityChange);
             numberOfDashes--;
             StartCoroutine(DashRecharge());
+        }
+        else if (isOverdriveActive)
+        {
+            dashParticles.Play();
+            anim.SetTrigger("Dash");
+            playerRb.AddForce(playerRb.velocity * dashForce, ForceMode.VelocityChange);
         }
     }
 
@@ -70,12 +76,17 @@ public class PlayerAbilities : MonoBehaviour
 
     private void Crash()
     {
-        if (numberOfCrashes > 0)
+        if (numberOfCrashes > 0 && !isOverdriveActive)
         {
             crashParticles.Play();
             anim.SetTrigger("Crash");
             numberOfCrashes--;
             StartCoroutine(CrashRecharge());
+        }
+        else if (isOverdriveActive)
+        {
+            crashParticles.Play();
+            anim.SetTrigger("Crash");
         }
     }
 
@@ -89,6 +100,7 @@ public class PlayerAbilities : MonoBehaviour
     {
         if (numberOfOverdrives > 0)
         {
+            BroadcastMessage("OverdriveStart");
             overdriveParticles.Play();
             anim.SetTrigger("Overdrive");
             numberOfOverdrives--;
@@ -98,7 +110,10 @@ public class PlayerAbilities : MonoBehaviour
 
     private IEnumerator OverdrivePeriod()
     {
+        isOverdriveActive = true;
         yield return new WaitForSeconds(overdrivePeriod);
+        isOverdriveActive = false;
+        BroadcastMessage("OverdriveStop");
         overdriveParticles.Stop();
         StartCoroutine(OverdriveRecharge());
     }
@@ -107,5 +122,15 @@ public class PlayerAbilities : MonoBehaviour
     {
         yield return new WaitForSeconds(overdriveRechargeTime);
         numberOfOverdrives++;
+    }
+
+    private void OverdriveStart()
+    {
+        dashForce = dashForce / 2;
+    }
+
+    private void OverdriveStop()
+    {
+        dashForce *= 2;
     }
 }

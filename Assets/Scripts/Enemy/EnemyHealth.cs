@@ -7,6 +7,8 @@ public class EnemyHealth : MonoBehaviour
     [Header("Health Points")]
     [SerializeField] private int healthPoints = 3;
 
+    private bool isLastEnemy = false;
+
     private Animator enemyAnim;
 
     // Start is called before the first frame update
@@ -20,6 +22,10 @@ public class EnemyHealth : MonoBehaviour
     {
         if (healthPoints <= 0)
         {
+            if (this.isLastEnemy)
+            {
+                BroadcastMessage("WaveComplete");
+            }
             Destroy(gameObject);
         }
     }
@@ -38,5 +44,10 @@ public class EnemyHealth : MonoBehaviour
     {
         healthPoints--;
         enemyAnim.SetTrigger("HurtTrigger");
+    }
+
+    public void EnableLastEnemyTag()
+    {
+        this.isLastEnemy = true;
     }
 }
