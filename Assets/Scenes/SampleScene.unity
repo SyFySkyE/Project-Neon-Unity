@@ -192,6 +192,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 420629156}
+    - target: {fileID: 4658642386544131763, guid: 44cf830cc456164489579372e051154f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2082da53a17c62c4aaa864250ea2c620, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44cf830cc456164489579372e051154f, type: 3}
 --- !u!1 &195462533
@@ -661,9 +666,9 @@ GameObject:
   - component: {fileID: 905774958}
   - component: {fileID: 905774957}
   - component: {fileID: 905774956}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2198,79 +2203,78 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1514835461, guid: b9c13b5424e395946be4b107fdc11c1f, type: 3}
-      propertyPath: m_TagString
-      value: Player Ability
+    - target: {fileID: 3051483154464256433, guid: b9c13b5424e395946be4b107fdc11c1f,
+        type: 3}
+      propertyPath: moveWithTransform
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 376588657, guid: b9c13b5424e395946be4b107fdc11c1f, type: 3}
-      propertyPath: m_TagString
-      value: Player Ability
-      objectReference: {fileID: 0}
-    - target: {fileID: 376588660, guid: b9c13b5424e395946be4b107fdc11c1f, type: 3}
-      propertyPath: TriggerModule.inside
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 376588660, guid: b9c13b5424e395946be4b107fdc11c1f, type: 3}
-      propertyPath: TriggerModule.enter
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 376588660, guid: b9c13b5424e395946be4b107fdc11c1f, type: 3}
-      propertyPath: TriggerModule.outside
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 376588660, guid: b9c13b5424e395946be4b107fdc11c1f, type: 3}
-      propertyPath: TriggerModule.exit
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 376588660, guid: b9c13b5424e395946be4b107fdc11c1f, type: 3}
-      propertyPath: TriggerModule.collisionShape0
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 376588660, guid: b9c13b5424e395946be4b107fdc11c1f, type: 3}
-      propertyPath: TriggerModule.enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 376588660, guid: b9c13b5424e395946be4b107fdc11c1f, type: 3}
+    - target: {fileID: 3051483154464256433, guid: b9c13b5424e395946be4b107fdc11c1f,
+        type: 3}
       propertyPath: CollisionModule.enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 376588660, guid: b9c13b5424e395946be4b107fdc11c1f, type: 3}
+    - target: {fileID: 3051483154464256433, guid: b9c13b5424e395946be4b107fdc11c1f,
+        type: 3}
       propertyPath: CollisionModule.type
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 376588660, guid: b9c13b5424e395946be4b107fdc11c1f, type: 3}
+    - target: {fileID: 3051483154464256433, guid: b9c13b5424e395946be4b107fdc11c1f,
+        type: 3}
+      propertyPath: CollisionModule.collidesWith.m_Bits
+      value: 12087
+      objectReference: {fileID: 0}
+    - target: {fileID: 3051483154464256433, guid: b9c13b5424e395946be4b107fdc11c1f,
+        type: 3}
       propertyPath: CollisionModule.collisionMessages
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2090910317, guid: b9c13b5424e395946be4b107fdc11c1f, type: 3}
-      propertyPath: m_TagString
-      value: Player Ability
+    - target: {fileID: 877097357215958547, guid: b9c13b5424e395946be4b107fdc11c1f,
+        type: 3}
+      propertyPath: moveWithTransform
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2090910320, guid: b9c13b5424e395946be4b107fdc11c1f, type: 3}
-      propertyPath: TriggerModule.enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2090910320, guid: b9c13b5424e395946be4b107fdc11c1f, type: 3}
-      propertyPath: TriggerModule.inside
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2090910320, guid: b9c13b5424e395946be4b107fdc11c1f, type: 3}
-      propertyPath: TriggerModule.outside
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2090910320, guid: b9c13b5424e395946be4b107fdc11c1f, type: 3}
-      propertyPath: TriggerModule.enter
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2090910320, guid: b9c13b5424e395946be4b107fdc11c1f, type: 3}
-      propertyPath: TriggerModule.exit
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2090910320, guid: b9c13b5424e395946be4b107fdc11c1f, type: 3}
+    - target: {fileID: 877097357215958547, guid: b9c13b5424e395946be4b107fdc11c1f,
+        type: 3}
       propertyPath: CollisionModule.enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2090910320, guid: b9c13b5424e395946be4b107fdc11c1f, type: 3}
+    - target: {fileID: 877097357215958547, guid: b9c13b5424e395946be4b107fdc11c1f,
+        type: 3}
+      propertyPath: CollisionModule.type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 877097357215958547, guid: b9c13b5424e395946be4b107fdc11c1f,
+        type: 3}
+      propertyPath: CollisionModule.collidesWith.m_Bits
+      value: 12087
+      objectReference: {fileID: 0}
+    - target: {fileID: 877097357215958547, guid: b9c13b5424e395946be4b107fdc11c1f,
+        type: 3}
+      propertyPath: CollisionModule.collisionMessages
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5903871395440331928, guid: b9c13b5424e395946be4b107fdc11c1f,
+        type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5903871395440331928, guid: b9c13b5424e395946be4b107fdc11c1f,
+        type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5903871395440331928, guid: b9c13b5424e395946be4b107fdc11c1f,
+        type: 3}
+      propertyPath: CollisionModule.type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5903871395440331928, guid: b9c13b5424e395946be4b107fdc11c1f,
+        type: 3}
+      propertyPath: CollisionModule.collidesWith.m_Bits
+      value: 12087
+      objectReference: {fileID: 0}
+    - target: {fileID: 5903871395440331928, guid: b9c13b5424e395946be4b107fdc11c1f,
+        type: 3}
       propertyPath: CollisionModule.collisionMessages
       value: 1
       objectReference: {fileID: 0}

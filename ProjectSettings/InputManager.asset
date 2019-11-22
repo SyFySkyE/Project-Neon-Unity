@@ -390,13 +390,13 @@ InputManager:
     axis: 0
     joyNum: 16
   - serializedVersion: 3
-    m_Name: Pause
+    m_Name: Overdrive
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: escape
+    positiveButton: q
     altNegativeButton: 
-    altPositiveButton: joystick button 9
+    altPositiveButton: joystick button 6
     gravity: 0
     dead: 0.19
     sensitivity: 1

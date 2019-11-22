@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 input;
     private Vector3 inputVelocity;
     private bool usingController;
+    private bool canMove = true;
     
     // TODO Controller only works with DS4, add support for XB1, X360
 
@@ -102,6 +103,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        playerRb.AddForce(inputVelocity, ForceMode.Impulse);
+        if (canMove)
+        {
+            playerRb.AddForce(inputVelocity, ForceMode.Impulse);
+        }        
+    }
+
+    public void ToggleCanMove()
+    {
+        canMove = !canMove;
     }
 }

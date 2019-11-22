@@ -26,12 +26,6 @@ public class Bullet : MonoBehaviour
         Destroy(this.gameObject, secBeforeDestroy); // Bullet destroys self during collision, this is for an extreme edge case where barrier doesn't
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void FixedUpdate()
     {
         bulletRb.velocity = transform.forward * speed;
@@ -43,5 +37,10 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void OnParticleCollision(GameObject other)
+    {
+        speed = -speed;
     }
 }

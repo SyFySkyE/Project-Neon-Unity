@@ -16,6 +16,12 @@ public class PlayerAbilities : MonoBehaviour
     [SerializeField] private float crashRechargeTime = 4f;
     [SerializeField] private ParticleSystem crashParticles;
 
+    [Header("Overdrive Ability")]
+    [SerializeField] private int numberOfOverdrives = 1;
+    [SerializeField] private float overdrivePeriod = 5f;
+    [SerializeField] private float overdriveRechargeTime = 10f;
+    [SerializeField] private ParticleSystem overdriveParticles;
+
     private bool canCharge = true;
 
     private Rigidbody playerRb;
@@ -37,6 +43,10 @@ public class PlayerAbilities : MonoBehaviour
         if (Input.GetButtonDown("Crash"))
         {
             Crash();
+        }
+        if (Input.GetButtonDown("Overdrive"))
+        {
+            Overdrive();
         }
     }
 
@@ -73,5 +83,29 @@ public class PlayerAbilities : MonoBehaviour
     {
         yield return new WaitForSeconds(crashRechargeTime);
         numberOfCrashes++;
+    }
+
+    private void Overdrive()
+    {
+        if (numberOfOverdrives > 0)
+        {
+            overdriveParticles.Play();
+            anim.SetTrigger("Overdrive");
+            numberOfOverdrives--;
+            StartCoroutine(OverdrivePeriod());
+        }
+    }
+
+    private IEnumerator OverdrivePeriod()
+    {
+        yield return new WaitForSeconds(overdrivePeriod);
+        overdriveParticles.Stop();
+        StartCoroutine(OverdriveRecharge());
+    }
+
+    private IEnumerator OverdriveRecharge()
+    {
+        yield return new WaitForSeconds(overdriveRechargeTime);
+        numberOfOverdrives++;
     }
 }
