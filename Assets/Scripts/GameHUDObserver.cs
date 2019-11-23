@@ -47,9 +47,4 @@ public class GameHUDObserver : MonoBehaviour
         moneyLabel.GetComponent<CanvasRenderer>().SetColor(Color.green);
         moneyLabel.CrossFadeAlpha(0f, fadeSpeed, false);
     }
-
-    private void Update()
-    {
-        Debug.Log(moneyLabel.color);
-    }
 }

@@ -9,6 +9,7 @@ public class GunController : MonoBehaviour
     private float shotCounter;
 
     [SerializeField] private Transform gunLocation;
+    [SerializeField] private float upgradeAmount = 0.05f;
 
     // Start is called before the first frame update
     void Start()
@@ -49,5 +50,10 @@ public class GunController : MonoBehaviour
         {
             secondsBetweenShots = secondsBetweenShots * 2;
         }
+    }
+
+    public void UpgradeFirerate()
+    {
+        secondsBetweenShots -= upgradeAmount;
     }
 }

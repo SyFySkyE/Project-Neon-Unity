@@ -21,6 +21,7 @@ public class PlayerAbilities : MonoBehaviour
     [SerializeField] private float overdrivePeriod = 5f;
     [SerializeField] private float overdriveRechargeTime = 10f;
     [SerializeField] private ParticleSystem overdriveParticles;
+    [SerializeField] private float overdriveUpgradeAmount = 2.5f;
 
     private bool isOverdriveActive = false;
 
@@ -74,6 +75,11 @@ public class PlayerAbilities : MonoBehaviour
         numberOfDashes++;
     }
 
+    public void UpgradeDash()
+    {
+        numberOfDashes++;
+    }
+
     private void Crash()
     {
         if (numberOfCrashes > 0 && !isOverdriveActive)
@@ -93,6 +99,11 @@ public class PlayerAbilities : MonoBehaviour
     private IEnumerator CrashRecharge()
     {
         yield return new WaitForSeconds(crashRechargeTime);
+        numberOfCrashes++;
+    }
+
+    public void UpgradeCrash()
+    {
         numberOfCrashes++;
     }
 
@@ -122,6 +133,11 @@ public class PlayerAbilities : MonoBehaviour
     {
         yield return new WaitForSeconds(overdriveRechargeTime);
         numberOfOverdrives++;
+    }
+
+    public void UpgradeOverdrive()
+    {
+        overdrivePeriod += overdriveUpgradeAmount;
     }
 
     private void OverdriveStart()

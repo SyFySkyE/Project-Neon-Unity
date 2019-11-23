@@ -24,4 +24,15 @@ public class PlayerPoints : MonoBehaviour
         points += pointsToAdd;
         OnPointsChange(pointsToAdd, points);
     }
+
+    public int GetPoints()
+    {
+        return this.points; 
+    }
+
+    public void SubtractPoints(int amountToSubtract)
+    {
+        this.points -= amountToSubtract;
+        OnPointsChange(amountToSubtract, points);
+    }
 }

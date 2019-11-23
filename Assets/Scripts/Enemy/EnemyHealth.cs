@@ -7,8 +7,6 @@ public class EnemyHealth : MonoBehaviour
     [Header("Health Points")]
     [SerializeField] private int healthPoints = 3;
 
-    private bool isLastEnemy = false;
-
     private Animator enemyAnim;
 
     // Start is called before the first frame update
@@ -17,24 +15,11 @@ public class EnemyHealth : MonoBehaviour
         enemyAnim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (healthPoints <= 0)
-        {
-            if (this.isLastEnemy)
-            {
-                BroadcastMessage("WaveComplete");
-            }
-            Destroy(gameObject);
-        }
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Bullet"))
         {
-            healthPoints--;
+            HurtEnemy();
             enemyAnim.SetTrigger("HurtTrigger");
             Destroy(other.gameObject);
         }
@@ -42,12 +27,17 @@ public class EnemyHealth : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        healthPoints--;
+        HurtEnemy();
         enemyAnim.SetTrigger("HurtTrigger");
     }
 
-    public void EnableLastEnemyTag()
+    private void HurtEnemy()
     {
-        this.isLastEnemy = true;
+        healthPoints--;
+        if (healthPoints <= 0)
+        {
+            EnemySpawnManager.Instance.OnEnemyDeath();
+            Destroy(gameObject);
+        }
     }
 }

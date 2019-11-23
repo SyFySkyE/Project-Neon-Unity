@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] private int healthPoints = 3;
+    [SerializeField] private int healthPoints = 5;
+    [SerializeField] private int currentHp = 5;
     [SerializeField] private float flinchBlowback = 5f;
         
     private Animator playerAnim;
@@ -19,7 +20,7 @@ public class PlayerHealth : MonoBehaviour
     {
         playerAnim = GetComponent<Animator>();
         playerRb = GetComponent<Rigidbody>();
-        OnHealthChange(healthPoints);
+        OnHealthChange(currentHp);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -37,12 +38,12 @@ public class PlayerHealth : MonoBehaviour
 
     private void HurtPlayer()
     {
-        healthPoints--;
-        OnHealthChange(healthPoints);
+        currentHp--;
+        OnHealthChange(currentHp);
         playerAnim.SetTrigger("HurtTrigger");
         isVulnerable = false;
         playerRb.AddForce(-transform.forward * flinchBlowback, ForceMode.Impulse);
-        if (this.healthPoints <= 0)
+        if (this.currentHp <= 0)
         {
             Destroy(this.gameObject);
         }
@@ -56,5 +57,12 @@ public class PlayerHealth : MonoBehaviour
     public void DisablePlayerVulnerability()
     {
         isVulnerable = false;
+    }
+
+    public void UpgradeHealth()
+    {
+        healthPoints++;
+        currentHp = healthPoints;
+        OnHealthChange(currentHp);
     }
 }
