@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 inputVelocity;
     private bool usingController;
     private bool canMove = true;
+    private bool isBossActive = false;
     
     // TODO Controller only works with DS4, add support for XB1, X360
 
@@ -59,8 +60,16 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void UpdateInput()
-    {
-        input = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
+    {        
+        if (isBossActive)
+        {
+            input = new Vector3(Input.GetAxis("Vertical"), 0f, -Input.GetAxis("Horizontal"));
+        }
+        else
+        {
+            input = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
+        }
+        
         inputVelocity = input * speed;
         if (input != Vector3.zero)
         {
