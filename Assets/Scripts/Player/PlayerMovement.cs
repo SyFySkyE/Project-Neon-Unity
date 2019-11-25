@@ -29,11 +29,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void CamSystem_OnMainCamSwitch()
     {
+        Debug.Log("Switching to main state cam");
         isBossActive = false;
     }
 
     private void CamSystem_OnBossCamSwitch()
     {
+        Debug.Log("Switching to boss cam");
         isBossActive = true;
     }
 
@@ -71,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
         {
             usingController = false;
         }
-        else if (Input.GetAxisRaw("RStickVertical") > 0f || Input.GetAxisRaw("RStickHorizontal") > 0f)
+        else if (Input.GetAxisRaw("RStickVertical") > 0.1f || Input.GetAxisRaw("RStickHorizontal") > 0.1f)
         {
             usingController = true;
         }
@@ -120,13 +122,20 @@ public class PlayerMovement : MonoBehaviour
 
     private void LookUsingController()
     {
-        Vector3 playerDir = Vector3.right * Input.GetAxisRaw("RStickHorizontal") + Vector3.forward * -Input.GetAxisRaw("RStickVertical"); // RStickVertical needs to be negative
+        Vector3 playerDir = Vector3.zero;
+        if (isBossActive)
+        {
+            playerDir = Vector3.forward * -Input.GetAxisRaw("RStickHorizontal") + Vector3.right * -Input.GetAxisRaw("RStickVertical");
+        }
+        else
+        {
+            playerDir = Vector3.right * Input.GetAxisRaw("RStickHorizontal") + Vector3.forward * -Input.GetAxisRaw("RStickVertical"); // RStickVertical 
+        }
         if (playerDir.sqrMagnitude > 0f) // If controller is receiving input
         {
-            usingController = true;
+            usingController = true;            
             transform.rotation = Quaternion.LookRotation(playerDir, Vector3.up);
-        }
-        
+        }        
     }
 
     private void FixedUpdate()
