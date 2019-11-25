@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speed = 2f;
     [SerializeField] private GameObject aimObject;
 
+    [SerializeField] private CameraSwitcher camSystem;
+
     private Rigidbody playerRb;
     private Camera mainCamera;
     private Animator playerAnim;
@@ -16,8 +18,24 @@ public class PlayerMovement : MonoBehaviour
     private bool usingController;
     private bool canMove = true;
     private bool isBossActive = false;
-    
+
     // TODO Controller only works with DS4, add support for XB1, X360
+
+    private void OnEnable()
+    {
+        camSystem.OnBossCamSwitch += CamSystem_OnBossCamSwitch;
+        camSystem.OnMainCamSwitch += CamSystem_OnMainCamSwitch;
+    }
+
+    private void CamSystem_OnMainCamSwitch()
+    {
+        isBossActive = false;
+    }
+
+    private void CamSystem_OnBossCamSwitch()
+    {
+        isBossActive = true;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -108,6 +126,7 @@ public class PlayerMovement : MonoBehaviour
             usingController = true;
             transform.rotation = Quaternion.LookRotation(playerDir, Vector3.up);
         }
+        
     }
 
     private void FixedUpdate()

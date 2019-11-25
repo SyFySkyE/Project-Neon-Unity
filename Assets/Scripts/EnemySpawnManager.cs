@@ -6,6 +6,7 @@ public class EnemySpawnManager : MonoBehaviour
 {
     [Header("Enemy Prefabs to Spawn")]
     [SerializeField] private GameObject[] enemyPrefabs;
+    [SerializeField] private Boss boss;
 
     [Header("Places to spawn Enemies")]
     [SerializeField] private List<Transform> placesToSpawn;
@@ -19,6 +20,7 @@ public class EnemySpawnManager : MonoBehaviour
     [SerializeField] private int waveNumber = 1;
     [SerializeField] private int wave2EnemiesToSpawn = 10;
     [SerializeField] private int wave3EnemiesToSpawn = 15;
+    [SerializeField] private int maxWaves = 3;
         
     [SerializeField] private ShopController shop;
 
@@ -95,9 +97,14 @@ public class EnemySpawnManager : MonoBehaviour
             enemiesThisWave = wave3EnemiesToSpawn;
             StartCoroutine(SpawnEnemy());
         }
-        else if (waveNumber == 3)
+        else if (waveNumber >= maxWaves)
         {
-            Debug.Log("Uh oh... Boss Round! Chris crunches hard on crappy shooter... Yet it's super effective!");
+            SpawnBoss();
         }
+    }
+
+    private void SpawnBoss()
+    {
+        boss.gameObject.SetActive(true);
     }
 }
