@@ -6,18 +6,18 @@ public class EnemySpawnManager : MonoBehaviour
 {
     [Header("Enemy Prefabs to Spawn")]
     [SerializeField] private GameObject[] enemyPrefabs;
-    [SerializeField] private Boss boss;
+    [SerializeField] private GameObject boss;
 
     [Header("Places to spawn Enemies")]
     [SerializeField] private List<Transform> placesToSpawn;
 
     [Header("Spawning Parameters")]
     [SerializeField] private float minTimeInSecBeforeSpawn = 2f;
-    [SerializeField] private float maxTimeInSecBeforeSpawn = 5f;
-    [SerializeField] private int enemiesThisWave = 10;
+    [SerializeField] private float maxTimeInSecBeforeSpawn = 5f;    
 
     [Header("Wave Paramenters")]
     [SerializeField] private int waveNumber = 1;
+    [SerializeField] private int enemiesThisWave = 10;
     [SerializeField] private int wave2EnemiesToSpawn = 10;
     [SerializeField] private int wave3EnemiesToSpawn = 15;
     [SerializeField] private int maxWaves = 3;
@@ -105,6 +105,6 @@ public class EnemySpawnManager : MonoBehaviour
 
     private void SpawnBoss()
     {
-        boss.gameObject.SetActive(true);
+        boss.SetActive(true);
     }
 }
