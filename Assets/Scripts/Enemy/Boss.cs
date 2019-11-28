@@ -12,8 +12,13 @@ public class Boss : MonoBehaviour
     [SerializeField] private int thirdPhaseHealthTrigger = 33;
     [SerializeField] private float secondsBetweenAttack = 3f;
 
-    [SerializeField] private ParticleSystem giantLaser;
-
+    [SerializeField] private ParticleSystem preLaser;
+    [SerializeField] private ParticleSystem laser;
+    [SerializeField] private GameObject laserObject;
+    [SerializeField] private float timeBeforeLaserShot = 5f;
+    [SerializeField] private Vector3 laserScale = new Vector3(180f, 1f, 1f);
+    [SerializeField] private float secondsBeforeLaserDestroy = 3f;
+ 
     [SerializeField] private GameObject player;
 
     public event System.Action OnSpawn;
@@ -35,11 +40,11 @@ public class Boss : MonoBehaviour
     }
 
     private IEnumerator StartAttacking()
-    {
-        yield return new WaitForSeconds(secondsBetweenAttack);
+    {        
+        yield return new WaitForSeconds(secondsBetweenAttack);        
         switch (currentPhase)
         {
-            case BossPhaseState.First:
+            case BossPhaseState.First:                
                 ShootLaser();
                 break;
             case BossPhaseState.Second:
@@ -51,8 +56,16 @@ public class Boss : MonoBehaviour
     }
 
     private void ShootLaser()
+    {     
+        preLaser.Play();
+        StartCoroutine(ChargeLaser());
+    }
+
+    private IEnumerator ChargeLaser()
     {
-        giantLaser.Play();
+        yield return new WaitForSeconds(timeBeforeLaserShot);
+        preLaser.Stop();
+        laser.Play();
     }
 
     private void ShootBulletHell()
