@@ -38,15 +38,18 @@ public class PlayerHealth : MonoBehaviour
 
     private void HurtPlayer()
     {
-        currentHp--;
-        OnHealthChange(currentHp);
-        playerAnim.SetTrigger("HurtTrigger");
-        isVulnerable = false;
-        playerRb.AddForce(-transform.forward * flinchBlowback, ForceMode.Impulse);
-        if (this.currentHp <= 0)
+        if (isVulnerable)
         {
-            Destroy(this.gameObject);
-        }
+            currentHp--;
+            OnHealthChange(currentHp);
+            playerAnim.SetTrigger("HurtTrigger");
+            isVulnerable = false; // Gets reset to true on playerHurtAnim
+            playerRb.AddForce(-transform.forward * flinchBlowback, ForceMode.Impulse);
+            if (this.currentHp <= 0)
+            {
+                Destroy(this.gameObject);
+            }
+        }        
     }
 
     public void EnablePlayerVulnerability() // Is triggered via Animator (end of HurtAnim)
@@ -64,5 +67,13 @@ public class PlayerHealth : MonoBehaviour
         healthPoints++;
         currentHp = healthPoints;
         OnHealthChange(currentHp);
+    }
+
+    private void OnParticleCollision(GameObject other)
+    {
+        if (other.CompareTag("Laser"))
+        {
+            HurtPlayer();
+        }
     }
 }

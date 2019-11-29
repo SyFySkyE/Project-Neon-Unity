@@ -14,10 +14,14 @@ public class Boss : MonoBehaviour
 
     [SerializeField] private ParticleSystem preLaser;
     [SerializeField] private ParticleSystem laser;
-    [SerializeField] private GameObject laserObject;
     [SerializeField] private float timeBeforeLaserShot = 5f;
-    [SerializeField] private Vector3 laserScale = new Vector3(180f, 1f, 1f);
-    [SerializeField] private float secondsBeforeLaserDestroy = 3f;
+
+    [SerializeField] private GameObject bullet;
+    [SerializeField] private ParticleSystem readyBulletHell;
+    [SerializeField] private float timeBeforeBulletHell = 5f;
+    [SerializeField] private Transform[] gunPositions;
+    [SerializeField] private int numberOfBulletsToFire = 20;
+    [SerializeField] private float shootTime = 3f;
  
     [SerializeField] private GameObject player;
 
@@ -51,8 +55,11 @@ public class Boss : MonoBehaviour
                 ShootBulletHell();
                 break;
             case BossPhaseState.Third:
+                ShootLaser();
+                ShootBulletHell();
                 break;
         }
+        StartCoroutine(StartAttacking());
     }
 
     private void ShootLaser()
@@ -70,7 +77,23 @@ public class Boss : MonoBehaviour
 
     private void ShootBulletHell()
     {
+        readyBulletHell.Play();
+        StartCoroutine(ChargeBulletHell());
+    }
 
+    private IEnumerator ChargeBulletHell()
+    {
+        yield return new WaitForSeconds(timeBeforeBulletHell);
+        readyBulletHell.Stop();
+        for (int h = 0; h < shootTime; h++)
+        {
+            yield return new WaitForSeconds(h);
+            for (int i = 0; i < numberOfBulletsToFire; i++)
+            {
+                int randomGun = Random.Range(0, gunPositions.Length);
+                Instantiate(bullet, gunPositions[randomGun].position, transform.rotation);
+            }
+        }        
     }
 
     private void OnDisable()
@@ -96,6 +119,14 @@ public class Boss : MonoBehaviour
     {
         health--;
         bossAnim.SetTrigger("HurtTrigger");
+        if (health <= secondPhaseHealthTrigger && health >= thirdPhaseHealthTrigger)
+        {
+            this.currentPhase = BossPhaseState.Second;
+        }
+        else if (health <= thirdPhaseHealthTrigger)
+        {
+            this.currentPhase = BossPhaseState.Third;
+        }
         if (health <= 0)
         {            
             Destroy(this.gameObject);
