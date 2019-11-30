@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [Header("Movement stats and dependencies")]
+    [Header("Movement stats")]
     [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float gravityMultiplier = 2f;
 
     private PlayerMovement player;
     private Rigidbody enemyRb;
@@ -13,6 +14,7 @@ public class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Physics.gravity *= gravityMultiplier;
         player = FindObjectOfType<PlayerMovement>();
         enemyRb = GetComponent<Rigidbody>();
     }
