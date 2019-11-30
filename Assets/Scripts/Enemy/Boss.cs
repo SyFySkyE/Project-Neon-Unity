@@ -11,6 +11,8 @@ public class Boss : MonoBehaviour
     [SerializeField] private int secondPhaseHealthTrigger = 66;
     [SerializeField] private int thirdPhaseHealthTrigger = 33;
     [SerializeField] private float secondsBetweenAttack = 3f;
+    [SerializeField] private GameObject topBody;
+    [SerializeField] private bool useNormalRotation = false;
 
     [SerializeField] private ParticleSystem preLaser;
     [SerializeField] private ParticleSystem laser;
@@ -24,6 +26,8 @@ public class Boss : MonoBehaviour
     [SerializeField] private float shootTime = 3f;
  
     [SerializeField] private GameObject player;
+    [SerializeField] private bool isMoving = false;
+    [SerializeField] private float moveSpeed = 5f;
 
     public event System.Action OnSpawn;
     public event System.Action OnDestroy;
@@ -33,12 +37,13 @@ public class Boss : MonoBehaviour
 
     private void OnEnable()
     {
-        OnSpawn();
+        
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        OnSpawn();
         bossAnim = GetComponent<Animator>();
         StartCoroutine(StartAttacking());
     }
@@ -91,7 +96,7 @@ public class Boss : MonoBehaviour
             for (int i = 0; i < numberOfBulletsToFire; i++)
             {
                 int randomGun = Random.Range(0, gunPositions.Length);
-                Instantiate(bullet, gunPositions[randomGun].position, transform.rotation);
+                Instantiate(bullet, gunPositions[randomGun].position, gunPositions[randomGun].rotation);
             }
         }        
     }
@@ -104,7 +109,18 @@ public class Boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(player.transform);
+        if (useNormalRotation)
+        {
+            topBody.transform.LookAt(player.transform);
+        }
+        else
+        {
+            topBody.transform.LookAt(player.transform, Vector3.forward);
+        }        
+        if (isMoving)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
