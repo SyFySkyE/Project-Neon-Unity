@@ -36,6 +36,19 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            if (isVulnerable) HurtPlayer();
+        }
+        else if (collision.gameObject.CompareTag("Bullet"))
+        {
+            if (isVulnerable) HurtPlayer();
+            Destroy(collision.gameObject);
+        }
+    }
+
     private void HurtPlayer()
     {
         if (isVulnerable)
@@ -44,7 +57,7 @@ public class PlayerHealth : MonoBehaviour
             OnHealthChange(currentHp);
             playerAnim.SetTrigger("HurtTrigger");
             isVulnerable = false; // Gets reset to true on playerHurtAnim
-            playerRb.AddForce(-transform.forward * flinchBlowback, ForceMode.Impulse);
+            playerRb.AddForce(-transform.forward * flinchBlowback, ForceMode.VelocityChange);
             if (this.currentHp <= 0)
             {
                 Destroy(this.gameObject);

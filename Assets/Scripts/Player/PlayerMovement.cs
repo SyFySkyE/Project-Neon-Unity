@@ -98,7 +98,8 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             playerAnim.SetBool("IsMoving", false);
-        }        
+        }       
+        
     }
 
     private void MakeCameraRay()

@@ -14,8 +14,11 @@ public class CameraSwitcher : MonoBehaviour
 
     private void OnEnable()
     {
-        boss.OnSpawn += Boss_OnSpawn;
-        boss.OnDestroy += Boss_OnDestroy;
+        if (boss)
+        {
+            boss.OnSpawn += Boss_OnSpawn;
+            boss.OnDestroy += Boss_OnDestroy;
+        }                
     }
 
     private void Boss_OnDestroy()

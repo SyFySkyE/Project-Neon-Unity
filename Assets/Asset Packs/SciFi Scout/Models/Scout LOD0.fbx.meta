@@ -1,295 +1,867 @@
 fileFormatVersion: 2
 guid: 276c293f321cbc340aa037fa9830e434
-timeCreated: 1504007353
-licenseType: Store
 ModelImporter:
-  serializedVersion: 21
-  fileIDToRecycleName:
-    100000: ArmArmor
-    100002: ARMATURE_BOT
-    100004: ARMATURE_CHARACTER
-    100006: BodySuit
-    100008: Bone
-    100010: Bone.001
-    100012: Bone.001_end
-    100014: Boots
-    100016: BootsDesign
-    100018: BootsProtection
-    100020: chest
-    100022: ChestArmor
-    100024: Cube
-    100026: Cube.001
-    100028: Cube.002
-    100030: Cylinder
-    100032: Cylinder.007
-    100034: Drone
-    100036: f_index.01.L
-    100038: f_index.01.R
-    100040: f_index.02.L
-    100042: f_index.02.R
-    100044: f_index.03.L
-    100046: f_index.03.L_end
-    100048: f_index.03.R
-    100050: f_index.03.R_end
-    100052: f_middle.01.L
-    100054: f_middle.01.R
-    100056: f_middle.02.L
-    100058: f_middle.02.R
-    100060: f_middle.03.L
-    100062: f_middle.03.L_end
-    100064: f_middle.03.R
-    100066: f_middle.03.R_end
-    100068: f_pinky.01.L
-    100070: f_pinky.01.R
-    100072: f_pinky.02.L
-    100074: f_pinky.02.R
-    100076: f_pinky.03.L
-    100078: f_pinky.03.L_end
-    100080: f_pinky.03.R
-    100082: f_pinky.03.R_end
-    100084: f_ring.01.L
-    100086: f_ring.01.R
-    100088: f_ring.02.L
-    100090: f_ring.02.R
-    100092: f_ring.03.L
-    100094: f_ring.03.L_end
-    100096: f_ring.03.R
-    100098: f_ring.03.R_end
-    100100: Face
-    100102: foot.L
-    100104: foot.R
-    100106: forearm.L
-    100108: forearm.R
-    100110: Gun
-    100112: hand.L
-    100114: hand.R
-    100116: head
-    100118: head_end
-    100120: heel.L
-    100122: heel.L_end
-    100124: heel.R
-    100126: heel.R_end
-    100128: Helmet
-    100130: HelmetBack
-    100132: hips
-    100134: Kneeelement
-    100136: LegArmor
-    100138: neck
-    100140: palm.01.L
-    100142: palm.01.R
-    100144: palm.02.L
-    100146: palm.02.R
-    100148: palm.03.L
-    100150: palm.03.R
-    100152: palm.04.L
-    100154: palm.04.R
-    100156: //RootNode
-    100158: shin.L
-    100160: shin.R
-    100162: ShinArmor
-    100164: ShinArmorDesign
-    100166: ShinArmorElement
-    100168: shoulder.L
-    100170: shoulder.R
-    100172: ShoulderPad
-    100174: spine
-    100176: Teeth
-    100178: thigh.L
-    100180: thigh.L.001
-    100182: thigh.L.001_end
-    100184: thigh.R
-    100186: thigh.R.001
-    100188: thigh.R.001_end
-    100190: thumb.01.L
-    100192: thumb.01.R
-    100194: thumb.02.L
-    100196: thumb.02.R
-    100198: thumb.03.L
-    100200: thumb.03.L_end
-    100202: thumb.03.R
-    100204: thumb.03.R_end
-    100206: toe.L
-    100208: toe.L_end
-    100210: toe.R
-    100212: toe.R_end
-    100214: upper_arm.L
-    100216: upper_arm.R
-    400000: ArmArmor
-    400002: ARMATURE_BOT
-    400004: ARMATURE_CHARACTER
-    400006: BodySuit
-    400008: Bone
-    400010: Bone.001
-    400012: Bone.001_end
-    400014: Boots
-    400016: BootsDesign
-    400018: BootsProtection
-    400020: chest
-    400022: ChestArmor
-    400024: Cube
-    400026: Cube.001
-    400028: Cube.002
-    400030: Cylinder
-    400032: Cylinder.007
-    400034: Drone
-    400036: f_index.01.L
-    400038: f_index.01.R
-    400040: f_index.02.L
-    400042: f_index.02.R
-    400044: f_index.03.L
-    400046: f_index.03.L_end
-    400048: f_index.03.R
-    400050: f_index.03.R_end
-    400052: f_middle.01.L
-    400054: f_middle.01.R
-    400056: f_middle.02.L
-    400058: f_middle.02.R
-    400060: f_middle.03.L
-    400062: f_middle.03.L_end
-    400064: f_middle.03.R
-    400066: f_middle.03.R_end
-    400068: f_pinky.01.L
-    400070: f_pinky.01.R
-    400072: f_pinky.02.L
-    400074: f_pinky.02.R
-    400076: f_pinky.03.L
-    400078: f_pinky.03.L_end
-    400080: f_pinky.03.R
-    400082: f_pinky.03.R_end
-    400084: f_ring.01.L
-    400086: f_ring.01.R
-    400088: f_ring.02.L
-    400090: f_ring.02.R
-    400092: f_ring.03.L
-    400094: f_ring.03.L_end
-    400096: f_ring.03.R
-    400098: f_ring.03.R_end
-    400100: Face
-    400102: foot.L
-    400104: foot.R
-    400106: forearm.L
-    400108: forearm.R
-    400110: Gun
-    400112: hand.L
-    400114: hand.R
-    400116: head
-    400118: head_end
-    400120: heel.L
-    400122: heel.L_end
-    400124: heel.R
-    400126: heel.R_end
-    400128: Helmet
-    400130: HelmetBack
-    400132: hips
-    400134: Kneeelement
-    400136: LegArmor
-    400138: neck
-    400140: palm.01.L
-    400142: palm.01.R
-    400144: palm.02.L
-    400146: palm.02.R
-    400148: palm.03.L
-    400150: palm.03.R
-    400152: palm.04.L
-    400154: palm.04.R
-    400156: //RootNode
-    400158: shin.L
-    400160: shin.R
-    400162: ShinArmor
-    400164: ShinArmorDesign
-    400166: ShinArmorElement
-    400168: shoulder.L
-    400170: shoulder.R
-    400172: ShoulderPad
-    400174: spine
-    400176: Teeth
-    400178: thigh.L
-    400180: thigh.L.001
-    400182: thigh.L.001_end
-    400184: thigh.R
-    400186: thigh.R.001
-    400188: thigh.R.001_end
-    400190: thumb.01.L
-    400192: thumb.01.R
-    400194: thumb.02.L
-    400196: thumb.02.R
-    400198: thumb.03.L
-    400200: thumb.03.L_end
-    400202: thumb.03.R
-    400204: thumb.03.R_end
-    400206: toe.L
-    400208: toe.L_end
-    400210: toe.R
-    400212: toe.R_end
-    400214: upper_arm.L
-    400216: upper_arm.R
-    4300000: Gun
-    4300002: Drone
-    4300004: Teeth
-    4300006: ShinArmorElement
-    4300008: ShinArmorDesign
-    4300010: ShinArmor
-    4300012: LegArmor
-    4300014: Kneeelement
-    4300016: HelmetBack
-    4300018: Helmet
-    4300020: Cylinder.007
-    4300022: Cube.002
-    4300024: Cube.001
-    4300026: Cube
-    4300028: ArmArmor
-    4300030: ChestArmor
-    4300032: Cylinder
-    4300034: ShoulderPad
-    4300036: Face
-    4300038: BootsDesign
-    4300040: BodySuit
-    4300042: Boots
-    4300044: BootsProtection
-    7400000: ShootPose
-    7400002: Command
-    7400004: Damage taken
-    7400006: Death
-    7400008: Grab
-    7400010: HandForward
-    7400012: Idle
-    7400014: Jump
-    7400016: Point
-    7400018: Run
-    7400020: Walk
-    7400022: ARMATURE_BOT|Idle_Pose_Drone
-    7400024: ARMATURE_CHARACTER|Idle
-    7400026: ShoulderPad|Run
-    7400028: Crouch_Move
-    7400030: Crouch_Idle
-    9500000: //RootNode
-    13700000: ArmArmor
-    13700002: BodySuit
-    13700004: Boots
-    13700006: BootsDesign
-    13700008: BootsProtection
-    13700010: ChestArmor
-    13700012: Cube
-    13700014: Cube.001
-    13700016: Cube.002
-    13700018: Cylinder
-    13700020: Cylinder.007
-    13700022: Drone
-    13700024: Face
-    13700026: Gun
-    13700028: Helmet
-    13700030: HelmetBack
-    13700032: Kneeelement
-    13700034: LegArmor
-    13700036: ShinArmor
-    13700038: ShinArmorDesign
-    13700040: ShinArmorElement
-    13700042: ShoulderPad
-    13700044: Teeth
+  serializedVersion: 25
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: ArmArmor
+  - first:
+      1: 100002
+    second: ARMATURE_BOT
+  - first:
+      1: 100004
+    second: ARMATURE_CHARACTER
+  - first:
+      1: 100006
+    second: BodySuit
+  - first:
+      1: 100008
+    second: Bone
+  - first:
+      1: 100010
+    second: Bone.001
+  - first:
+      1: 100012
+    second: Bone.001_end
+  - first:
+      1: 100014
+    second: Boots
+  - first:
+      1: 100016
+    second: BootsDesign
+  - first:
+      1: 100018
+    second: BootsProtection
+  - first:
+      1: 100020
+    second: chest
+  - first:
+      1: 100022
+    second: ChestArmor
+  - first:
+      1: 100024
+    second: Cube
+  - first:
+      1: 100026
+    second: Cube.001
+  - first:
+      1: 100028
+    second: Cube.002
+  - first:
+      1: 100030
+    second: Cylinder
+  - first:
+      1: 100032
+    second: Cylinder.007
+  - first:
+      1: 100034
+    second: Drone
+  - first:
+      1: 100036
+    second: f_index.01.L
+  - first:
+      1: 100038
+    second: f_index.01.R
+  - first:
+      1: 100040
+    second: f_index.02.L
+  - first:
+      1: 100042
+    second: f_index.02.R
+  - first:
+      1: 100044
+    second: f_index.03.L
+  - first:
+      1: 100046
+    second: f_index.03.L_end
+  - first:
+      1: 100048
+    second: f_index.03.R
+  - first:
+      1: 100050
+    second: f_index.03.R_end
+  - first:
+      1: 100052
+    second: f_middle.01.L
+  - first:
+      1: 100054
+    second: f_middle.01.R
+  - first:
+      1: 100056
+    second: f_middle.02.L
+  - first:
+      1: 100058
+    second: f_middle.02.R
+  - first:
+      1: 100060
+    second: f_middle.03.L
+  - first:
+      1: 100062
+    second: f_middle.03.L_end
+  - first:
+      1: 100064
+    second: f_middle.03.R
+  - first:
+      1: 100066
+    second: f_middle.03.R_end
+  - first:
+      1: 100068
+    second: f_pinky.01.L
+  - first:
+      1: 100070
+    second: f_pinky.01.R
+  - first:
+      1: 100072
+    second: f_pinky.02.L
+  - first:
+      1: 100074
+    second: f_pinky.02.R
+  - first:
+      1: 100076
+    second: f_pinky.03.L
+  - first:
+      1: 100078
+    second: f_pinky.03.L_end
+  - first:
+      1: 100080
+    second: f_pinky.03.R
+  - first:
+      1: 100082
+    second: f_pinky.03.R_end
+  - first:
+      1: 100084
+    second: f_ring.01.L
+  - first:
+      1: 100086
+    second: f_ring.01.R
+  - first:
+      1: 100088
+    second: f_ring.02.L
+  - first:
+      1: 100090
+    second: f_ring.02.R
+  - first:
+      1: 100092
+    second: f_ring.03.L
+  - first:
+      1: 100094
+    second: f_ring.03.L_end
+  - first:
+      1: 100096
+    second: f_ring.03.R
+  - first:
+      1: 100098
+    second: f_ring.03.R_end
+  - first:
+      1: 100100
+    second: Face
+  - first:
+      1: 100102
+    second: foot.L
+  - first:
+      1: 100104
+    second: foot.R
+  - first:
+      1: 100106
+    second: forearm.L
+  - first:
+      1: 100108
+    second: forearm.R
+  - first:
+      1: 100110
+    second: Gun
+  - first:
+      1: 100112
+    second: hand.L
+  - first:
+      1: 100114
+    second: hand.R
+  - first:
+      1: 100116
+    second: head
+  - first:
+      1: 100118
+    second: head_end
+  - first:
+      1: 100120
+    second: heel.L
+  - first:
+      1: 100122
+    second: heel.L_end
+  - first:
+      1: 100124
+    second: heel.R
+  - first:
+      1: 100126
+    second: heel.R_end
+  - first:
+      1: 100128
+    second: Helmet
+  - first:
+      1: 100130
+    second: HelmetBack
+  - first:
+      1: 100132
+    second: hips
+  - first:
+      1: 100134
+    second: Kneeelement
+  - first:
+      1: 100136
+    second: LegArmor
+  - first:
+      1: 100138
+    second: neck
+  - first:
+      1: 100140
+    second: palm.01.L
+  - first:
+      1: 100142
+    second: palm.01.R
+  - first:
+      1: 100144
+    second: palm.02.L
+  - first:
+      1: 100146
+    second: palm.02.R
+  - first:
+      1: 100148
+    second: palm.03.L
+  - first:
+      1: 100150
+    second: palm.03.R
+  - first:
+      1: 100152
+    second: palm.04.L
+  - first:
+      1: 100154
+    second: palm.04.R
+  - first:
+      1: 100156
+    second: //RootNode
+  - first:
+      1: 100158
+    second: shin.L
+  - first:
+      1: 100160
+    second: shin.R
+  - first:
+      1: 100162
+    second: ShinArmor
+  - first:
+      1: 100164
+    second: ShinArmorDesign
+  - first:
+      1: 100166
+    second: ShinArmorElement
+  - first:
+      1: 100168
+    second: shoulder.L
+  - first:
+      1: 100170
+    second: shoulder.R
+  - first:
+      1: 100172
+    second: ShoulderPad
+  - first:
+      1: 100174
+    second: spine
+  - first:
+      1: 100176
+    second: Teeth
+  - first:
+      1: 100178
+    second: thigh.L
+  - first:
+      1: 100180
+    second: thigh.L.001
+  - first:
+      1: 100182
+    second: thigh.L.001_end
+  - first:
+      1: 100184
+    second: thigh.R
+  - first:
+      1: 100186
+    second: thigh.R.001
+  - first:
+      1: 100188
+    second: thigh.R.001_end
+  - first:
+      1: 100190
+    second: thumb.01.L
+  - first:
+      1: 100192
+    second: thumb.01.R
+  - first:
+      1: 100194
+    second: thumb.02.L
+  - first:
+      1: 100196
+    second: thumb.02.R
+  - first:
+      1: 100198
+    second: thumb.03.L
+  - first:
+      1: 100200
+    second: thumb.03.L_end
+  - first:
+      1: 100202
+    second: thumb.03.R
+  - first:
+      1: 100204
+    second: thumb.03.R_end
+  - first:
+      1: 100206
+    second: toe.L
+  - first:
+      1: 100208
+    second: toe.L_end
+  - first:
+      1: 100210
+    second: toe.R
+  - first:
+      1: 100212
+    second: toe.R_end
+  - first:
+      1: 100214
+    second: upper_arm.L
+  - first:
+      1: 100216
+    second: upper_arm.R
+  - first:
+      4: 400000
+    second: ArmArmor
+  - first:
+      4: 400002
+    second: ARMATURE_BOT
+  - first:
+      4: 400004
+    second: ARMATURE_CHARACTER
+  - first:
+      4: 400006
+    second: BodySuit
+  - first:
+      4: 400008
+    second: Bone
+  - first:
+      4: 400010
+    second: Bone.001
+  - first:
+      4: 400012
+    second: Bone.001_end
+  - first:
+      4: 400014
+    second: Boots
+  - first:
+      4: 400016
+    second: BootsDesign
+  - first:
+      4: 400018
+    second: BootsProtection
+  - first:
+      4: 400020
+    second: chest
+  - first:
+      4: 400022
+    second: ChestArmor
+  - first:
+      4: 400024
+    second: Cube
+  - first:
+      4: 400026
+    second: Cube.001
+  - first:
+      4: 400028
+    second: Cube.002
+  - first:
+      4: 400030
+    second: Cylinder
+  - first:
+      4: 400032
+    second: Cylinder.007
+  - first:
+      4: 400034
+    second: Drone
+  - first:
+      4: 400036
+    second: f_index.01.L
+  - first:
+      4: 400038
+    second: f_index.01.R
+  - first:
+      4: 400040
+    second: f_index.02.L
+  - first:
+      4: 400042
+    second: f_index.02.R
+  - first:
+      4: 400044
+    second: f_index.03.L
+  - first:
+      4: 400046
+    second: f_index.03.L_end
+  - first:
+      4: 400048
+    second: f_index.03.R
+  - first:
+      4: 400050
+    second: f_index.03.R_end
+  - first:
+      4: 400052
+    second: f_middle.01.L
+  - first:
+      4: 400054
+    second: f_middle.01.R
+  - first:
+      4: 400056
+    second: f_middle.02.L
+  - first:
+      4: 400058
+    second: f_middle.02.R
+  - first:
+      4: 400060
+    second: f_middle.03.L
+  - first:
+      4: 400062
+    second: f_middle.03.L_end
+  - first:
+      4: 400064
+    second: f_middle.03.R
+  - first:
+      4: 400066
+    second: f_middle.03.R_end
+  - first:
+      4: 400068
+    second: f_pinky.01.L
+  - first:
+      4: 400070
+    second: f_pinky.01.R
+  - first:
+      4: 400072
+    second: f_pinky.02.L
+  - first:
+      4: 400074
+    second: f_pinky.02.R
+  - first:
+      4: 400076
+    second: f_pinky.03.L
+  - first:
+      4: 400078
+    second: f_pinky.03.L_end
+  - first:
+      4: 400080
+    second: f_pinky.03.R
+  - first:
+      4: 400082
+    second: f_pinky.03.R_end
+  - first:
+      4: 400084
+    second: f_ring.01.L
+  - first:
+      4: 400086
+    second: f_ring.01.R
+  - first:
+      4: 400088
+    second: f_ring.02.L
+  - first:
+      4: 400090
+    second: f_ring.02.R
+  - first:
+      4: 400092
+    second: f_ring.03.L
+  - first:
+      4: 400094
+    second: f_ring.03.L_end
+  - first:
+      4: 400096
+    second: f_ring.03.R
+  - first:
+      4: 400098
+    second: f_ring.03.R_end
+  - first:
+      4: 400100
+    second: Face
+  - first:
+      4: 400102
+    second: foot.L
+  - first:
+      4: 400104
+    second: foot.R
+  - first:
+      4: 400106
+    second: forearm.L
+  - first:
+      4: 400108
+    second: forearm.R
+  - first:
+      4: 400110
+    second: Gun
+  - first:
+      4: 400112
+    second: hand.L
+  - first:
+      4: 400114
+    second: hand.R
+  - first:
+      4: 400116
+    second: head
+  - first:
+      4: 400118
+    second: head_end
+  - first:
+      4: 400120
+    second: heel.L
+  - first:
+      4: 400122
+    second: heel.L_end
+  - first:
+      4: 400124
+    second: heel.R
+  - first:
+      4: 400126
+    second: heel.R_end
+  - first:
+      4: 400128
+    second: Helmet
+  - first:
+      4: 400130
+    second: HelmetBack
+  - first:
+      4: 400132
+    second: hips
+  - first:
+      4: 400134
+    second: Kneeelement
+  - first:
+      4: 400136
+    second: LegArmor
+  - first:
+      4: 400138
+    second: neck
+  - first:
+      4: 400140
+    second: palm.01.L
+  - first:
+      4: 400142
+    second: palm.01.R
+  - first:
+      4: 400144
+    second: palm.02.L
+  - first:
+      4: 400146
+    second: palm.02.R
+  - first:
+      4: 400148
+    second: palm.03.L
+  - first:
+      4: 400150
+    second: palm.03.R
+  - first:
+      4: 400152
+    second: palm.04.L
+  - first:
+      4: 400154
+    second: palm.04.R
+  - first:
+      4: 400156
+    second: //RootNode
+  - first:
+      4: 400158
+    second: shin.L
+  - first:
+      4: 400160
+    second: shin.R
+  - first:
+      4: 400162
+    second: ShinArmor
+  - first:
+      4: 400164
+    second: ShinArmorDesign
+  - first:
+      4: 400166
+    second: ShinArmorElement
+  - first:
+      4: 400168
+    second: shoulder.L
+  - first:
+      4: 400170
+    second: shoulder.R
+  - first:
+      4: 400172
+    second: ShoulderPad
+  - first:
+      4: 400174
+    second: spine
+  - first:
+      4: 400176
+    second: Teeth
+  - first:
+      4: 400178
+    second: thigh.L
+  - first:
+      4: 400180
+    second: thigh.L.001
+  - first:
+      4: 400182
+    second: thigh.L.001_end
+  - first:
+      4: 400184
+    second: thigh.R
+  - first:
+      4: 400186
+    second: thigh.R.001
+  - first:
+      4: 400188
+    second: thigh.R.001_end
+  - first:
+      4: 400190
+    second: thumb.01.L
+  - first:
+      4: 400192
+    second: thumb.01.R
+  - first:
+      4: 400194
+    second: thumb.02.L
+  - first:
+      4: 400196
+    second: thumb.02.R
+  - first:
+      4: 400198
+    second: thumb.03.L
+  - first:
+      4: 400200
+    second: thumb.03.L_end
+  - first:
+      4: 400202
+    second: thumb.03.R
+  - first:
+      4: 400204
+    second: thumb.03.R_end
+  - first:
+      4: 400206
+    second: toe.L
+  - first:
+      4: 400208
+    second: toe.L_end
+  - first:
+      4: 400210
+    second: toe.R
+  - first:
+      4: 400212
+    second: toe.R_end
+  - first:
+      4: 400214
+    second: upper_arm.L
+  - first:
+      4: 400216
+    second: upper_arm.R
+  - first:
+      43: 4300000
+    second: Gun
+  - first:
+      43: 4300002
+    second: Drone
+  - first:
+      43: 4300004
+    second: Teeth
+  - first:
+      43: 4300006
+    second: ShinArmorElement
+  - first:
+      43: 4300008
+    second: ShinArmorDesign
+  - first:
+      43: 4300010
+    second: ShinArmor
+  - first:
+      43: 4300012
+    second: LegArmor
+  - first:
+      43: 4300014
+    second: Kneeelement
+  - first:
+      43: 4300016
+    second: HelmetBack
+  - first:
+      43: 4300018
+    second: Helmet
+  - first:
+      43: 4300020
+    second: Cylinder.007
+  - first:
+      43: 4300022
+    second: Cube.002
+  - first:
+      43: 4300024
+    second: Cube.001
+  - first:
+      43: 4300026
+    second: Cube
+  - first:
+      43: 4300028
+    second: ArmArmor
+  - first:
+      43: 4300030
+    second: ChestArmor
+  - first:
+      43: 4300032
+    second: Cylinder
+  - first:
+      43: 4300034
+    second: ShoulderPad
+  - first:
+      43: 4300036
+    second: Face
+  - first:
+      43: 4300038
+    second: BootsDesign
+  - first:
+      43: 4300040
+    second: BodySuit
+  - first:
+      43: 4300042
+    second: Boots
+  - first:
+      43: 4300044
+    second: BootsProtection
+  - first:
+      74: 7400000
+    second: ShootPose
+  - first:
+      74: 7400002
+    second: Command
+  - first:
+      74: 7400004
+    second: Damage taken
+  - first:
+      74: 7400006
+    second: Death
+  - first:
+      74: 7400008
+    second: Grab
+  - first:
+      74: 7400010
+    second: HandForward
+  - first:
+      74: 7400012
+    second: Idle
+  - first:
+      74: 7400014
+    second: Jump
+  - first:
+      74: 7400016
+    second: Point
+  - first:
+      74: 7400018
+    second: Run
+  - first:
+      74: 7400020
+    second: Walk
+  - first:
+      74: 7400022
+    second: ARMATURE_BOT|Idle_Pose_Drone
+  - first:
+      74: 7400024
+    second: ARMATURE_CHARACTER|Idle
+  - first:
+      74: 7400026
+    second: ShoulderPad|Run
+  - first:
+      74: 7400028
+    second: Crouch_Move
+  - first:
+      74: 7400030
+    second: Crouch_Idle
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: ArmArmor
+  - first:
+      137: 13700002
+    second: BodySuit
+  - first:
+      137: 13700004
+    second: Boots
+  - first:
+      137: 13700006
+    second: BootsDesign
+  - first:
+      137: 13700008
+    second: BootsProtection
+  - first:
+      137: 13700010
+    second: ChestArmor
+  - first:
+      137: 13700012
+    second: Cube
+  - first:
+      137: 13700014
+    second: Cube.001
+  - first:
+      137: 13700016
+    second: Cube.002
+  - first:
+      137: 13700018
+    second: Cylinder
+  - first:
+      137: 13700020
+    second: Cylinder.007
+  - first:
+      137: 13700022
+    second: Drone
+  - first:
+      137: 13700024
+    second: Face
+  - first:
+      137: 13700026
+    second: Gun
+  - first:
+      137: 13700028
+    second: Helmet
+  - first:
+      137: 13700030
+    second: HelmetBack
+  - first:
+      137: 13700032
+    second: Kneeelement
+  - first:
+      137: 13700034
+    second: LegArmor
+  - first:
+      137: 13700036
+    second: ShinArmor
+  - first:
+      137: 13700038
+    second: ShinArmorDesign
+  - first:
+      137: 13700040
+    second: ShinArmorElement
+  - first:
+      137: 13700042
+    second: ShoulderPad
+  - first:
+      137: 13700044
+    second: Teeth
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_armor
+    second: {fileID: 2100000, guid: cfe9fb314c947eb4cb4c8f625ddc0850, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_suit
+    second: {fileID: 2100000, guid: 485f6b2bf173307479adeb3b17ec1d3d, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -328,6 +900,8 @@ ModelImporter:
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -339,6 +913,7 @@ ModelImporter:
     - serializedVersion: 16
       name: ShootPose
       takeName: ShootPose
+      internalID: 7400000
       firstFrame: 0
       lastFrame: 20
       wrapMode: 0
@@ -367,6 +942,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Command
       takeName: Command
+      internalID: 7400002
       firstFrame: 0
       lastFrame: 60
       wrapMode: 0
@@ -395,6 +971,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Damage taken
       takeName: Damage taken
+      internalID: 7400004
       firstFrame: 0
       lastFrame: 10
       wrapMode: 0
@@ -423,6 +1000,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Death
       takeName: Death
+      internalID: 7400006
       firstFrame: 0
       lastFrame: 25
       wrapMode: 0
@@ -451,6 +1029,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Grab
       takeName: Grab
+      internalID: 7400008
       firstFrame: 0
       lastFrame: 20
       wrapMode: 0
@@ -479,6 +1058,7 @@ ModelImporter:
     - serializedVersion: 16
       name: HandForward
       takeName: HandForward
+      internalID: 7400010
       firstFrame: 0
       lastFrame: 80
       wrapMode: 0
@@ -507,6 +1087,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Idle
       takeName: Idle
+      internalID: 7400012
       firstFrame: 0
       lastFrame: 120
       wrapMode: 0
@@ -535,6 +1116,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Jump
       takeName: Jump
+      internalID: 7400014
       firstFrame: 0
       lastFrame: 30
       wrapMode: 0
@@ -563,6 +1145,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Point
       takeName: Point
+      internalID: 7400016
       firstFrame: 0
       lastFrame: 30
       wrapMode: 0
@@ -591,6 +1174,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Run
       takeName: Run
+      internalID: 7400018
       firstFrame: 0
       lastFrame: 30
       wrapMode: 0
@@ -619,6 +1203,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Walk
       takeName: Walk
+      internalID: 7400020
       firstFrame: 0
       lastFrame: 60
       wrapMode: 0
@@ -647,6 +1232,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Crouch_Move
       takeName: crouch_move.001
+      internalID: 7400028
       firstFrame: 0
       lastFrame: 40
       wrapMode: 0
@@ -675,6 +1261,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Crouch_Idle
       takeName: idle_crouch.001
+      internalID: 7400030
       firstFrame: 0
       lastFrame: 40
       wrapMode: 0
@@ -706,6 +1293,7 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -713,9 +1301,14 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
@@ -726,10 +1319,14 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human:
     - boneName: hips
       humanName: Hips
@@ -1676,8 +2273,8 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
