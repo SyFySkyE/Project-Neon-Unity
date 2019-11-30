@@ -3611,11 +3611,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 526345290955972749, guid: 7b57ed8ac873ded4bab018f1c77060b2,
-        type: 3}
-      propertyPath: flinchBlowback
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 526345290955972750, guid: 7b57ed8ac873ded4bab018f1c77060b2,
         type: 3}
       propertyPath: camSystem

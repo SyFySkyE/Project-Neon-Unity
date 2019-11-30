@@ -39209,7 +39209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthPoints: 5
   currentHp: 5
-  flinchBlowback: 5
+  flinchBlowback: 100
   isVulnerable: 1
 --- !u!114 &526345290955972750
 MonoBehaviour:
