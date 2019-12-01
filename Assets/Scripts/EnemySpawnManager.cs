@@ -23,6 +23,7 @@ public class EnemySpawnManager : MonoBehaviour
     [SerializeField] private int maxWaves = 3;
         
     [SerializeField] private ShopController shop;
+    [SerializeField] private GameSceneManager sceneManagement;
 
     private int numberOfEnemiesSpawned = 0;
     private int numberOfEnemiesAlive = 0;
@@ -38,6 +39,19 @@ public class EnemySpawnManager : MonoBehaviour
             }
             return instance;
         }
+    }
+
+    private void OnEnable()
+    {
+        if (boss)
+        {
+            boss.GetComponent<Boss>().OnDestroy += EnemySpawnManager_OnDestroy;
+        }        
+    }
+
+    private void EnemySpawnManager_OnDestroy()
+    {
+        sceneManagement.LoadNextScene();
     }
 
     // Start is called before the first frame update
@@ -105,6 +119,13 @@ public class EnemySpawnManager : MonoBehaviour
 
     private void SpawnBoss()
     {
-        boss.SetActive(true);
+        if (boss)
+        {
+            boss.SetActive(true);
+        }
+        else
+        {
+            sceneManagement.LoadNextScene();
+        }
     }
 }

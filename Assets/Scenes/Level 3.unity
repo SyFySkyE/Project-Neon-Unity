@@ -66533,7 +66533,7 @@ PrefabInstance:
     - target: {fileID: 373195324896862308, guid: 07ee7b547d3fd10469f066923f4a1a86,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 22.838999
+      value: 22.039
       objectReference: {fileID: 0}
     - target: {fileID: 373195324896862308, guid: 07ee7b547d3fd10469f066923f4a1a86,
         type: 3}
@@ -66543,12 +66543,12 @@ PrefabInstance:
     - target: {fileID: 373195324241569444, guid: 07ee7b547d3fd10469f066923f4a1a86,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 19.843054
+      value: 19.04305
       objectReference: {fileID: 0}
     - target: {fileID: 373195324241569444, guid: 07ee7b547d3fd10469f066923f4a1a86,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.027489
+      value: -10.427488
       objectReference: {fileID: 0}
     - target: {fileID: 373195324241569445, guid: 07ee7b547d3fd10469f066923f4a1a86,
         type: 3}
@@ -66721,6 +66721,11 @@ PrefabInstance:
       propertyPath: waveNumber
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3151068126881499379, guid: 57f791f7bd2962e4db995a6a3b4a084f,
+        type: 3}
+      propertyPath: sceneManagement
+      value: 
+      objectReference: {fileID: 6159008374313892969}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57f791f7bd2962e4db995a6a3b4a084f, type: 3}
 --- !u!1001 &3766370599669517015
@@ -67367,6 +67372,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb016b2f8195a1b47b61a5760f4a2d2e, type: 3}
+--- !u!114 &6159008374313892969 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1798070751, guid: eb016b2f8195a1b47b61a5760f4a2d2e,
+    type: 3}
+  m_PrefabInstance: {fileID: 6159008374313892968}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0644b9c34b5546e478ba66220a313223, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7607395494017113448
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67402,7 +67419,7 @@ PrefabInstance:
     - target: {fileID: 7607395493897121820, guid: 5f8852d3a18104b4392cc4fd70a545ea,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 37.719933
+      value: 36.919933
       objectReference: {fileID: 0}
     - target: {fileID: 7607395493897121820, guid: 5f8852d3a18104b4392cc4fd70a545ea,
         type: 3}
