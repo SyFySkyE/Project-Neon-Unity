@@ -7,6 +7,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private int healthPoints = 5;
     [SerializeField] private int currentHp = 5;
     [SerializeField] private float flinchBlowback = 5f;
+    [SerializeField] private float secBeforeDeath = 3f;
         
     private Animator playerAnim;
     private Rigidbody playerRb;
@@ -14,6 +15,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private bool isVulnerable = true; // TODO Take out serialization
 
     public event System.Action<int> OnHealthChange;
+    public event System.Action OnDeath;
 
     // Start is called before the first frame update
     void Start()
@@ -59,10 +61,17 @@ public class PlayerHealth : MonoBehaviour
             isVulnerable = false; // Gets reset to true on playerHurtAnim
             playerRb.AddForce(-transform.forward * flinchBlowback, ForceMode.VelocityChange);
             if (this.currentHp <= 0)
-            {
-                Destroy(this.gameObject);
+            {                
+                StartCoroutine(DeathRoutine());
             }
         }        
+    }
+
+    private IEnumerator DeathRoutine()
+    {
+        playerAnim.SetTrigger("Death");
+        yield return new WaitForSeconds(secBeforeDeath);
+        OnDeath();
     }
 
     public void EnablePlayerVulnerability() // Is triggered via Animator (end of HurtAnim)

@@ -14138,6 +14138,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Scene Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 1798070751, guid: eb016b2f8195a1b47b61a5760f4a2d2e, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1476792229}
     - target: {fileID: 6159008375313420792, guid: eb016b2f8195a1b47b61a5760f4a2d2e,
         type: 3}
       propertyPath: m_LocalPosition.x
