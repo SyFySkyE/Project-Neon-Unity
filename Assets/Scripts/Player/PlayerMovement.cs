@@ -52,6 +52,8 @@ public class PlayerMovement : MonoBehaviour
     {
         UpdateInput();
         UpdateMovement();
+        Debug.Log("Input: " + input);
+        Debug.Log("Input velocty: " + inputVelocity);
     }
 
     private void UpdateMovement()
@@ -98,8 +100,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             playerAnim.SetBool("IsMoving", false);
-        }       
-        
+        }        
     }
 
     private void MakeCameraRay()
@@ -165,5 +166,10 @@ public class PlayerMovement : MonoBehaviour
     private void OverdriveStop()
     {
         speed = speed / 2;
+    }
+
+    public Vector3 GetInputDirection()
+    {
+        return inputVelocity;
     }
 }

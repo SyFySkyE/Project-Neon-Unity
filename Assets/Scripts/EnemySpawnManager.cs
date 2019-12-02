@@ -13,7 +13,8 @@ public class EnemySpawnManager : MonoBehaviour
 
     [Header("Spawning Parameters")]
     [SerializeField] private float minTimeInSecBeforeSpawn = 2f;
-    [SerializeField] private float maxTimeInSecBeforeSpawn = 5f;    
+    [SerializeField] private float maxTimeInSecBeforeSpawn = 5f;
+    [SerializeField] private int maxNumberOfEnemies = 3;
 
     [Header("Wave Paramenters")]
     [SerializeField] private int waveNumber = 1;
@@ -73,11 +74,14 @@ public class EnemySpawnManager : MonoBehaviour
 
     private void InstantiateRandomEnemyAndLoc()
     {
-        int randomEnemyIndex = Random.Range(0, enemyPrefabs.Length);
-        int randomLocIndex = Random.Range(0, placesToSpawn.Count);
-        GameObject nextEnemy = Instantiate(enemyPrefabs[randomEnemyIndex], placesToSpawn[randomLocIndex].position, Quaternion.identity) as GameObject;
-        numberOfEnemiesAlive++;
-        numberOfEnemiesSpawned++;
+        if (numberOfEnemiesAlive < maxNumberOfEnemies)
+        {
+            int randomEnemyIndex = Random.Range(0, enemyPrefabs.Length);
+            int randomLocIndex = Random.Range(0, placesToSpawn.Count);
+            GameObject nextEnemy = Instantiate(enemyPrefabs[randomEnemyIndex], placesToSpawn[randomLocIndex].position, Quaternion.identity) as GameObject;
+            numberOfEnemiesAlive++;
+            numberOfEnemiesSpawned++;
+        }        
     }    
 
     public void OnEnemyDeath()

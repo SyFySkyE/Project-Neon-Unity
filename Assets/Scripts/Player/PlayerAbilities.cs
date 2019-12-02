@@ -25,13 +25,22 @@ public class PlayerAbilities : MonoBehaviour
 
     private bool isOverdriveActive = false;
 
+    private PlayerMovement playerMove;
     private Rigidbody playerRb;
     private Animator anim;
 
+    public event System.Action<int> OnDashChange;
+    public event System.Action<int> OnCrashChange;
+    public event System.Action<bool> OnODChange;
+
     private void Start()
     {
+        playerMove = GetComponent<PlayerMovement>();
         anim = GetComponent<Animator>();
         playerRb = GetComponent<Rigidbody>();
+        OnDashChange(numberOfDashes);
+        OnCrashChange(numberOfCrashes);
+        OnODChange(false);
     }
 
     // Update is called once per frame
@@ -54,39 +63,43 @@ public class PlayerAbilities : MonoBehaviour
     private void Dash()
     {
         if (numberOfDashes > 0 && !isOverdriveActive) 
-        {
+        {            
             dashParticles.Play();
             anim.SetTrigger("Dash");
-            playerRb.AddForce(playerRb.velocity * dashForce, ForceMode.VelocityChange);
+            playerRb.AddForce(playerMove.GetInputDirection() * dashForce, ForceMode.Impulse);
             numberOfDashes--;
+            OnDashChange(numberOfDashes);
             StartCoroutine(DashRecharge());
         }
         else if (isOverdriveActive)
         {
             dashParticles.Play();
             anim.SetTrigger("Dash");
-            playerRb.AddForce(playerRb.velocity * dashForce, ForceMode.VelocityChange);
+            playerRb.AddForce(playerMove.GetInputDirection() * dashForce, ForceMode.Impulse);
         }
     }
 
     private IEnumerator DashRecharge()
     {
-        yield return new WaitForSeconds(dashRechargeTime);
+        yield return new WaitForSeconds(dashRechargeTime);        
         numberOfDashes++;
+        OnDashChange(numberOfDashes);
     }
 
     public void UpgradeDash()
-    {
+    {        
         numberOfDashes++;
+        OnDashChange(numberOfDashes);
     }
 
     private void Crash()
     {
         if (numberOfCrashes > 0 && !isOverdriveActive)
-        {
+        {            
             crashParticles.Play();
             anim.SetTrigger("Crash");
             numberOfCrashes--;
+            OnCrashChange(numberOfCrashes);
             StartCoroutine(CrashRecharge());
         }
         else if (isOverdriveActive)
@@ -98,19 +111,24 @@ public class PlayerAbilities : MonoBehaviour
 
     private IEnumerator CrashRecharge()
     {
-        yield return new WaitForSeconds(crashRechargeTime);
+        yield return new WaitForSeconds(crashRechargeTime);        
         numberOfCrashes++;
+        OnCrashChange(numberOfCrashes);
     }
 
     public void UpgradeCrash()
-    {
+    {        
         numberOfCrashes++;
+        OnCrashChange(numberOfCrashes);
     }
 
     private void Overdrive()
     {
         if (numberOfOverdrives > 0)
         {
+            OnODChange(false);
+            OnDashChange(999);
+            OnCrashChange(999);
             BroadcastMessage("OverdriveStart");
             overdriveParticles.Play();
             anim.SetTrigger("Overdrive");
@@ -125,6 +143,8 @@ public class PlayerAbilities : MonoBehaviour
         yield return new WaitForSeconds(overdrivePeriod);
         isOverdriveActive = false;
         BroadcastMessage("OverdriveStop");
+        OnCrashChange(numberOfCrashes);
+        OnDashChange(numberOfDashes);
         overdriveParticles.Stop();
         StartCoroutine(OverdriveRecharge());
     }
@@ -132,12 +152,14 @@ public class PlayerAbilities : MonoBehaviour
     private IEnumerator OverdriveRecharge()
     {
         yield return new WaitForSeconds(overdriveRechargeTime);
+        OnODChange(true);
         numberOfOverdrives++;
     }
 
     public void UpgradeOverdrive()
     {
         overdrivePeriod += overdriveUpgradeAmount;
+        OnODChange(true);
     }
 
     private void OverdriveStart()

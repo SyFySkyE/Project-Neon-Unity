@@ -39090,7 +39090,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8030136714162090437}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8026890518772076507}
@@ -39210,6 +39210,7 @@ MonoBehaviour:
   healthPoints: 5
   currentHp: 5
   flinchBlowback: 100
+  secBeforeDeath: 3
   isVulnerable: 1
 --- !u!114 &526345290955972750
 MonoBehaviour:
@@ -43689,18 +43690,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8026681801585710401}
     m_Modifications:
-    - target: {fileID: 1235173210086940, guid: 0b410962d3eb81a4e9d33776b0557e39, type: 3}
-      propertyPath: m_Name
-      value: Drone
-      objectReference: {fileID: 0}
-    - target: {fileID: 1235173210086940, guid: 0b410962d3eb81a4e9d33776b0557e39, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1235173210086940, guid: 0b410962d3eb81a4e9d33776b0557e39, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 4236096795606418, guid: 0b410962d3eb81a4e9d33776b0557e39, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.118
@@ -43745,6 +43734,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90.00001
       objectReference: {fileID: 0}
+    - target: {fileID: 1981960677605068, guid: 0b410962d3eb81a4e9d33776b0557e39, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1235173210086940, guid: 0b410962d3eb81a4e9d33776b0557e39, type: 3}
+      propertyPath: m_Name
+      value: Drone
+      objectReference: {fileID: 0}
+    - target: {fileID: 1235173210086940, guid: 0b410962d3eb81a4e9d33776b0557e39, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1235173210086940, guid: 0b410962d3eb81a4e9d33776b0557e39, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 95133933768310676, guid: 0b410962d3eb81a4e9d33776b0557e39,
         type: 3}
       propertyPath: m_Avatar
@@ -43785,10 +43790,6 @@ PrefabInstance:
     - target: {fileID: 4608832690326054, guid: 0b410962d3eb81a4e9d33776b0557e39, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 89.9802
-      objectReference: {fileID: 0}
-    - target: {fileID: 1981960677605068, guid: 0b410962d3eb81a4e9d33776b0557e39, type: 3}
-      propertyPath: m_Layer
-      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 137732271989917938, guid: 0b410962d3eb81a4e9d33776b0557e39,
         type: 3}
