@@ -9,6 +9,21 @@ public class PlayerPoints : MonoBehaviour
 
     public event System.Action<int, int> OnPointsChange;
 
+    public static PlayerPoints instance { get; private set; }
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
     private void Start()
     {
         OnPointsChange(0, 0);

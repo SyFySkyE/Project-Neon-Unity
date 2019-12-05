@@ -11,6 +11,7 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
         if (instance == null)
         {
             instance = this as Singleton<T>;
+            DontDestroyOnLoad(this);
         }
         else
         {

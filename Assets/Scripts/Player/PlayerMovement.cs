@@ -52,8 +52,6 @@ public class PlayerMovement : MonoBehaviour
     {
         UpdateInput();
         UpdateMovement();
-        Debug.Log("Input: " + input);
-        Debug.Log("Input velocty: " + inputVelocity);
     }
 
     private void UpdateMovement()
