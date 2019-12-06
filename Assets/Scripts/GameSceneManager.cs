@@ -7,21 +7,6 @@ public class GameSceneManager : MonoBehaviour
 {
     [SerializeField] PlayerHealth player;
     [SerializeField] private float secondsBeforeSceneLoad = 3f;
-    public static GameSceneManager manager;
-    private int sceneIndex = 1;
-
-    private void Awake()
-    {
-        if (!manager)
-        {
-            manager = this;
-            SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
-    }    
 
     private void Start()
     {
@@ -35,27 +20,20 @@ public class GameSceneManager : MonoBehaviour
 
     public void ReloadScene()
     {
-        StartCoroutine(LoadScene(false));
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        StartCoroutine(LoadScene(currentSceneIndex));
     }
 
     public void LoadNextScene()
-    {        
-        StartCoroutine(LoadScene(true));
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = currentSceneIndex + 1;
+        StartCoroutine(LoadScene(nextSceneIndex));
     }
 
-    private IEnumerator LoadScene(bool loadNextScene)
+    private IEnumerator LoadScene(int index)
     {
         yield return new WaitForSeconds(secondsBeforeSceneLoad);
-        if (loadNextScene)
-        {
-            SceneManager.UnloadSceneAsync(sceneIndex);
-            sceneIndex++;
-            SceneManager.LoadSceneAsync(sceneIndex, LoadSceneMode.Additive);
-        }
-        else
-        {
-            SceneManager.UnloadSceneAsync(sceneIndex);
-            SceneManager.LoadSceneAsync(sceneIndex, LoadSceneMode.Additive);
-        }
+        SceneManager.LoadScene(index);
     }
 }

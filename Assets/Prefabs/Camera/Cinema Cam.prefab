@@ -95,7 +95,6 @@ GameObject:
   m_Component:
   - component: {fileID: 373195324199757722}
   - component: {fileID: 373195324199757723}
-  - component: {fileID: 373195325093276223}
   m_Layer: 0
   m_Name: Cinema Cam
   m_TagString: Untagged
@@ -170,20 +169,33 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   m_CustomBlends: {fileID: 0}
-  m_ParentHash: []
---- !u!114 &373195325093276223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 373195324199757720}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7c88ce7f41abab4f88b7abd9ce3384e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 373195324199757723}
+  m_ParentHash:
+  - m_Hash: -1365118772
+    m_ParentHash: 756556552
+  - m_Hash: -1208727327
+    m_ParentHash: 756556552
+  - m_Hash: -2064725364
+    m_ParentHash: 756556552
+  - m_Hash: 1831749599
+    m_ParentHash: 756556552
+  - m_Hash: -1546996312
+    m_ParentHash: 756556552
+  - m_Hash: -2032729242
+    m_ParentHash: 756556552
+  - m_Hash: -208773186
+    m_ParentHash: 756556552
+  - m_Hash: 1432961145
+    m_ParentHash: 756556552
+  - m_Hash: 788460410
+    m_ParentHash: 756556552
+  - m_Hash: -215444574
+    m_ParentHash: 756556552
+  - m_Hash: -827840423
+    m_ParentHash: 756556552
+  - m_Hash: 1779624489
+    m_ParentHash: 756556552
+  - m_Hash: 81563449
+    m_ParentHash: 756556552
 --- !u!1 &373195324241569450
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,7 +221,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 373195324241569450}
   m_LocalRotation: {x: 0.41103968, y: -0, z: -0, w: 0.91161746}
-  m_LocalPosition: {x: 7.25, y: 11.348833, z: -3.8065605}
+  m_LocalPosition: {x: 3.2598732, y: 11.428833, z: -6.6065617}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 373195324856784299}
@@ -465,7 +477,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 373195324896862314}
   m_LocalRotation: {x: 0.4593179, y: -0, z: -0, w: 0.88827205}
-  m_LocalPosition: {x: 7.25, y: 13.679014, z: -3.6652088}
+  m_LocalPosition: {x: 3.2598732, y: 13.759014, z: -3.6652088}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 373195324133757832}
@@ -534,7 +546,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 373195324929906556}
   m_LocalRotation: {x: 0.4593179, y: -0, z: -0, w: 0.88827205}
-  m_LocalPosition: {x: 7.25, y: 13.679012, z: -0.8652077}
+  m_LocalPosition: {x: 3.2598732, y: 13.759014, z: -3.6652088}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 373195324695751607}

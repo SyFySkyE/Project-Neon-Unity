@@ -39168,7 +39168,7 @@ GameObject:
   - component: {fileID: 526345290955972754}
   m_Layer: 9
   m_Name: Scout
-  m_TagString: Follow
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39303,6 +39303,7 @@ MonoBehaviour:
   currentHp: 5
   flinchBlowback: 100
   secBeforeDeath: 3
+  isVulnerable: 1
 --- !u!114 &526345290955972750
 MonoBehaviour:
   m_ObjectHideFlags: 0

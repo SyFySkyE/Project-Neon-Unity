@@ -23,8 +23,8 @@ public class EnemySpawnManager : MonoBehaviour
     [SerializeField] private int wave3EnemiesToSpawn = 15;
     [SerializeField] private int maxWaves = 3;
         
-    private ShopController shop;
-    private GameSceneManager sceneManagement;
+    [SerializeField] private ShopController shop;
+    [SerializeField] private GameSceneManager sceneManagement;
 
     private int numberOfEnemiesSpawned = 0;
     private int numberOfEnemiesAlive = 0;
@@ -47,9 +47,7 @@ public class EnemySpawnManager : MonoBehaviour
         if (boss)
         {
             boss.GetComponent<Boss>().OnDestroy += EnemySpawnManager_OnDestroy;
-        }
-        shop = FindObjectOfType<ShopController>();
-        sceneManagement = FindObjectOfType<GameSceneManager>();
+        }        
     }
 
     private void EnemySpawnManager_OnDestroy()

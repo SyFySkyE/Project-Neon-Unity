@@ -25,6 +25,7 @@ public class Boss : MonoBehaviour
     [SerializeField] private int numberOfBulletsToFire = 20;
     [SerializeField] private float shootTime = 3f;
  
+    [SerializeField] private GameObject player;
     [SerializeField] private bool isMoving = false;
     [SerializeField] private float moveSpeed = 5f;
 
@@ -32,7 +33,6 @@ public class Boss : MonoBehaviour
     public event System.Action OnDestroy;
 
     private Animator bossAnim;
-    private GameObject player;
     private BossPhaseState currentPhase = BossPhaseState.First;
 
     private void OnEnable()
@@ -45,15 +45,7 @@ public class Boss : MonoBehaviour
     {
         OnSpawn();
         bossAnim = GetComponent<Animator>();
-        StartCoroutine(FindPlayer());
-        
         StartCoroutine(StartAttacking());
-    }
-
-    private IEnumerator FindPlayer()
-    {
-        yield return new WaitForSeconds(0.5f);
-        player = GameObject.Find("Player");
     }
 
     private IEnumerator StartAttacking()
