@@ -12,7 +12,7 @@ public class PlayerHealth : MonoBehaviour
     private Animator playerAnim;
     private Rigidbody playerRb;
 
-    [SerializeField] private bool isVulnerable = true; // TODO Take out serialization
+    private bool isVulnerable = true; 
 
     public event System.Action<int> OnHealthChange;
     public event System.Action OnDeath;
@@ -97,5 +97,11 @@ public class PlayerHealth : MonoBehaviour
         {
             HurtPlayer();
         }
+    }
+
+    public void ResetHealth() // Gets called in shopCanvas before next round starts
+    {
+        this.currentHp = healthPoints;
+        OnHealthChange(currentHp);
     }
 }

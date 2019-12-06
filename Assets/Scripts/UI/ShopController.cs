@@ -7,7 +7,11 @@ public class ShopController : MonoBehaviour
 {
     [SerializeField] private GameObject shopCanvas;
     [SerializeField] private GameObject player;
-    [SerializeField] private PlayerPoints playerPoints;
+
+    private PlayerPoints playerPoints;
+    private PlayerHealth playerHealth;
+    private List<GunController> playerGunControllers = new List<GunController>();
+    private PlayerAbilities playerAbility;
 
     [Header("Upgrade Costs")]
     [SerializeField] private int fireRateCost = 100;
@@ -43,6 +47,13 @@ public class ShopController : MonoBehaviour
     {
         shopCanvas.SetActive(false);
         UpdateLabels();
+        playerPoints = player.GetComponent<PlayerPoints>();
+        playerHealth = player.GetComponent<PlayerHealth>();
+        foreach (GunController gun in player.GetComponentsInChildren<GunController>())
+        {
+            playerGunControllers.Add(gun);
+        }
+        playerAbility = player.GetComponent<PlayerAbilities>();
     }
 
     private void UpdateLabels()
@@ -67,7 +78,10 @@ public class ShopController : MonoBehaviour
             {
                 playerPoints.SubtractPoints(fireRateCost);
                 fireRateCost *= 2;
-                player.GetComponentInChildren<GunController>().UpgradeFirerate();
+                foreach (GunController gun in playerGunControllers)
+                {
+                    gun.UpgradeFirerate();
+                }
                 fireRateLevel++;
                 UpdateLabels();
             }
@@ -82,7 +96,7 @@ public class ShopController : MonoBehaviour
             {
                 playerPoints.SubtractPoints(hpIncrementCost);
                 hpIncrementCost *= 2;
-                player.GetComponent<PlayerHealth>().UpgradeHealth();
+                playerHealth.UpgradeHealth();
                 hpLevel++;
                 UpdateLabels();
             }
@@ -97,7 +111,7 @@ public class ShopController : MonoBehaviour
             {
                 playerPoints.SubtractPoints(dashIncrementCost);
                 dashIncrementCost *= 2;
-                player.GetComponent<PlayerAbilities>().UpgradeDash();
+                playerAbility.UpgradeDash();
                 dashLevel++;
                 UpdateLabels();
             }
@@ -112,7 +126,7 @@ public class ShopController : MonoBehaviour
             {
                 playerPoints.SubtractPoints(crashIncrementCost);
                 crashIncrementCost *= 2;
-                player.GetComponent<PlayerAbilities>().UpgradeCrash();
+                playerAbility.UpgradeCrash();
                 crashLevel++;
                 UpdateLabels();
             }
@@ -127,7 +141,7 @@ public class ShopController : MonoBehaviour
             {
                 playerPoints.SubtractPoints(overdriveIncrementCost);
                 overdriveIncrementCost *= 2;
-                player.GetComponent<PlayerAbilities>().UpgradeOverdrive();
+                playerAbility.UpgradeOverdrive();
                 overdriveLevel++;
                 UpdateLabels();
             }
@@ -141,6 +155,7 @@ public class ShopController : MonoBehaviour
 
     public void NextWaveButton()
     {
+        playerHealth.ResetHealth();
         EnemySpawnManager.Instance.NextWave();
         shopCanvas.SetActive(false);
     }

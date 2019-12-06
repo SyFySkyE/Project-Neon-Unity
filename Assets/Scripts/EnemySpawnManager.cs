@@ -89,7 +89,7 @@ public class EnemySpawnManager : MonoBehaviour
         numberOfEnemiesAlive--;
         if (numberOfEnemiesAlive == 0 && numberOfEnemiesSpawned >= enemiesThisWave)
         {
-            shop.BroadcastMessage("WaveComplete");
+            shop.BroadcastMessage("WaveComplete"); // TODO Replace this w/ event
         }
     }
 
