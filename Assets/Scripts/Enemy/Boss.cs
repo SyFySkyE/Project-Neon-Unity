@@ -29,23 +29,36 @@ public class Boss : MonoBehaviour
     [SerializeField] private bool isMoving = false;
     [SerializeField] private float moveSpeed = 5f;
 
+    [SerializeField] private AudioClip spawnSfx;
+    [SerializeField] private float spawnSfxVolume = 0.5f;
+    [SerializeField] private AudioClip hurtSfx;
+    [SerializeField] private float hurtSfxVolume = 0.5f;
+    [SerializeField] private AudioClip deathSfx;
+    [SerializeField] private float deathSfxVolume = 0.5f;
+    [SerializeField] private AudioClip laserChargeSfx;
+    [SerializeField] private float laserChargeSfxVolume = 0.5f;
+    [SerializeField] private AudioClip laserFireSfx;
+    [SerializeField] private float laserFireSfxVolume = 0.5f;
+    [SerializeField] private AudioClip bulletChargeSfx;
+    [SerializeField] private float bulletChargeSfxVolume = 0.5f;
+    [SerializeField] private AudioClip bulletFireSfx;
+    [SerializeField] private float bulletFireSfxVolume = 0.5f;
+
     public event System.Action OnSpawn;
     public event System.Action OnDestroy;
 
     private Animator bossAnim;
+    private AudioSource audioSource;
     private BossPhaseState currentPhase = BossPhaseState.First;
-
-    private void OnEnable()
-    {
-        
-    }
 
     // Start is called before the first frame update
     void Start()
     {
         OnSpawn();
         bossAnim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         StartCoroutine(StartAttacking());
+        audioSource.PlayOneShot(spawnSfx, spawnSfxVolume);
     }
 
     private IEnumerator StartAttacking()
@@ -75,7 +88,9 @@ public class Boss : MonoBehaviour
 
     private IEnumerator ChargeLaser()
     {
+        audioSource.PlayOneShot(laserChargeSfx, laserChargeSfxVolume);
         yield return new WaitForSeconds(timeBeforeLaserShot);
+        audioSource.PlayOneShot(laserFireSfx, laserFireSfxVolume);
         preLaser.Stop();
         laser.Play();
     }
@@ -88,13 +103,15 @@ public class Boss : MonoBehaviour
 
     private IEnumerator ChargeBulletHell()
     {
+        audioSource.PlayOneShot(bulletChargeSfx, bulletChargeSfxVolume);
         yield return new WaitForSeconds(timeBeforeBulletHell);
         readyBulletHell.Stop();
+        audioSource.PlayOneShot(bulletChargeSfx, bulletChargeSfxVolume);
         for (int h = 0; h < shootTime; h++)
         {
             yield return new WaitForSeconds(h);
             for (int i = 0; i < numberOfBulletsToFire; i++)
-            {
+            {                
                 int randomGun = Random.Range(0, gunPositions.Length);
                 Instantiate(bullet, gunPositions[randomGun].position, gunPositions[randomGun].rotation);
             }
@@ -125,9 +142,10 @@ public class Boss : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Bullet") || other.gameObject.CompareTag("Player Ability"))
+        if (other.gameObject.CompareTag("Bullet"))
         {
             DecrementHealth();
+            audioSource.PlayOneShot(hurtSfx, hurtSfxVolume);
         }
     }
 
@@ -144,7 +162,8 @@ public class Boss : MonoBehaviour
             this.currentPhase = BossPhaseState.Third;
         }
         if (health <= 0)
-        {            
+        {
+            AudioSource.PlayClipAtPoint(deathSfx, Camera.main.transform.position, deathSfxVolume);
             Destroy(this.gameObject);
         }
     }

@@ -10,11 +10,15 @@ public class PlayerAbilities : MonoBehaviour
     [Tooltip("How long it takes before dash can be used again")]
     [SerializeField] private float dashRechargeTime = 2f;
     [SerializeField] private ParticleSystem dashParticles;
+    [SerializeField] private AudioClip dashSfx;
+    [SerializeField] private float dashSfxVolume = 0.5f;
 
     [Header("Crash Ability")]
     [SerializeField] private int numberOfCrashes = 1;
     [SerializeField] private float crashRechargeTime = 4f;
     [SerializeField] private ParticleSystem crashParticles;
+    [SerializeField] private AudioClip crashSfx;
+    [SerializeField] private float crashSfxVolume = 0.5f;
 
     [Header("Overdrive Ability")]
     [SerializeField] private int numberOfOverdrives = 1;
@@ -22,12 +26,16 @@ public class PlayerAbilities : MonoBehaviour
     [SerializeField] private float overdriveRechargeTime = 10f;
     [SerializeField] private ParticleSystem overdriveParticles;
     [SerializeField] private float overdriveUpgradeAmount = 2.5f;
+    [SerializeField] private AudioClip overdriveSfx;
+    [SerializeField] private float overdriveSfxVolume = 0.5f;
 
     private bool isOverdriveActive = false;
+    private bool canOverdrive = false;
 
     private PlayerMovement playerMove;
     private Rigidbody playerRb;
     private Animator anim;
+    private AudioSource audioSource;
 
     public event System.Action<int> OnDashChange;
     public event System.Action<int> OnCrashChange;
@@ -35,6 +43,12 @@ public class PlayerAbilities : MonoBehaviour
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+        this.numberOfDashes = GamewideControl.instance.NumberOfDashes;
+        this.numberOfCrashes = GamewideControl.instance.NumberOfCrashes;
+        this.overdrivePeriod = GamewideControl.instance.OverdrivePeriod;
+        this.numberOfOverdrives = 1; // In case scene transitions before recharge
+        this.canOverdrive = true; // See above
         playerMove = GetComponent<PlayerMovement>();
         anim = GetComponent<Animator>();
         playerRb = GetComponent<Rigidbody>();
@@ -70,16 +84,18 @@ public class PlayerAbilities : MonoBehaviour
             numberOfDashes--;
             OnDashChange(numberOfDashes);
             StartCoroutine(DashRecharge());
+            audioSource.PlayOneShot(dashSfx, dashSfxVolume);
         }
         else if (isOverdriveActive)
         {
+            audioSource.PlayOneShot(dashSfx, dashSfxVolume);
             dashParticles.Play();
             anim.SetTrigger("Dash");
             playerRb.AddForce(playerMove.GetInputDirection() * dashForce, ForceMode.Impulse);
         }
     }
 
-    private IEnumerator DashRecharge()
+    private IEnumerator DashRecharge() // TODO sfx for recharge
     {
         yield return new WaitForSeconds(dashRechargeTime);        
         numberOfDashes++;
@@ -95,7 +111,8 @@ public class PlayerAbilities : MonoBehaviour
     private void Crash()
     {
         if (numberOfCrashes > 0 && !isOverdriveActive)
-        {            
+        {
+            audioSource.PlayOneShot(crashSfx, crashSfxVolume);
             crashParticles.Play();
             anim.SetTrigger("Crash");
             numberOfCrashes--;
@@ -104,6 +121,7 @@ public class PlayerAbilities : MonoBehaviour
         }
         else if (isOverdriveActive)
         {
+            audioSource.PlayOneShot(crashSfx, crashSfxVolume);
             crashParticles.Play();
             anim.SetTrigger("Crash");
         }
@@ -124,8 +142,9 @@ public class PlayerAbilities : MonoBehaviour
 
     private void Overdrive()
     {
-        if (numberOfOverdrives > 0)
+        if (numberOfOverdrives > 0 && canOverdrive)
         {
+            audioSource.PlayOneShot(overdriveSfx, overdriveSfxVolume);
             OnODChange(false);
             OnDashChange(999);
             OnCrashChange(999);
@@ -158,6 +177,7 @@ public class PlayerAbilities : MonoBehaviour
 
     public void UpgradeOverdrive()
     {
+        canOverdrive = true;
         overdrivePeriod += overdriveUpgradeAmount;
         OnODChange(true);
     }
@@ -170,5 +190,12 @@ public class PlayerAbilities : MonoBehaviour
     private void OverdriveStop()
     {
         dashForce *= 2;
+    }
+
+    private void OnDestroy()
+    {
+        GamewideControl.instance.NumberOfDashes = this.numberOfDashes;
+        GamewideControl.instance.NumberOfCrashes = this.numberOfCrashes;
+        GamewideControl.instance.OverdrivePeriod = this.overdrivePeriod;
     }
 }

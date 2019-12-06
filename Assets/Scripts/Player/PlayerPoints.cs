@@ -11,7 +11,8 @@ public class PlayerPoints : MonoBehaviour
 
     private void Start()
     {
-        OnPointsChange(0, 0);
+        this.points = GamewideControl.instance.Points;
+        OnPointsChange(points, points);
     }
     public void IncrementPoints()
     {
@@ -34,5 +35,10 @@ public class PlayerPoints : MonoBehaviour
     {
         this.points -= amountToSubtract;
         OnPointsChange(amountToSubtract, points);
+    }
+
+    private void OnDestroy()
+    {
+        GamewideControl.instance.Points = this.points;
     }
 }

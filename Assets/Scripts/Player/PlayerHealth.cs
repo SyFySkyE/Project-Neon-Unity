@@ -8,9 +8,16 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private int currentHp = 5;
     [SerializeField] private float flinchBlowback = 5f;
     [SerializeField] private float secBeforeDeath = 3f;
+
+    [SerializeField] private AudioClip hurtSfx;
+    [SerializeField] private float hurtSfxVolume = 0.5f;
+
+    [SerializeField] private AudioClip deathSfx;
+    [SerializeField] private float deathSfxVolume = 0.5f;
         
     private Animator playerAnim;
     private Rigidbody playerRb;
+    private AudioSource audioSource;
 
     private bool isVulnerable = true; 
 
@@ -20,6 +27,9 @@ public class PlayerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+        this.healthPoints = GamewideControl.instance.HealthPoints;
+        ResetHealth();
         playerAnim = GetComponent<Animator>();
         playerRb = GetComponent<Rigidbody>();
         OnHealthChange(currentHp);
@@ -55,6 +65,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (isVulnerable)
         {
+            audioSource.PlayOneShot(hurtSfx, hurtSfxVolume);
             currentHp--;
             OnHealthChange(currentHp);
             playerAnim.SetTrigger("HurtTrigger");
@@ -70,6 +81,7 @@ public class PlayerHealth : MonoBehaviour
     private IEnumerator DeathRoutine()
     {
         playerAnim.SetTrigger("Death");
+        audioSource.PlayOneShot(deathSfx, deathSfxVolume);
         yield return new WaitForSeconds(secBeforeDeath);
         OnDeath();
     }
@@ -103,5 +115,10 @@ public class PlayerHealth : MonoBehaviour
     {
         this.currentHp = healthPoints;
         OnHealthChange(currentHp);
+    }
+
+    private void OnDestroy()
+    {
+        GamewideControl.instance.HealthPoints = this.healthPoints;
     }
 }

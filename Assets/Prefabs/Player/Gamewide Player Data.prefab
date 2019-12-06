@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7332604816517200331
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2157256641491057403}
+  - component: {fileID: 3312018265829973572}
+  m_Layer: 0
+  m_Name: Gamewide Player Data
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2157256641491057403
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7332604816517200331}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3312018265829973572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7332604816517200331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 937a76dbc63b5f84da5500d02c0fef25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NumberOfDashes: 0
+  NumberOfCrashes: 0
+  OverdrivePeriod: 0
+  HealthPoints: 5
+  Points: 0
+  SecondsBetweenShots: 0.25
+  fireRateLevel: 0
+  hpLevel: 0
+  dashLevel: 0
+  crashLevel: 0
+  overdriveLevel: 0
+  fireRateCost: 500
+  hpUpgradeCost: 500
+  dashUpgradeCost: 500
+  crashUpgradeCost: 500
+  overdriveUpgradeCost: 500

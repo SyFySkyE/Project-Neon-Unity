@@ -45,6 +45,7 @@ public class ShopController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        LoadFromGlobalGO();
         shopCanvas.SetActive(false);
         UpdateLabels();
         playerPoints = player.GetComponent<PlayerPoints>();
@@ -54,6 +55,21 @@ public class ShopController : MonoBehaviour
             playerGunControllers.Add(gun);
         }
         playerAbility = player.GetComponent<PlayerAbilities>();
+    }
+
+    private void LoadFromGlobalGO()
+    {
+        this.fireRateLevel = GamewideControl.instance.fireRateLevel;
+        this.hpLevel = GamewideControl.instance.hpLevel;
+        this.dashLevel = GamewideControl.instance.dashLevel;
+        this.crashLevel = GamewideControl.instance.crashLevel;
+        this.overdriveLevel = GamewideControl.instance.overdriveLevel;
+
+        this.fireRateCost = GamewideControl.instance.fireRateCost;
+        this.hpIncrementCost = GamewideControl.instance.hpUpgradeCost;
+        this.dashIncrementCost = GamewideControl.instance.dashUpgradeCost;
+        this.crashIncrementCost = GamewideControl.instance.crashUpgradeCost;
+        this.overdriveIncrementCost = GamewideControl.instance.overdriveUpgradeCost;
     }
 
     private void UpdateLabels()
@@ -155,8 +171,24 @@ public class ShopController : MonoBehaviour
 
     public void NextWaveButton()
     {
+        SaveToGlobalGO();
         playerHealth.ResetHealth();
-        EnemySpawnManager.Instance.NextWave();
+        EnemySpawnManager.Instance.NextWave();        
         shopCanvas.SetActive(false);
+    }
+
+    private void SaveToGlobalGO()
+    {
+        GamewideControl.instance.fireRateLevel = this.fireRateLevel;
+        GamewideControl.instance.hpLevel = this.hpLevel;
+        GamewideControl.instance.dashLevel = this.dashLevel;
+        GamewideControl.instance.crashLevel = this.crashLevel;
+        GamewideControl.instance.overdriveLevel = this.overdriveLevel;
+
+        GamewideControl.instance.fireRateCost = this.fireRateCost;
+        GamewideControl.instance.hpUpgradeCost = this.hpIncrementCost;
+        GamewideControl.instance.dashUpgradeCost = this.dashIncrementCost;
+        GamewideControl.instance.crashUpgradeCost = this.crashIncrementCost;
+        GamewideControl.instance.overdriveUpgradeCost = this.overdriveIncrementCost;
     }
 }

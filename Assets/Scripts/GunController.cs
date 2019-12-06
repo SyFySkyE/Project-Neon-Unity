@@ -10,11 +10,21 @@ public class GunController : MonoBehaviour
 
     [SerializeField] private Transform gunLocation;
     [SerializeField] private float upgradeAmount = 0.05f;
+    [SerializeField] private AudioClip playerFireSfx;
+    [SerializeField] private float playerFireSfxVolume = 0.5f;
+    [SerializeField] private AudioClip enemyFireSfx;
+    [SerializeField] private float enemyFireSfxVolume = 0.5f;
+
+    private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        if (this.gameObject.CompareTag("Player"))
+        {
+            this.secondsBetweenShots = GamewideControl.instance.SecondsBetweenShots;
+        }
+        audioSource = GetComponentInParent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -27,6 +37,14 @@ public class GunController : MonoBehaviour
             {
                 shotCounter = secondsBetweenShots;
                 Bullet newBullet = Instantiate(bullet, gunLocation.position, gunLocation.rotation) as Bullet;
+                if (this.gameObject.CompareTag("Player"))
+                {
+                    audioSource.PlayOneShot(playerFireSfx, playerFireSfxVolume);
+                }
+                else
+                {
+                    audioSource.PlayOneShot(enemyFireSfx, enemyFireSfxVolume);
+                }
                 newBullet.Speed = bulletSpeed;
             }
         }
@@ -55,5 +73,13 @@ public class GunController : MonoBehaviour
     public void UpgradeFirerate()
     {
         secondsBetweenShots -= upgradeAmount;
+    }
+
+    private void OnDestroy()
+    {
+        if (this.gameObject.CompareTag("Player")) // TODO what if player does during round?
+        {
+            GamewideControl.instance.SecondsBetweenShots = this.secondsBetweenShots;
+        }
     }
 }

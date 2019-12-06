@@ -7,20 +7,29 @@ public class EnemyHealth : MonoBehaviour
     [Header("Health Points")]
     [SerializeField] private int healthPoints = 3;
 
+    [SerializeField] private AudioClip spawnSfx;
+    [SerializeField] private float spawnSfxVolume = 0.5f;
+    [SerializeField] private AudioClip hurtSfx;
+    [SerializeField] private float hurtSfxVolume = 0.5f;
+    [SerializeField] private AudioClip deathSfx;
+    [SerializeField] private float deathSfxVolume = 0.5f;
+
     private Animator enemyAnim;
+    private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
         enemyAnim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
+        audioSource.PlayOneShot(spawnSfx, spawnSfxVolume);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Bullet"))
         {
-            HurtEnemy();
-            enemyAnim.SetTrigger("HurtTrigger");
+            HurtEnemy();            
             Destroy(other.gameObject);
         }
     }
@@ -28,15 +37,17 @@ public class EnemyHealth : MonoBehaviour
     private void OnParticleCollision(GameObject other)
     {
         HurtEnemy();
-        enemyAnim.SetTrigger("HurtTrigger");
     }
 
     private void HurtEnemy()
     {
         healthPoints--;
+        audioSource.PlayOneShot(hurtSfx, hurtSfxVolume);
+        enemyAnim.SetTrigger("HurtTrigger");
         if (healthPoints <= 0)
         {
             EnemySpawnManager.Instance.OnEnemyDeath();
+            AudioSource.PlayClipAtPoint(deathSfx, Camera.main.transform.position, deathSfxVolume);
             Destroy(gameObject);
         }
     }
