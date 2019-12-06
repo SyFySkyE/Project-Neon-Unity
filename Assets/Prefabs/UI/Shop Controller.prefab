@@ -45,7 +45,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shopCanvas: {fileID: 0}
   player: {fileID: 0}
-  playerPoints: {fileID: 0}
   fireRateCost: 500
   hpIncrementCost: 500
   dashIncrementCost: 500

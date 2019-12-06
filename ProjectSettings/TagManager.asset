@@ -10,6 +10,8 @@ TagManager:
   - Player Ability
   - Ground
   - Laser
+  - Follow
+  - Shop
   layers:
   - Default
   - TransparentFX

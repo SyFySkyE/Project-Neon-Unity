@@ -7,13 +7,22 @@ public class CameraSwitcher : MonoBehaviour
     [SerializeField] private Cinemachine.CinemachineStateDrivenCamera mainStateCam;
     [SerializeField] private Cinemachine.CinemachineVirtualCamera bossCam;
 
-    [SerializeField] private Boss boss;
+    private Boss boss;
 
     public event System.Action OnBossCamSwitch;
     public event System.Action OnMainCamSwitch;
 
     private void OnEnable()
     {
+        try
+        {
+            boss = FindObjectOfType<Boss>();
+            bossCam.LookAt = boss.transform;
+        }
+        catch
+        {
+            Debug.Log("No boss in this level");
+        }
         if (boss)
         {
             boss.OnSpawn += Boss_OnSpawn;
@@ -31,17 +40,5 @@ public class CameraSwitcher : MonoBehaviour
     {
         bossCam.Priority = 11;
         OnBossCamSwitch();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

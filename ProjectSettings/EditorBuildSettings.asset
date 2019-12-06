@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
+    path: Assets/Scenes/NeverUnload.unity
+    guid: db2e66f3ea4daf2438f3c47ca8fc140f
+  - enabled: 1
     path: Assets/Scenes/Level 1.unity
     guid: 513980a574505524f91d6e5e3647164c
   - enabled: 1
