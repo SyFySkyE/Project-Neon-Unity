@@ -214,6 +214,7 @@ GameObject:
   - component: {fileID: 4658642386544131774}
   - component: {fileID: 4658642386544131768}
   - component: {fileID: 4658642386544131769}
+  - component: {fileID: 9182299164865232838}
   m_Layer: 0
   m_Name: Running Enemy
   m_TagString: Enemy
@@ -326,6 +327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
+  gravityMultiplier: 2
 --- !u!114 &4658642386544131768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,6 +341,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthPoints: 3
+  spawnSfx: {fileID: 0}
+  spawnSfxVolume: 0.5
+  hurtSfx: {fileID: 0}
+  hurtSfxVolume: 0.5
+  deathSfx: {fileID: 0}
+  deathSfxVolume: 0.5
 --- !u!95 &4658642386544131769
 Animator:
   serializedVersion: 3
@@ -358,3 +366,25 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!195 &9182299164865232838
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4658642386544131761}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

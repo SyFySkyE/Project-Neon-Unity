@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class EnemyMovement : MonoBehaviour
 
     private PlayerMovement player;
     private Rigidbody enemyRb;
+    private NavMeshAgent navMesh;
     
     // Start is called before the first frame update
     void Start()
@@ -17,6 +19,7 @@ public class EnemyMovement : MonoBehaviour
         Physics.gravity *= gravityMultiplier;
         player = FindObjectOfType<PlayerMovement>();
         enemyRb = GetComponent<Rigidbody>();
+        navMesh = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
@@ -24,13 +27,17 @@ public class EnemyMovement : MonoBehaviour
     {
         if (player) // Null check if player died
         {
+            if (navMesh) // Null check since shoot robots don't need nav mesh
+            {
+                navMesh.SetDestination(player.transform.position);
+            }            
             transform.LookAt(player.transform); // Looks at player Y, if player Y changes this can get borked
         }        
     }
 
     private void FixedUpdate()
     {
-        enemyRb.velocity = transform.forward * moveSpeed;
+        
     }
 
     private void OnDestroy() // TODO Should this be in enemyHealth? It's in here because this script knows Player
