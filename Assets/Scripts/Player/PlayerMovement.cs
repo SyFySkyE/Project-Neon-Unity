@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody playerRb;
     private Camera mainCamera;
     private Animator playerAnim;
+    private BoxCollider playerCollider;
 
     private Vector3 input;
     private Vector3 inputVelocity;
@@ -45,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
         playerRb = GetComponent<Rigidbody>();
         mainCamera = Camera.main;
         playerAnim = GetComponent<Animator>();
+        playerCollider = GetComponent<BoxCollider>();
     }
 
     // Update is called once per frame
@@ -169,5 +171,15 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 GetInputDirection()
     {
         return inputVelocity;
+    }
+
+    public void EnableCollision()
+    {
+        playerCollider.enabled = true;
+    }
+
+    public void DisableCollision()
+    {
+        playerCollider.enabled = false;
     }
 }

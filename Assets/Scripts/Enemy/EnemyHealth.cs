@@ -14,6 +14,9 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private AudioClip deathSfx;
     [SerializeField] private float deathSfxVolume = 0.5f;
 
+    [SerializeField] private ParticleSystem hurtVfx;
+    [SerializeField] private ParticleSystem deathVfx;
+
     private Animator enemyAnim;
     private AudioSource audioSource;
 
@@ -44,6 +47,7 @@ public class EnemyHealth : MonoBehaviour
         healthPoints--;
         audioSource.PlayOneShot(hurtSfx, hurtSfxVolume);
         enemyAnim.SetTrigger("HurtTrigger");
+        hurtVfx.Play();
         if (healthPoints <= 0)
         {
             EnemySpawnManager.Instance.OnEnemyDeath();

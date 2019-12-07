@@ -5,12 +5,9 @@ using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [Header("Movement stats")]
-    [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float gravityMultiplier = 2f;
 
     private PlayerMovement player;
-    private Rigidbody enemyRb;
     private NavMeshAgent navMesh;
     
     // Start is called before the first frame update
@@ -18,7 +15,6 @@ public class EnemyMovement : MonoBehaviour
     {
         Physics.gravity *= gravityMultiplier;
         player = FindObjectOfType<PlayerMovement>();
-        enemyRb = GetComponent<Rigidbody>();
         navMesh = GetComponent<NavMeshAgent>();
     }
 
@@ -33,11 +29,6 @@ public class EnemyMovement : MonoBehaviour
             }            
             transform.LookAt(player.transform); // Looks at player Y, if player Y changes this can get borked
         }        
-    }
-
-    private void FixedUpdate()
-    {
-        
     }
 
     private void OnDestroy() // TODO Should this be in enemyHealth? It's in here because this script knows Player
