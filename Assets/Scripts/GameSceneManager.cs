@@ -8,6 +8,8 @@ public class GameSceneManager : MonoBehaviour
     [SerializeField] PlayerHealth player;
     [SerializeField] private float secondsBeforeSceneLoad = 3f;
 
+    public event System.Action LevelCompleted;
+
     private void Start()
     {
         player.OnDeath += Player_OnDeath;
@@ -33,6 +35,7 @@ public class GameSceneManager : MonoBehaviour
 
     private IEnumerator LoadScene(int index)
     {
+        LevelCompleted();
         yield return new WaitForSeconds(secondsBeforeSceneLoad);
         SceneManager.LoadScene(index);
     }

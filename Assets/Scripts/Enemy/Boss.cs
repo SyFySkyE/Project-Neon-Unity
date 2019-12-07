@@ -88,8 +88,9 @@ public class Boss : MonoBehaviour
 
     private IEnumerator ChargeLaser()
     {
-        audioSource.PlayOneShot(laserChargeSfx, laserChargeSfxVolume);
+        audioSource.PlayOneShot(laserChargeSfx, laserChargeSfxVolume);        
         yield return new WaitForSeconds(timeBeforeLaserShot);
+        audioSource.Stop();
         audioSource.PlayOneShot(laserFireSfx, laserFireSfxVolume);
         preLaser.Stop();
         laser.Play();
@@ -165,14 +166,6 @@ public class Boss : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(deathSfx, Camera.main.transform.position, deathSfxVolume);
             Destroy(this.gameObject);
-        }
-    }
-
-    private void OnParticleCollision(GameObject other)
-    {
-        if (other.CompareTag("Player Ability"))
-        {
-            DecrementHealth();
         }
     }
 }

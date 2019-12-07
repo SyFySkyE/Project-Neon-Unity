@@ -1223,11 +1223,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthPoints: 3
   spawnSfx: {fileID: 8300000, guid: 027475240fc39c34790b1a6edef9373b, type: 3}
-  spawnSfxVolume: 1
+  spawnSfxVolume: 2
   hurtSfx: {fileID: 8300000, guid: 21eb6160e61463d4b94eaa6bdaf2ea95, type: 3}
-  hurtSfxVolume: 1
+  hurtSfxVolume: 3
   deathSfx: {fileID: 8300000, guid: 700c63d0e03c5084b86eff92b01eaec2, type: 3}
-  deathSfxVolume: 0.25
+  deathSfxVolume: 0.7
 --- !u!114 &217057208249451308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1241,7 +1241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
-  gravityMultiplier: 1
+  gravityMultiplier: 2
 --- !u!82 &4162105961479528538
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1254,7 +1254,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 22720b86dcdf52d438497097393fca39, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0

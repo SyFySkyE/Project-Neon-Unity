@@ -26030,7 +26030,7 @@ MonoBehaviour:
   deathSfx: {fileID: 8300000, guid: b6a6d91fb1eb6ae4680bfb218b721741, type: 3}
   deathSfxVolume: 0.5
   laserChargeSfx: {fileID: 8300000, guid: 3a5a926bc3dd48b4d98a8385aa0ad45d, type: 3}
-  laserChargeSfxVolume: 0.5
+  laserChargeSfxVolume: 0.25
   laserFireSfx: {fileID: 8300000, guid: 6e3b9935895a47043b0f125052dd5e53, type: 3}
   laserFireSfxVolume: 0.5
   bulletChargeSfx: {fileID: 8300000, guid: 25864da6300c38244b5ae5f0f471fe50, type: 3}

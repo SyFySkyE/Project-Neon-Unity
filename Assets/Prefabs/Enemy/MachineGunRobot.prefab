@@ -10233,7 +10233,7 @@ MonoBehaviour:
   playerFireSfx: {fileID: 8300000, guid: 7947419fc0a2cfe48bd95f69776fb3e4, type: 3}
   playerFireSfxVolume: 0.5
   enemyFireSfx: {fileID: 8300000, guid: a3f64664ba753464bbc5469f281b3050, type: 3}
-  enemyFireSfxVolume: 0.5
+  enemyFireSfxVolume: 2
 --- !u!114 &5410359925644658226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10276,11 +10276,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthPoints: 5
   spawnSfx: {fileID: 8300000, guid: 7ebf9f63480357a4a92f7034a5811f37, type: 3}
-  spawnSfxVolume: 0.5
+  spawnSfxVolume: 3
   hurtSfx: {fileID: 8300000, guid: 21eb6160e61463d4b94eaa6bdaf2ea95, type: 3}
-  hurtSfxVolume: 0.5
+  hurtSfxVolume: 3
   deathSfx: {fileID: 8300000, guid: 700c63d0e03c5084b86eff92b01eaec2, type: 3}
-  deathSfxVolume: 0.25
+  deathSfxVolume: 0.7
 --- !u!95 &-8259453608604502787
 Animator:
   serializedVersion: 3
