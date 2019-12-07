@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     private bool usingController;
     private bool canMove = true;
     private bool isBossActive = false;
+    private bool canAim = true;
 
     // TODO Controller only works with DS4, add support for XB1, X360
 
@@ -52,8 +53,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UpdateInput();
-        UpdateMovement();
+        if (canAim)
+        {
+            UpdateInput();
+            UpdateMovement();
+        }
     }
 
     private void UpdateMovement()
@@ -61,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
         UpdateControlMethod();
         if (!usingController)
         {
-            MakeCameraRay();
+            //MakeCameraRay();
         }
         else
         {
@@ -181,5 +185,15 @@ public class PlayerMovement : MonoBehaviour
     public void DisableCollision()
     {
         playerCollider.enabled = false;
+    }
+
+    public void EnableAim()
+    {
+        canAim = true;
+    }
+
+    public void DisableAim()
+    {
+        canAim = false;
     }
 }
