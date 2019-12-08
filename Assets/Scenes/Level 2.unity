@@ -12425,7 +12425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
+  m_VerticalAxis: MenuSelect
   m_SubmitButton: Submit
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
@@ -12443,7 +12443,7 @@ MonoBehaviour:
   m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1983607981}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &395898657
@@ -63351,6 +63351,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1acd03bc537c24f3484ab4d6f07b9e02, type: 3}
+--- !u!1 &1983607981 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4434333894654952949, guid: 575bab7e23e044441b88577045b8553a,
+    type: 3}
+  m_PrefabInstance: {fileID: 4434333893775595452}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1984259203
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69892,7 +69898,7 @@ PrefabInstance:
     - target: {fileID: 3151068126881499379, guid: 57f791f7bd2962e4db995a6a3b4a084f,
         type: 3}
       propertyPath: enemiesThisWave
-      value: 15
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3151068126881499379, guid: 57f791f7bd2962e4db995a6a3b4a084f,
         type: 3}
@@ -70056,6 +70062,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Shop Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4434333894868867399, guid: 575bab7e23e044441b88577045b8553a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4434333894868867395, guid: 575bab7e23e044441b88577045b8553a,
         type: 3}
