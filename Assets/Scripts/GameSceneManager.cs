@@ -12,7 +12,10 @@ public class GameSceneManager : MonoBehaviour
 
     private void Start()
     {
-        player.OnDeath += Player_OnDeath;
+        if (player)
+        {
+            player.OnDeath += Player_OnDeath;
+        }        
     }
 
     private void Player_OnDeath()
@@ -38,5 +41,15 @@ public class GameSceneManager : MonoBehaviour
         LevelCompleted();
         yield return new WaitForSeconds(secondsBeforeSceneLoad);
         SceneManager.LoadScene(index);
+    }
+
+    public void LoadFirstLevel()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit(0);
     }
 }
