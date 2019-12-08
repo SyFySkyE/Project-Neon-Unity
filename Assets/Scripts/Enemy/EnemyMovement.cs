@@ -5,34 +5,36 @@ using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] private float gravityMultiplier = 2f;
+    [SerializeField] private float moveSpeed = 3f;
 
     private PlayerMovement player;
     private NavMeshAgent navMesh;
+    private Rigidbody enemyRb;
     
     // Start is called before the first frame update
     void Start()
     {
-        Physics.gravity *= gravityMultiplier;
         player = FindObjectOfType<PlayerMovement>();
         navMesh = GetComponent<NavMeshAgent>();
+        enemyRb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
         if (player) // Null check if player died
-        {
-            if (navMesh) // Null check since shoot robots don't need nav mesh
-            {
-                navMesh.SetDestination(player.transform.position);
-            }            
+        {             
             transform.LookAt(player.transform); // Looks at player Y, if player Y changes this can get borked
         }        
     }
 
-    private void OnDestroy() // TODO Should this be in enemyHealth? It's in here because this script knows Player
+    private void FixedUpdate()
     {
+        enemyRb.AddForce(transform.forward * moveSpeed, ForceMode.Impulse);
+    }
+
+    private void OnDestroy() // TODO Should this be in enemyHealth? It's in here because this script knows Player
+    { // TODO Should not use GetComponent outside of Start!!
         if (player)
         {
             player.GetComponent<PlayerComboSystem>().AddToCombo();

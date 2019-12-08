@@ -42622,7 +42622,32 @@ PrefabInstance:
     - target: {fileID: 3151068126881499379, guid: 57f791f7bd2962e4db995a6a3b4a084f,
         type: 3}
       propertyPath: maxNumberOfEnemies
-      value: 10
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3151068126881499379, guid: 57f791f7bd2962e4db995a6a3b4a084f,
+        type: 3}
+      propertyPath: wave1EnemiesToSpawn
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3151068126881499379, guid: 57f791f7bd2962e4db995a6a3b4a084f,
+        type: 3}
+      propertyPath: wave2EnemiesToSpawn
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 3151068126881499379, guid: 57f791f7bd2962e4db995a6a3b4a084f,
+        type: 3}
+      propertyPath: wave3EnemiesToSpawn
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3151068126881499379, guid: 57f791f7bd2962e4db995a6a3b4a084f,
+        type: 3}
+      propertyPath: enemiesThisWave
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3151068126881499379, guid: 57f791f7bd2962e4db995a6a3b4a084f,
+        type: 3}
+      propertyPath: maxTimeInSecBeforeSpawn
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3151068126523032393, guid: 57f791f7bd2962e4db995a6a3b4a084f,
         type: 3}

@@ -19,6 +19,7 @@ public class EnemySpawnManager : MonoBehaviour
     [Header("Wave Paramenters")]
     [SerializeField] private int waveNumber = 1;
     [SerializeField] private int enemiesThisWave = 10;
+    [SerializeField] private int wave1EnemiesToSpawn = 5;
     [SerializeField] private int wave2EnemiesToSpawn = 10;
     [SerializeField] private int wave3EnemiesToSpawn = 15;
     [SerializeField] private int maxWaves = 3;
@@ -28,6 +29,8 @@ public class EnemySpawnManager : MonoBehaviour
 
     private int numberOfEnemiesSpawned = 0;
     private int numberOfEnemiesAlive = 0;
+
+    public event System.Action OnWaveComplete;
 
     static EnemySpawnManager instance;
     public static EnemySpawnManager Instance
@@ -63,19 +66,23 @@ public class EnemySpawnManager : MonoBehaviour
 
     private IEnumerator SpawnEnemy()
     {
-        InstantiateRandomEnemyAndLoc();
-        float nextRandomSpawnTime = Random.Range(minTimeInSecBeforeSpawn, maxTimeInSecBeforeSpawn);
-        yield return new WaitForSeconds(nextRandomSpawnTime);
         if (numberOfEnemiesSpawned < enemiesThisWave)
         {
-            StartCoroutine(SpawnEnemy());
-        }
+            InstantiateRandomEnemyAndLoc();
+            float nextRandomSpawnTime = Random.Range(minTimeInSecBeforeSpawn, maxTimeInSecBeforeSpawn);
+            yield return new WaitForSeconds(nextRandomSpawnTime);
+            if (numberOfEnemiesSpawned < enemiesThisWave)
+            {
+                StartCoroutine(SpawnEnemy());
+            }
+        }       
     }
 
     private void InstantiateRandomEnemyAndLoc()
     {
         if (numberOfEnemiesAlive < maxNumberOfEnemies)
         {
+            Debug.Log("dwadwa");
             int randomEnemyIndex = Random.Range(0, enemyPrefabs.Length);
             int randomLocIndex = Random.Range(0, placesToSpawn.Count);
             GameObject nextEnemy = Instantiate(enemyPrefabs[randomEnemyIndex], placesToSpawn[randomLocIndex].position, Quaternion.identity) as GameObject;
@@ -86,10 +93,14 @@ public class EnemySpawnManager : MonoBehaviour
 
     public void OnEnemyDeath()
     {
-        numberOfEnemiesAlive--;
-        if (numberOfEnemiesAlive == 0 && numberOfEnemiesSpawned >= enemiesThisWave)
+        if (this.waveNumber != 0) // If this is NOT the tutorial level
         {
-            shop.BroadcastMessage("WaveComplete"); // TODO Replace this w/ event
+            numberOfEnemiesAlive--;
+        }
+        
+        if (numberOfEnemiesAlive <= 0 && numberOfEnemiesSpawned >= enemiesThisWave)
+        {
+            OnWaveComplete();
         }
     }
 
@@ -99,25 +110,33 @@ public class EnemySpawnManager : MonoBehaviour
         StartCoroutine(SpawnEnemy());
     }
 
-    public void NextWave()
+    public void NextWave() // TODO not sure why i didn't use switch
     {
-        if (waveNumber == 1)
+        switch (waveNumber)
         {
-            waveNumber++;
-            numberOfEnemiesSpawned = 0;
-            enemiesThisWave = wave2EnemiesToSpawn;
-            StartCoroutine(SpawnEnemy());
-        }
-        else if (waveNumber == 2)
-        {
-            waveNumber++;
-            numberOfEnemiesSpawned = 0;
-            enemiesThisWave = wave3EnemiesToSpawn;
-            StartCoroutine(SpawnEnemy());
-        }
-        else if (waveNumber >= maxWaves)
-        {
-            SpawnBoss();
+            case 0:
+                Debug.Log("1");
+                waveNumber++;
+                numberOfEnemiesSpawned = 0;
+                enemiesThisWave = wave1EnemiesToSpawn;
+                StartCoroutine(SpawnEnemy());
+                break;
+            case 1:
+                Debug.Log("2");
+                waveNumber++;
+                numberOfEnemiesSpawned = 0;
+                enemiesThisWave = wave2EnemiesToSpawn;
+                StartCoroutine(SpawnEnemy());
+                break;
+            case 2:
+                waveNumber++;
+                numberOfEnemiesSpawned = 0;
+                enemiesThisWave = wave3EnemiesToSpawn;
+                StartCoroutine(SpawnEnemy());
+                break;
+            case 3:
+                SpawnBoss();
+                break;
         }
     }
 

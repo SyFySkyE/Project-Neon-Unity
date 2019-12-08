@@ -42,6 +42,16 @@ public class ShopController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI overdriveIncrementCostLevel;
     [SerializeField] private TextMeshProUGUI overdriveLevelLabel;
 
+    private void OnEnable()
+    {
+        EnemySpawnManager.Instance.OnWaveComplete += Instance_OnWaveComplete;
+    }
+
+    private void Instance_OnWaveComplete()
+    {
+        WaveComplete();
+    }
+
     // Start is called before the first frame update
     void Start()
     {

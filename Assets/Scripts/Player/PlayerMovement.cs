@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private GameObject aimObject;
 
     [SerializeField] private CameraSwitcher camSystem;
+    [SerializeField] private GameObject playerParticles;
 
     private Rigidbody playerRb;
     private Camera mainCamera;
@@ -65,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
         UpdateControlMethod();
         if (!usingController)
         {
-            //MakeCameraRay();
+            MakeCameraRay();
         }
         else
         {
@@ -177,23 +178,20 @@ public class PlayerMovement : MonoBehaviour
         return inputVelocity;
     }
 
-    public void EnableCollision()
+    public void EnableCutsceneRestrictions()
     {
-        playerCollider.enabled = true;
-    }
-
-    public void DisableCollision()
-    {
+        playerParticles.SetActive(false);
         playerCollider.enabled = false;
-    }
-
-    public void EnableAim()
-    {
-        canAim = true;
-    }
-
-    public void DisableAim()
-    {
+        canMove = false;
         canAim = false;
+    }
+
+    public void DisableCustsceneRestrictions()
+    {
+        playerParticles.SetActive(true);
+        playerCollider.enabled = true;
+        canMove = true;
+        canAim = true;
+        playerAnim.applyRootMotion = true;
     }
 }
