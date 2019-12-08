@@ -41,13 +41,6 @@ public class PlayerAbilities : MonoBehaviour
     public event System.Action<int> OnCrashChange;
     public event System.Action<bool> OnODChange;
 
-    private void OnEnable()
-    {
-        OnDashChange(numberOfDashes);
-        OnCrashChange(numberOfCrashes);
-        OnODChange(false);
-    }
-
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -55,7 +48,13 @@ public class PlayerAbilities : MonoBehaviour
         this.numberOfCrashes = GamewideControl.instance.NumberOfCrashes;
         this.overdrivePeriod = GamewideControl.instance.OverdrivePeriod;
         this.numberOfOverdrives = 1; // In case scene transitions before recharge
-        this.canOverdrive = true; // See above
+        OnDashChange(numberOfDashes);
+        OnCrashChange(numberOfCrashes);
+        OnODChange(false);
+        if (overdrivePeriod != 0)
+        {
+            this.canOverdrive = true; // See above
+        }        
         playerMove = GetComponent<PlayerMovement>();
         anim = GetComponent<Animator>();
         playerRb = GetComponent<Rigidbody>();        
@@ -149,6 +148,7 @@ public class PlayerAbilities : MonoBehaviour
         if (numberOfOverdrives > 0 && canOverdrive)
         {
             audioSource.PlayOneShot(overdriveSfx, overdriveSfxVolume);
+            isOverdriveActive = true;
             OnODChange(false);
             OnDashChange(999);
             OnCrashChange(999);
@@ -161,13 +161,13 @@ public class PlayerAbilities : MonoBehaviour
     }
 
     private IEnumerator OverdrivePeriod()
-    {
-        isOverdriveActive = true;
+    {        
         yield return new WaitForSeconds(overdrivePeriod);
         isOverdriveActive = false;
         BroadcastMessage("OverdriveStop");
         OnCrashChange(numberOfCrashes);
         OnDashChange(numberOfDashes);
+        audioSource.Stop();
         overdriveParticles.Stop();
         StartCoroutine(OverdriveRecharge());
     }

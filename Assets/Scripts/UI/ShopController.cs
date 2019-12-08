@@ -7,6 +7,7 @@ public class ShopController : MonoBehaviour
 {
     [SerializeField] private GameObject shopCanvas;
     [SerializeField] private GameObject player;
+    [SerializeField] private Tutorial tutorial;
 
     private PlayerPoints playerPoints;
     private PlayerHealth playerHealth;
@@ -181,10 +182,23 @@ public class ShopController : MonoBehaviour
 
     public void NextWaveButton()
     {
-        SaveToGlobalGO();
-        playerHealth.ResetHealth();
-        EnemySpawnManager.Instance.NextWave();        
-        shopCanvas.SetActive(false);
+        if (tutorial)
+        {
+            if (tutorial.PassedTutorial())
+            {
+                SaveToGlobalGO();
+                playerHealth.ResetHealth();
+                EnemySpawnManager.Instance.NextWave();
+                shopCanvas.SetActive(false);
+            }
+        }
+        else
+        {
+            SaveToGlobalGO();
+            playerHealth.ResetHealth();
+            EnemySpawnManager.Instance.NextWave();
+            shopCanvas.SetActive(false);
+        }        
     }
 
     private void SaveToGlobalGO()

@@ -19,10 +19,14 @@ public class EnemyHealth : MonoBehaviour
 
     private Animator enemyAnim;
     private AudioSource audioSource;
+    private EnemyMovement enemyMove;
+    private EnemyShoot enemyShoot;
+    private bool isDead = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        enemyMove = GetComponent<EnemyMovement>();
         enemyAnim = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         audioSource.PlayOneShot(spawnSfx, spawnSfxVolume);
@@ -30,9 +34,10 @@ public class EnemyHealth : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Bullet"))
+        if (other.CompareTag("Bullet") && !isDead)
         {
-            HurtEnemy();            
+            HurtEnemy();
+            audioSource.PlayOneShot(hurtSfx, hurtSfxVolume);
             Destroy(other.gameObject);
         }
     }
@@ -44,15 +49,18 @@ public class EnemyHealth : MonoBehaviour
 
     private void HurtEnemy()
     {
-        healthPoints--;
-        audioSource.PlayOneShot(hurtSfx, hurtSfxVolume);
+        healthPoints--;        
         enemyAnim.SetTrigger("HurtTrigger");
         hurtVfx.Play();
-        if (healthPoints <= 0)
+        if (healthPoints <= 0 && !isDead)
         {
+            isDead = true;
+            enemyMove.enabled = false;
             EnemySpawnManager.Instance.OnEnemyDeath();
             AudioSource.PlayClipAtPoint(deathSfx, Camera.main.transform.position, deathSfxVolume);
-            Destroy(gameObject);
+            enemyAnim.SetTrigger("DeathTrigger");
+            deathVfx.Play();
+            Destroy(gameObject, deathVfx.main.duration);
         }
     }
 }

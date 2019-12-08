@@ -82,7 +82,6 @@ public class EnemySpawnManager : MonoBehaviour
     {
         if (numberOfEnemiesAlive < maxNumberOfEnemies)
         {
-            Debug.Log("dwadwa");
             int randomEnemyIndex = Random.Range(0, enemyPrefabs.Length);
             int randomLocIndex = Random.Range(0, placesToSpawn.Count);
             GameObject nextEnemy = Instantiate(enemyPrefabs[randomEnemyIndex], placesToSpawn[randomLocIndex].position, Quaternion.identity) as GameObject;
@@ -110,19 +109,17 @@ public class EnemySpawnManager : MonoBehaviour
         StartCoroutine(SpawnEnemy());
     }
 
-    public void NextWave() // TODO not sure why i didn't use switch
+    public void NextWave() 
     {
         switch (waveNumber)
         {
             case 0:
-                Debug.Log("1");
                 waveNumber++;
                 numberOfEnemiesSpawned = 0;
                 enemiesThisWave = wave1EnemiesToSpawn;
                 StartCoroutine(SpawnEnemy());
                 break;
             case 1:
-                Debug.Log("2");
                 waveNumber++;
                 numberOfEnemiesSpawned = 0;
                 enemiesThisWave = wave2EnemiesToSpawn;

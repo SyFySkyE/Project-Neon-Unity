@@ -20,7 +20,7 @@ public class GameHUDObserver : MonoBehaviour
     [SerializeField] private TextMeshProUGUI crashLabel;
 
     [Tooltip("How fast the money diff text fades out after firing")]
-    [SerializeField] private float fadeSpeed = 1f;
+    [SerializeField] private float fadeSpeed = 2f;
 
     private void OnEnable()
     {
@@ -74,7 +74,10 @@ public class GameHUDObserver : MonoBehaviour
 
     private void FadeMoneyText()
     {
-        moneyLabel.GetComponent<CanvasRenderer>().SetColor(Color.green);
-        moneyLabel.CrossFadeAlpha(0f, fadeSpeed, false);
+        if (moneyLabel)
+        {
+            moneyLabel.GetComponent<CanvasRenderer>().SetColor(Color.green);
+            moneyLabel.CrossFadeAlpha(0f, fadeSpeed, false);
+        }
     }
 }

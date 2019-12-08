@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         if (canAim)
-        {
+        {            
             UpdateInput();
             UpdateMovement();
         }
@@ -65,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
     {
         UpdateControlMethod();
         if (!usingController)
-        {
+        {            
             MakeCameraRay();
         }
         else

@@ -8,14 +8,12 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float moveSpeed = 3f;
 
     private PlayerMovement player;
-    private NavMeshAgent navMesh;
     private Rigidbody enemyRb;
     
     // Start is called before the first frame update
     void Start()
     {
         player = FindObjectOfType<PlayerMovement>();
-        navMesh = GetComponent<NavMeshAgent>();
         enemyRb = GetComponent<Rigidbody>();
     }
 

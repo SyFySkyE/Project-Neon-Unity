@@ -19735,8 +19735,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5409853568405889947}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.37, y: 0.5, z: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -4.4627776, y: 0.5, z: 0.224576}
   m_LocalScale: {x: 1, y: 1, z: -1}
   m_Children:
   - {fileID: 5411782865684531481}
@@ -19746,7 +19746,7 @@ Transform:
   - {fileID: 7114666733548302900}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!54 &5410359925644658231
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19775,7 +19775,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3.22744, y: 4.547659, z: 1.5211179}
-  m_Center: {x: 0.06331742, y: 1.244801, z: -0.23217857}
+  m_Center: {x: 0.06331742, y: 1.244801, z: 0}
 --- !u!114 &5410359925644658227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19790,7 +19790,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFiring: 0
   bullet: {fileID: 5717124867407850777, guid: 470690621f2546841966460789f32e54, type: 3}
-  bulletSpeed: 5
+  bulletSpeed: 10
   secondsBetweenShots: 2
   gunLocation: {fileID: 5410359924892587873}
   upgradeAmount: 0.05
@@ -19811,7 +19811,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gun: {fileID: 5410359925644658227}
-  secondsBetweenShots: 3
+  secondsBetweenShots: 1.5
 --- !u!114 &5410359925644658225
 MonoBehaviour:
   m_ObjectHideFlags: 0

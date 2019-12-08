@@ -16,6 +16,7 @@ public class GunController : MonoBehaviour
     [SerializeField] private float enemyFireSfxVolume = 0.5f;
 
     private AudioSource audioSource;
+    public event System.Action OnPlayerShoot;
 
     // Start is called before the first frame update
     void Start()
@@ -36,9 +37,10 @@ public class GunController : MonoBehaviour
             if (shotCounter <= 0)
             {
                 shotCounter = secondsBetweenShots;
-                Bullet newBullet = Instantiate(bullet, gunLocation.position, gunLocation.rotation) as Bullet;
+                Bullet newBullet = Instantiate(bullet, gunLocation.position, gunLocation.rotation) as Bullet;               
                 if (this.gameObject.CompareTag("Player"))
                 {
+                    OnPlayerShoot();
                     audioSource.PlayOneShot(playerFireSfx, playerFireSfxVolume);
                 }
                 else
