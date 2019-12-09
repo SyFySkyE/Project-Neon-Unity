@@ -4226,12 +4226,13 @@ MonoBehaviour:
   moveTut: WASD | Left Stick to Move
   aimTut: Mouse | Right Stick to Aim
   shootTut: Left Click | R2 to Shoot
-  abilityBuyTut: Buy Dash, Crash and Overdrive to Enable your Abilities
+  abilityBuyTut: Overdrive makes you Invulnerable, adds a buff to your fire rate and
+    move speed and unlocks unlimited Ability use
   dashBuyTut: Buy Dash
   crashBuyTut: Buy Crash
   odBuyTut: Buy Overdrive
   gameLoopTut: At the end of every round, you'll be given a chance to Upgrade your
-    abilitites with the money you've earned.
+    Abilities with the money you've earned.
   comboTutText: The quicker you destroy, the higher your combo gets. The higher the
     combo, the bigger money bonus you'll earn.
   dashTut: Left Shift | L1 to Dash
