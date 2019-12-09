@@ -7,6 +7,7 @@ public class ShopController : MonoBehaviour
 {
     [SerializeField] private GameObject shopCanvas;
     [SerializeField] private GameObject player;
+    [Header("Tutorial Soft Dependency")]
     [SerializeField] private Tutorial tutorial;
 
     private PlayerPoints playerPoints;

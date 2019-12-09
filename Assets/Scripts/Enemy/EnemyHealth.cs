@@ -20,7 +20,6 @@ public class EnemyHealth : MonoBehaviour
     private Animator enemyAnim;
     private AudioSource audioSource;
     private EnemyMovement enemyMove;
-    private EnemyShoot enemyShoot;
     private bool isDead = false;
 
     // Start is called before the first frame update

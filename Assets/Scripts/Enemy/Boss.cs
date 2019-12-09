@@ -107,7 +107,7 @@ public class Boss : MonoBehaviour
         audioSource.PlayOneShot(bulletChargeSfx, bulletChargeSfxVolume);
         yield return new WaitForSeconds(timeBeforeBulletHell);
         readyBulletHell.Stop();
-        audioSource.PlayOneShot(bulletChargeSfx, bulletChargeSfxVolume);
+        audioSource.PlayOneShot(bulletFireSfx, bulletFireSfxVolume);
         for (int h = 0; h < shootTime; h++)
         {
             yield return new WaitForSeconds(h);

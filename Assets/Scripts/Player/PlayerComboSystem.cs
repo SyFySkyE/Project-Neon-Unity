@@ -11,8 +11,11 @@ public class PlayerComboSystem : MonoBehaviour
 
     public event System.Action<int> OnComboChange;
 
+    private PlayerPoints playerPoints;
+
     private void Start()
     {
+        playerPoints = GetComponent<PlayerPoints>();
         OnComboChange(combo);
     }
 
@@ -27,8 +30,7 @@ public class PlayerComboSystem : MonoBehaviour
     private IEnumerator ComboDecay()
     {
         yield return new WaitForSeconds(timeDecayInSeconds);
-        GetComponent<PlayerPoints>().AddPoints(combo * comboMultiplier);
-        Debug.Log("Last combo: " + combo);
+        playerPoints.AddPoints(combo * comboMultiplier);
         combo = 0;
         OnComboChange(combo);        
     }

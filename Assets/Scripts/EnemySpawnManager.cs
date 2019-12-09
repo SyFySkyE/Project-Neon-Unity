@@ -22,9 +22,7 @@ public class EnemySpawnManager : MonoBehaviour
     [SerializeField] private int wave1EnemiesToSpawn = 5;
     [SerializeField] private int wave2EnemiesToSpawn = 10;
     [SerializeField] private int wave3EnemiesToSpawn = 15;
-    [SerializeField] private int maxWaves = 3;
         
-    [SerializeField] private ShopController shop;
     [SerializeField] private GameSceneManager sceneManagement;
 
     private int numberOfEnemiesSpawned = 0;

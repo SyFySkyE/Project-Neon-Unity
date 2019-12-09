@@ -44,6 +44,14 @@ public class PlayerAbilities : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        InitializeAbilityValues();
+        playerMove = GetComponent<PlayerMovement>();
+        anim = GetComponent<Animator>();
+        playerRb = GetComponent<Rigidbody>();
+    }
+
+    private void InitializeAbilityValues()
+    {
         this.numberOfDashes = GamewideControl.instance.NumberOfDashes;
         this.numberOfCrashes = GamewideControl.instance.NumberOfCrashes;
         this.overdrivePeriod = GamewideControl.instance.OverdrivePeriod;
@@ -54,10 +62,7 @@ public class PlayerAbilities : MonoBehaviour
         if (overdrivePeriod != 0)
         {
             this.canOverdrive = true; // See above
-        }        
-        playerMove = GetComponent<PlayerMovement>();
-        anim = GetComponent<Animator>();
-        playerRb = GetComponent<Rigidbody>();        
+        }
     }
 
     // Update is called once per frame

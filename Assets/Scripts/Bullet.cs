@@ -2,8 +2,8 @@
 
 public class Bullet : MonoBehaviour
 {
-    [Header("Move Speed")]
-    [SerializeField] private float speed = 5f;
+    [Header("Move Speed, usually set by Gun/Fire Controller")]
+    [SerializeField] private float speed = 5f; // Usually set by GunController using Set below
 
     private float secBeforeDestroy = 10f;
     public float Speed

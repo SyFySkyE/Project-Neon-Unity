@@ -5,7 +5,8 @@ using TMPro;
 
 public class GameHUDObserver : MonoBehaviour
 {
-    [SerializeField] private PlayerHealth health;
+    [Header("Depends On Player")]
+    [SerializeField] private PlayerHealth health; // This is a bit messy, dragging Player over four times.
     [SerializeField] private PlayerComboSystem combo;
     [SerializeField] private PlayerPoints points;
     [SerializeField] private PlayerAbilities abilities;
@@ -76,7 +77,7 @@ public class GameHUDObserver : MonoBehaviour
     {
         if (moneyLabel)
         {
-            moneyLabel.GetComponent<CanvasRenderer>().SetColor(Color.green);
+            moneyLabel.GetComponent<CanvasRenderer>().SetColor(Color.green); // TODO Baaad GetComponent outside of start
             moneyLabel.CrossFadeAlpha(0f, fadeSpeed, false);
         }
     }

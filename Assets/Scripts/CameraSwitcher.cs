@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CameraSwitcher : MonoBehaviour
 {
-    [SerializeField] private Cinemachine.CinemachineStateDrivenCamera mainStateCam;
     [SerializeField] private Cinemachine.CinemachineVirtualCamera bossCam;
 
     [SerializeField] private Boss boss;

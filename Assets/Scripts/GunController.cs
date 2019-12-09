@@ -79,7 +79,7 @@ public class GunController : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (this.gameObject.CompareTag("Player")) // TODO what if player does during round?
+        if (this.gameObject.CompareTag("Player")) 
         {
             GamewideControl.instance.SecondsBetweenShots = this.secondsBetweenShots;
         }

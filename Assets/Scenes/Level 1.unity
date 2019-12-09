@@ -4980,6 +4980,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 40446227db830ab4b9cc9dda925649ad,
         type: 2}
+    - target: {fileID: 526345290955972753, guid: 7b57ed8ac873ded4bab018f1c77060b2,
+        type: 3}
+      propertyPath: comboMultiplier
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b57ed8ac873ded4bab018f1c77060b2, type: 3}
 --- !u!1001 &588564959

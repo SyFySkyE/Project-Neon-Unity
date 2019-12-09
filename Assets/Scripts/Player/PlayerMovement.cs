@@ -34,13 +34,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void CamSystem_OnMainCamSwitch()
     {
-        Debug.Log("Switching to main state cam");
         isBossActive = false;
     }
 
     private void CamSystem_OnBossCamSwitch()
     {
-        Debug.Log("Switching to boss cam");
         isBossActive = true;
     }
 
