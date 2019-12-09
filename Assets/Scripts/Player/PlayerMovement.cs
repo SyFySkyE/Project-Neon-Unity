@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private Camera mainCamera;
     private Animator playerAnim;
     private BoxCollider playerCollider;
+    private PlayerHealth playerHealth;
 
     private Vector3 input;
     private Vector3 inputVelocity;
@@ -21,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     private bool canMove = true;
     private bool isBossActive = false;
     private bool canAim = true;
+    private bool isDead = false;
 
     // TODO Controller only works with DS4, add support for XB1, X360
 
@@ -45,16 +47,23 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerHealth = GetComponent<PlayerHealth>();
+        playerHealth.OnDeath += PlayerHealth_OnDeath;
         playerRb = GetComponent<Rigidbody>();
         mainCamera = Camera.main;
         playerAnim = GetComponent<Animator>();
         playerCollider = GetComponent<BoxCollider>();
     }
 
+    private void PlayerHealth_OnDeath()
+    {
+        isDead = true;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (canAim)
+        if (canAim && !isDead)
         {            
             UpdateInput();
             UpdateMovement();

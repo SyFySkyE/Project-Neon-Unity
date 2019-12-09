@@ -52,4 +52,9 @@ public class GameSceneManager : MonoBehaviour
     {
         Application.Quit(0);
     }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
 }

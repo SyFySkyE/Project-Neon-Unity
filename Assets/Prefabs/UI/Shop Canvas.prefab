@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4434333893096106715}
   - component: {fileID: 4434333893096106709}
   - component: {fileID: 4434333893096106708}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: Upgrades Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32,10 +32,10 @@ RectTransform:
   m_Father: {fileID: 4434333893181734219}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000076294, y: 380.4}
-  m_SizeDelta: {x: 814.2, y: 65.7}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 425.45, y: 380.4}
+  m_SizeDelta: {x: 814.2001, y: 65.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4434333893096106709
 CanvasRenderer:
@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 4434333893162545424}
   - component: {fileID: 4434333893162545426}
   - component: {fileID: 4434333893162545425}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: Overdrive++ Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,9 +189,9 @@ RectTransform:
   m_Father: {fileID: 4434333894868867395}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -345, y: -194}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 425.45, y: -97}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4434333893162545426
@@ -325,7 +325,7 @@ GameObject:
   - component: {fileID: 4434333893181734219}
   - component: {fileID: 4434333893181734213}
   - component: {fileID: 4434333893181734212}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -365,10 +365,10 @@ RectTransform:
   m_Father: {fileID: 4434333894868867395}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -473, y: 0}
-  m_SizeDelta: {x: -1105.8, y: -200}
+  m_AnchorMin: {x: 0.041, y: 0.20555557}
+  m_AnchorMax: {x: 0.46460408, y: 0.9704445}
+  m_AnchoredPosition: {x: 2.5, y: 2}
+  m_SizeDelta: {x: -0.8000488, y: 0.6000061}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4434333893181734213
 CanvasRenderer:
@@ -418,7 +418,7 @@ GameObject:
   - component: {fileID: 4434333893353059424}
   - component: {fileID: 4434333893353059426}
   - component: {fileID: 4434333893353059425}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: Upgrade Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -575,7 +575,7 @@ GameObject:
   - component: {fileID: 4434333893434011475}
   - component: {fileID: 4434333893434011469}
   - component: {fileID: 4434333893434011468}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: Overdrive Time Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -596,10 +596,10 @@ RectTransform:
   m_Father: {fileID: 4434333893181734219}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 24, y: -202}
-  m_SizeDelta: {x: 814.2, y: 65.7}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 425.45, y: -202}
+  m_SizeDelta: {x: 814.2001, y: 65.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4434333893434011469
 CanvasRenderer:
@@ -734,7 +734,7 @@ GameObject:
   - component: {fileID: 4434333893461289576}
   - component: {fileID: 4434333893461289578}
   - component: {fileID: 4434333893461289577}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: Level Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -757,8 +757,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 69, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 170.04, y: 0}
+  m_SizeDelta: {x: 60.07, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4434333893461289578
 CanvasRenderer:
@@ -891,7 +891,7 @@ GameObject:
   - component: {fileID: 4434333893512238124}
   - component: {fileID: 4434333893512238126}
   - component: {fileID: 4434333893512238125}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: Level Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -914,8 +914,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 3}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 122.19, y: 3}
+  m_SizeDelta: {x: 100.38, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4434333893512238126
 CanvasRenderer:
@@ -1049,7 +1049,7 @@ GameObject:
   - component: {fileID: 4434333893626760520}
   - component: {fileID: 4434333893626760527}
   - component: {fileID: 4434333893626760526}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: Next Wave Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1071,9 +1071,9 @@ RectTransform:
   m_Father: {fileID: 4434333893181734219}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 31, y: -325}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 425.45, y: -325}
   m_SizeDelta: {x: 360, y: 67.505}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4434333893626760520
@@ -1133,10 +1133,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_NormalColor: {r: 1, g: 0.514151, b: 0.514151, a: 1}
+    m_HighlightedColor: {r: 1, g: 0, b: 0.8187933, a: 1}
     m_PressedColor: {r: 0.54668033, g: 0.9769697, b: 0.990566, a: 1}
-    m_SelectedColor: {r: 1, g: 0.4198113, b: 0.6860123, a: 1}
+    m_SelectedColor: {r: 0.0141509175, g: 1, b: 0.85629386, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1180,7 +1180,7 @@ GameObject:
   - component: {fileID: 4434333893797993639}
   - component: {fileID: 4434333893797993633}
   - component: {fileID: 4434333893797993632}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: Level Value (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1201,10 +1201,10 @@ RectTransform:
   m_Father: {fileID: 4434333893181734219}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 93, y: -194}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 597.43024, y: -194}
+  m_SizeDelta: {x: 54.86, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4434333893797993633
 CanvasRenderer:
@@ -1338,7 +1338,7 @@ GameObject:
   - component: {fileID: 4434333893830485808}
   - component: {fileID: 4434333893830485815}
   - component: {fileID: 4434333893830485814}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: HP+ Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1423,9 +1423,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 0, b: 0.8187933, a: 1}
     m_PressedColor: {r: 0.54668033, g: 0.9769697, b: 0.990566, a: 1}
-    m_SelectedColor: {r: 1, g: 0.4198113, b: 0.6860123, a: 1}
+    m_SelectedColor: {r: 0, g: 1, b: 0.9668927, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1469,7 +1469,7 @@ GameObject:
   - component: {fileID: 4434333893907544112}
   - component: {fileID: 4434333893907544114}
   - component: {fileID: 4434333893907544113}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: Gun Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1490,10 +1490,10 @@ RectTransform:
   m_Father: {fileID: 4434333893181734219}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -179, y: 311}
-  m_SizeDelta: {x: 814.2, y: 65.7}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 425.45, y: 311}
+  m_SizeDelta: {x: 814.2001, y: 65.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4434333893907544114
 CanvasRenderer:
@@ -1626,7 +1626,7 @@ GameObject:
   - component: {fileID: 4434333894053587585}
   - component: {fileID: 4434333894053587587}
   - component: {fileID: 4434333894053587586}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: Fire Rate Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1650,10 +1650,10 @@ RectTransform:
   m_Father: {fileID: 4434333893181734219}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 24, y: 249}
-  m_SizeDelta: {x: 814.2, y: 65.7}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 425.45, y: 249}
+  m_SizeDelta: {x: 814.2001, y: 65.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4434333894053587587
 CanvasRenderer:
@@ -1786,7 +1786,7 @@ GameObject:
   - component: {fileID: 4434333894059722140}
   - component: {fileID: 4434333894059722142}
   - component: {fileID: 4434333894059722141}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: Level Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1809,8 +1809,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 135.54, y: 0}
+  m_SizeDelta: {x: 129.08, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4434333894059722142
 CanvasRenderer:
@@ -1943,7 +1943,7 @@ GameObject:
   - component: {fileID: 4434333894113014383}
   - component: {fileID: 4434333894113014377}
   - component: {fileID: 4434333894113014376}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: Upgrade Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2100,7 +2100,7 @@ GameObject:
   - component: {fileID: 4434333894225042837}
   - component: {fileID: 4434333894225042839}
   - component: {fileID: 4434333894225042838}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: Level Text (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2121,10 +2121,10 @@ RectTransform:
   m_Father: {fileID: 4434333893181734219}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 24, y: -194}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 555.89, y: -194}
+  m_SizeDelta: {x: 115.77, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4434333894225042839
 CanvasRenderer:
@@ -2257,7 +2257,7 @@ GameObject:
   - component: {fileID: 4434333894237504315}
   - component: {fileID: 4434333894237504309}
   - component: {fileID: 4434333894237504308}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: FR Cost Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2278,9 +2278,9 @@ RectTransform:
   m_Father: {fileID: 4434333894868867395}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -345, y: 249}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 425.45, y: 346}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4434333894237504309
@@ -2414,7 +2414,7 @@ GameObject:
   - component: {fileID: 4434333894261959575}
   - component: {fileID: 4434333894261959569}
   - component: {fileID: 4434333894261959568}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: Level Value (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2435,10 +2435,10 @@ RectTransform:
   m_Father: {fileID: 4434333893181734219}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 93, y: -104}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 587.72, y: -104}
+  m_SizeDelta: {x: 35.45, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4434333894261959569
 CanvasRenderer:
@@ -2571,7 +2571,7 @@ GameObject:
   - component: {fileID: 4434333894263415877}
   - component: {fileID: 4434333894263415879}
   - component: {fileID: 4434333894263415878}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: Abilities Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2592,10 +2592,10 @@ RectTransform:
   m_Father: {fileID: 4434333893181734219}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -179, y: 48}
-  m_SizeDelta: {x: 814.2, y: 65.7}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 425.45, y: 48}
+  m_SizeDelta: {x: 814.2001, y: 65.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4434333894263415879
 CanvasRenderer:
@@ -2730,7 +2730,7 @@ GameObject:
   - component: {fileID: 4434333894456737413}
   - component: {fileID: 4434333894456737415}
   - component: {fileID: 4434333894456737414}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: Level Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2751,10 +2751,10 @@ RectTransform:
   m_Father: {fileID: 4434333893181734219}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 24, y: -23}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 550.54, y: -23}
+  m_SizeDelta: {x: 105.08, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4434333894456737415
 CanvasRenderer:
@@ -2888,7 +2888,7 @@ GameObject:
   - component: {fileID: 4434333894457785760}
   - component: {fileID: 4434333894457785767}
   - component: {fileID: 4434333894457785766}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: FR Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2973,9 +2973,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 0, b: 0.8187933, a: 1}
     m_PressedColor: {r: 0.54668033, g: 0.9769697, b: 0.990566, a: 1}
-    m_SelectedColor: {r: 1, g: 0.4198113, b: 0.6860123, a: 1}
+    m_SelectedColor: {r: 0, g: 1, b: 0.9668927, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -3020,13 +3020,13 @@ GameObject:
   - component: {fileID: 4434333894466545081}
   - component: {fileID: 4434333894466545080}
   - component: {fileID: 4434333894466545087}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: Crash Upgrade Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4434333894466545086
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3042,9 +3042,9 @@ RectTransform:
   m_Father: {fileID: 4434333893181734219}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 312, y: -111}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 714, y: -111}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4434333894466545081
@@ -3104,10 +3104,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_NormalColor: {r: 1, g: 0.514151, b: 0.514151, a: 1}
+    m_HighlightedColor: {r: 1, g: 0, b: 0.8187933, a: 1}
     m_PressedColor: {r: 0.54668033, g: 0.9769697, b: 0.990566, a: 1}
-    m_SelectedColor: {r: 1, g: 0.4198113, b: 0.6860123, a: 1}
+    m_SelectedColor: {r: 0.0141509175, g: 1, b: 0.85629386, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -3151,7 +3151,7 @@ GameObject:
   - component: {fileID: 4434333894585073577}
   - component: {fileID: 4434333894585073579}
   - component: {fileID: 4434333894585073578}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: HP+ Cost Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3172,9 +3172,9 @@ RectTransform:
   m_Father: {fileID: 4434333894868867395}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -345, y: 114}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 425.45, y: 211}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4434333894585073579
@@ -3309,13 +3309,13 @@ GameObject:
   - component: {fileID: 4434333894618794621}
   - component: {fileID: 4434333894618794620}
   - component: {fileID: 4434333894618794499}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: Overdrive Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4434333894618794498
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3331,9 +3331,9 @@ RectTransform:
   m_Father: {fileID: 4434333893181734219}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 312, y: -202}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 714, y: -202}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4434333894618794621
@@ -3357,7 +3357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.5990566, b: 0.5990566, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3394,9 +3394,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 0, b: 0.8187933, a: 1}
     m_PressedColor: {r: 0.54668033, g: 0.9769697, b: 0.990566, a: 1}
-    m_SelectedColor: {r: 1, g: 0.4198113, b: 0.6860123, a: 1}
+    m_SelectedColor: {r: 0.0141509175, g: 1, b: 0.85629386, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -3440,7 +3440,7 @@ GameObject:
   - component: {fileID: 4434333894641051084}
   - component: {fileID: 4434333894641051086}
   - component: {fileID: 4434333894641051085}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: Total HP Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3464,10 +3464,10 @@ RectTransform:
   m_Father: {fileID: 4434333893181734219}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 24, y: 114}
-  m_SizeDelta: {x: 814.2, y: 65.7}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 425.45, y: 114}
+  m_SizeDelta: {x: 814.2001, y: 65.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4434333894641051086
 CanvasRenderer:
@@ -3600,7 +3600,7 @@ GameObject:
   - component: {fileID: 4434333894651247896}
   - component: {fileID: 4434333894651247898}
   - component: {fileID: 4434333894651247897}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: Level Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3621,10 +3621,10 @@ RectTransform:
   m_Father: {fileID: 4434333893181734219}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 93, y: -23}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 585.67, y: -23}
+  m_SizeDelta: {x: 31.34, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4434333894651247898
 CanvasRenderer:
@@ -3758,13 +3758,13 @@ GameObject:
   - component: {fileID: 4434333894654952945}
   - component: {fileID: 4434333894654952944}
   - component: {fileID: 4434333894654952951}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: Upgrade Dash Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4434333894654952950
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3780,9 +3780,9 @@ RectTransform:
   m_Father: {fileID: 4434333893181734219}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 312, y: -30}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 714, y: -30}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4434333894654952945
@@ -3842,10 +3842,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_NormalColor: {r: 1, g: 0.514151, b: 0.514151, a: 1}
+    m_HighlightedColor: {r: 1, g: 0, b: 0.8187933, a: 1}
     m_PressedColor: {r: 0.54668033, g: 0.9769697, b: 0.990566, a: 1}
-    m_SelectedColor: {r: 1, g: 0.4198113, b: 0.6860123, a: 1}
+    m_SelectedColor: {r: 0.0141509175, g: 1, b: 0.85629386, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -3889,7 +3889,7 @@ GameObject:
   - component: {fileID: 4434333894800211868}
   - component: {fileID: 4434333894800211870}
   - component: {fileID: 4434333894800211869}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: Upgrade Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4047,13 +4047,13 @@ GameObject:
   - component: {fileID: 4434333894868867394}
   - component: {fileID: 4434333894868867393}
   - component: {fileID: 4434333894868867392}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: Shop Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4434333894868867395
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4112,10 +4112,10 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -4150,7 +4150,7 @@ GameObject:
   - component: {fileID: 4434333894932559806}
   - component: {fileID: 4434333894932559800}
   - component: {fileID: 4434333894932559807}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: Health Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4171,10 +4171,10 @@ RectTransform:
   m_Father: {fileID: 4434333893181734219}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -179, y: 183}
-  m_SizeDelta: {x: 814.2, y: 65.7}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 425.45, y: 183}
+  m_SizeDelta: {x: 814.2001, y: 65.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4434333894932559800
 CanvasRenderer:
@@ -4307,7 +4307,7 @@ GameObject:
   - component: {fileID: 4434333894944533865}
   - component: {fileID: 4434333894944533867}
   - component: {fileID: 4434333894944533866}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: Dashes++ Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4328,9 +4328,9 @@ RectTransform:
   m_Father: {fileID: 4434333894868867395}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -345, y: -30}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 425.45, y: 66.99998}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4434333894944533867
@@ -4464,7 +4464,7 @@ GameObject:
   - component: {fileID: 4434333894955484205}
   - component: {fileID: 4434333894955484207}
   - component: {fileID: 4434333894955484206}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: Upgrade Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4621,7 +4621,7 @@ GameObject:
   - component: {fileID: 4434333894996564070}
   - component: {fileID: 4434333894996564064}
   - component: {fileID: 4434333894996564071}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: Number of Dashes Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4642,10 +4642,10 @@ RectTransform:
   m_Father: {fileID: 4434333893181734219}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 24, y: -30}
-  m_SizeDelta: {x: 814.2, y: 65.7}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 425.45, y: -30}
+  m_SizeDelta: {x: 814.2001, y: 65.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4434333894996564064
 CanvasRenderer:
@@ -4778,7 +4778,7 @@ GameObject:
   - component: {fileID: 4434333895121759899}
   - component: {fileID: 4434333895121759893}
   - component: {fileID: 4434333895121759892}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: Level Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4801,8 +4801,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 69, y: 3}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 161.77, y: 3}
+  m_SizeDelta: {x: 41.54, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4434333895121759893
 CanvasRenderer:
@@ -4935,7 +4935,7 @@ GameObject:
   - component: {fileID: 4434333895146183306}
   - component: {fileID: 4434333895146183300}
   - component: {fileID: 4434333895146183307}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: Crashes++ Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4956,9 +4956,9 @@ RectTransform:
   m_Father: {fileID: 4434333894868867395}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -345, y: -111}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 425.45, y: -14}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4434333895146183300
@@ -5092,7 +5092,7 @@ GameObject:
   - component: {fileID: 4434333895152813641}
   - component: {fileID: 4434333895152813643}
   - component: {fileID: 4434333895152813642}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: Number Of Crashes Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5113,10 +5113,10 @@ RectTransform:
   m_Father: {fileID: 4434333893181734219}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 24, y: -111}
-  m_SizeDelta: {x: 814.2, y: 65.7}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 425.45, y: -111}
+  m_SizeDelta: {x: 814.2001, y: 65.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4434333895152813643
 CanvasRenderer:
@@ -5249,7 +5249,7 @@ GameObject:
   - component: {fileID: 4434333895180744119}
   - component: {fileID: 4434333895180744113}
   - component: {fileID: 4434333895180744112}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: Level Text (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5270,10 +5270,10 @@ RectTransform:
   m_Father: {fileID: 4434333893181734219}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 24, y: -104}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 550.54, y: -104}
+  m_SizeDelta: {x: 105.08, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4434333895180744113
 CanvasRenderer:
@@ -5406,7 +5406,7 @@ GameObject:
   - component: {fileID: 4434333895181524228}
   - component: {fileID: 4434333895181524230}
   - component: {fileID: 4434333895181524229}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: Upgrade Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5563,7 +5563,7 @@ GameObject:
   - component: {fileID: 4434333895212830350}
   - component: {fileID: 4434333895212830344}
   - component: {fileID: 4434333895212830351}
-  m_Layer: 5
+  m_Layer: 19
   m_Name: Next Wave Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}

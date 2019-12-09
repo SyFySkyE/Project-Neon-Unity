@@ -42901,6 +42901,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shop Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4434333894868867399, guid: 575bab7e23e044441b88577045b8553a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4434333894654952949, guid: 575bab7e23e044441b88577045b8553a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4434333894868867395, guid: 575bab7e23e044441b88577045b8553a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -43036,6 +43046,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1602956903}
+    - target: {fileID: 4434333894466545085, guid: 575bab7e23e044441b88577045b8553a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4434333894618794497, guid: 575bab7e23e044441b88577045b8553a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 575bab7e23e044441b88577045b8553a, type: 3}
 --- !u!1001 &4450792303251143025
@@ -43212,22 +43232,22 @@ PrefabInstance:
     - target: {fileID: 4682750301391870493, guid: fbd17cb29913fd54eac8aef88c0c06c7,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.12401791
+      value: -0.12401793
       objectReference: {fileID: 0}
     - target: {fileID: 4682750301391870493, guid: fbd17cb29913fd54eac8aef88c0c06c7,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.69614625
+      value: -0.6961462
       objectReference: {fileID: 0}
     - target: {fileID: 4682750301391870493, guid: fbd17cb29913fd54eac8aef88c0c06c7,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.12401933
+      value: 0.12401934
       objectReference: {fileID: 0}
     - target: {fileID: 4682750301391870493, guid: fbd17cb29913fd54eac8aef88c0c06c7,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.69614595
+      value: -0.696146
       objectReference: {fileID: 0}
     - target: {fileID: 4682750301391870493, guid: fbd17cb29913fd54eac8aef88c0c06c7,
         type: 3}
@@ -43264,6 +43284,11 @@ PrefabInstance:
       value: Game Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 6126653841924542074, guid: 255d70e6d0d596a4185474c8c4ec1cf9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2800798665563749744, guid: 255d70e6d0d596a4185474c8c4ec1cf9,
         type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -43408,6 +43433,42 @@ PrefabInstance:
       propertyPath: oDLabel
       value: 
       objectReference: {fileID: 406416992}
+    - target: {fileID: 1036019256, guid: 255d70e6d0d596a4185474c8c4ec1cf9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 315470332, guid: 255d70e6d0d596a4185474c8c4ec1cf9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1297376097, guid: 255d70e6d0d596a4185474c8c4ec1cf9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2024497653, guid: 255d70e6d0d596a4185474c8c4ec1cf9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1966408909, guid: 255d70e6d0d596a4185474c8c4ec1cf9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1013421974, guid: 255d70e6d0d596a4185474c8c4ec1cf9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 743578102, guid: 255d70e6d0d596a4185474c8c4ec1cf9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1678893766, guid: 255d70e6d0d596a4185474c8c4ec1cf9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 555073088, guid: 255d70e6d0d596a4185474c8c4ec1cf9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 255d70e6d0d596a4185474c8c4ec1cf9, type: 3}
 --- !u!1001 &6159008374313892968
