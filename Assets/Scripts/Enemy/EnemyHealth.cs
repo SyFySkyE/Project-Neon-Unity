@@ -21,6 +21,7 @@ public class EnemyHealth : MonoBehaviour
     private AudioSource audioSource;
     private EnemyMovement enemyMove;
     private bool isDead = false;
+    private float killZoneYPos = -100f;
 
     // Start is called before the first frame update
     void Start()
@@ -60,6 +61,15 @@ public class EnemyHealth : MonoBehaviour
             enemyAnim.SetTrigger("DeathTrigger");
             deathVfx.Play();
             Destroy(gameObject, deathVfx.main.duration);
+        }
+    }
+
+    private void Update()
+    {
+        if (transform.position.y <= killZoneYPos)
+        {
+            Destroy(gameObject);
+            Debug.LogWarning("Enemy has fallen off map and has been destroyed");
         }
     }
 }

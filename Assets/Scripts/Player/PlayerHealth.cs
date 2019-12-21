@@ -19,7 +19,8 @@ public class PlayerHealth : MonoBehaviour
     private Rigidbody playerRb;
     private AudioSource audioSource;
 
-    private bool isVulnerable = true; 
+    private bool isVulnerable = true;
+    private float yPosReset = -100f;
 
     public event System.Action<int> OnHealthChange;
     public event System.Action OnDeath;
@@ -120,5 +121,13 @@ public class PlayerHealth : MonoBehaviour
     private void OnDestroy()
     {
         GamewideControl.instance.HealthPoints = this.healthPoints;
+    }
+
+    private void Update()
+    {
+        if (transform.position.y <= yPosReset)
+        {
+            transform.position = Vector3.zero;
+        }
     }
 }
