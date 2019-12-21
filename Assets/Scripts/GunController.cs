@@ -31,9 +31,13 @@ public class GunController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isFiring)
+        if (shotCounter > 0)
         {
             shotCounter -= Time.deltaTime;
+        }
+
+        if (isFiring)
+        {            
             if (shotCounter <= 0)
             {
                 shotCounter = secondsBetweenShots;
@@ -49,10 +53,6 @@ public class GunController : MonoBehaviour
                 }
                 newBullet.Speed = bulletSpeed;
             }
-        }
-        else
-        {
-            shotCounter = 0f;
         }
     }
 
