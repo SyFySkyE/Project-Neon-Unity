@@ -4328,7 +4328,7 @@ MonoBehaviour:
     combo, the bigger money bonus you'll earn.
   dashTut: Left Shift | L1 to Dash
   crashTut: Space | R1 to Crash
-  overdriveTut: Q | L2 to activate Overdrive
+  overdriveTut: F | L2 to activate Overdrive
   endRoundTut: You've survived! For now...
   startLight: {fileID: 609369369}
   levelLights:
