@@ -16,7 +16,7 @@ public class PlayerAbilities : MonoBehaviour
     [Header("Crash Ability")]
     [SerializeField] private int numberOfCrashes = 1;
     [SerializeField] private float crashRechargeTime = 4f;
-    [SerializeField] private ParticleSystem crashParticles;
+    [SerializeField] private GameObject crashParticles;
     [SerializeField] private AudioClip crashSfx;
     [SerializeField] private float crashSfxVolume = 0.5f;
 
@@ -80,6 +80,16 @@ public class PlayerAbilities : MonoBehaviour
         {
             Overdrive();
         }
+
+#if UNITY_EDITOR
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            numberOfCrashes = 100;
+            numberOfDashes = 100;
+            numberOfOverdrives = 100;
+        }
+#endif
+
     }
 
     private void Dash()
@@ -121,7 +131,7 @@ public class PlayerAbilities : MonoBehaviour
         if (numberOfCrashes > 0 && !isOverdriveActive)
         {
             audioSource.PlayOneShot(crashSfx, crashSfxVolume);
-            crashParticles.Play();
+            Instantiate(crashParticles, transform.position, Quaternion.identity);
             anim.SetTrigger("Crash");
             numberOfCrashes--;
             OnCrashChange(numberOfCrashes);
@@ -130,7 +140,7 @@ public class PlayerAbilities : MonoBehaviour
         else if (isOverdriveActive)
         {
             audioSource.PlayOneShot(crashSfx, crashSfxVolume);
-            crashParticles.Play();
+            Instantiate(crashParticles, transform.position, Quaternion.identity);
             anim.SetTrigger("Crash");
         }
     }

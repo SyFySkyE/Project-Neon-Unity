@@ -41875,6 +41875,17 @@ PrefabInstance:
       propertyPath: crashSfxVolume
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 526345290955972754, guid: 7b57ed8ac873ded4bab018f1c77060b2,
+        type: 3}
+      propertyPath: numberOfCrashes
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 526345290955972754, guid: 7b57ed8ac873ded4bab018f1c77060b2,
+        type: 3}
+      propertyPath: crashParticles
+      value: 
+      objectReference: {fileID: 3529893945020866867, guid: b2c7b3aa50e0f14428250d033dfc3175,
+        type: 3}
     - target: {fileID: 526345290955972749, guid: 7b57ed8ac873ded4bab018f1c77060b2,
         type: 3}
       propertyPath: flinchBlowback
@@ -41915,6 +41926,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Constraints
       value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615800084, guid: 7b57ed8ac873ded4bab018f1c77060b2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615800087, guid: 7b57ed8ac873ded4bab018f1c77060b2, type: 3}
+      propertyPath: lengthInSec
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615800087, guid: 7b57ed8ac873ded4bab018f1c77060b2, type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 120930061, guid: 7b57ed8ac873ded4bab018f1c77060b2, type: 3}
+      propertyPath: playOnAwake
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5490880829078152116, guid: 7b57ed8ac873ded4bab018f1c77060b2, type: 3}
@@ -70432,7 +70459,7 @@ PrefabInstance:
     - target: {fileID: 4682750301391870493, guid: fbd17cb29913fd54eac8aef88c0c06c7,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.0967029
+      value: 0.09670288
       objectReference: {fileID: 0}
     - target: {fileID: 4682750301391870493, guid: fbd17cb29913fd54eac8aef88c0c06c7,
         type: 3}
@@ -70442,7 +70469,7 @@ PrefabInstance:
     - target: {fileID: 4682750301391870493, guid: fbd17cb29913fd54eac8aef88c0c06c7,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.096583836
+      value: -0.09658381
       objectReference: {fileID: 0}
     - target: {fileID: 4682750301391870493, guid: fbd17cb29913fd54eac8aef88c0c06c7,
         type: 3}

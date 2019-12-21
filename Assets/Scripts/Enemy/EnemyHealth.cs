@@ -44,7 +44,10 @@ public class EnemyHealth : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        HurtEnemy();
+        if (!isDead)
+        {
+            DestroySelf();
+        }        
     }
 
     private void HurtEnemy()
@@ -54,14 +57,20 @@ public class EnemyHealth : MonoBehaviour
         hurtVfx.Play();
         if (healthPoints <= 0 && !isDead)
         {
-            isDead = true;
-            enemyMove.enabled = false;
-            EnemySpawnManager.Instance.OnEnemyDeath();
-            AudioSource.PlayClipAtPoint(deathSfx, Camera.main.transform.position, deathSfxVolume);
-            enemyAnim.SetTrigger("DeathTrigger");
-            deathVfx.Play();
-            Destroy(gameObject, deathVfx.main.duration);
+            DestroySelf();
         }
+    }
+
+    private void DestroySelf()
+    {
+        this.gameObject.layer = 20; // Don't collide w/ Player. Physics.IgnoreLayer disables collision for ALL enemy GO's, not just the instance
+        isDead = true;
+        enemyMove.enabled = false;
+        EnemySpawnManager.Instance.OnEnemyDeath();
+        AudioSource.PlayClipAtPoint(deathSfx, Camera.main.transform.position, deathSfxVolume);
+        enemyAnim.SetTrigger("DeathTrigger");
+        deathVfx.Play();
+        Destroy(gameObject, deathVfx.main.duration);
     }
 
     private void Update()
