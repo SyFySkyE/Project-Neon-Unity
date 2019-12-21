@@ -56,7 +56,6 @@ public class PlayerMovement : MonoBehaviour
     private void PlayerHealth_OnDeath()
     {
         isDead = true;
-        Debug.Log("Player died and should stop moving");
     }
 
     // Update is called once per frame
