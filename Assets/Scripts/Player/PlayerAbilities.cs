@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAbilities : MonoBehaviour
@@ -81,6 +80,7 @@ public class PlayerAbilities : MonoBehaviour
             Overdrive();
         }
 
+
 #if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.G))
         {
@@ -94,8 +94,8 @@ public class PlayerAbilities : MonoBehaviour
 
     private void Dash()
     {
-        if (numberOfDashes > 0 && !isOverdriveActive) 
-        {            
+        if (numberOfDashes > 0 && !isOverdriveActive)
+        {
             dashParticles.Play();
             anim.SetTrigger("Dash");
             playerRb.AddForce(playerMove.GetInputDirection() * dashForce, ForceMode.Impulse);
@@ -115,13 +115,13 @@ public class PlayerAbilities : MonoBehaviour
 
     private IEnumerator DashRecharge() // TODO sfx for recharge
     {
-        yield return new WaitForSeconds(dashRechargeTime);        
+        yield return new WaitForSeconds(dashRechargeTime);
         numberOfDashes++;
         OnDashChange(numberOfDashes);
     }
 
     public void UpgradeDash()
-    {        
+    {
         numberOfDashes++;
         OnDashChange(numberOfDashes);
     }
@@ -147,13 +147,13 @@ public class PlayerAbilities : MonoBehaviour
 
     private IEnumerator CrashRecharge()
     {
-        yield return new WaitForSeconds(crashRechargeTime);        
+        yield return new WaitForSeconds(crashRechargeTime);
         numberOfCrashes++;
         OnCrashChange(numberOfCrashes);
     }
 
     public void UpgradeCrash()
-    {        
+    {
         numberOfCrashes++;
         OnCrashChange(numberOfCrashes);
     }
@@ -176,7 +176,7 @@ public class PlayerAbilities : MonoBehaviour
     }
 
     private IEnumerator OverdrivePeriod()
-    {        
+    {
         yield return new WaitForSeconds(overdrivePeriod);
         isOverdriveActive = false;
         BroadcastMessage("OverdriveStop");

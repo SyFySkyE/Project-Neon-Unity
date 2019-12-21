@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System.Collections.Generic;
 using TMPro;
+using UnityEngine;
 
 public class ShopController : MonoBehaviour
 {
@@ -113,7 +112,7 @@ public class ShopController : MonoBehaviour
                 fireRateLevel++;
                 UpdateLabels();
             }
-        }        
+        }
     }
 
     public void HPUpgradeButton()
@@ -128,7 +127,7 @@ public class ShopController : MonoBehaviour
                 hpLevel++;
                 UpdateLabels();
             }
-        }        
+        }
     }
 
     public void DashUpgradeButton()
@@ -143,7 +142,7 @@ public class ShopController : MonoBehaviour
                 dashLevel++;
                 UpdateLabels();
             }
-        }        
+        }
     }
 
     public void CrashUpgradeButton()
@@ -158,7 +157,7 @@ public class ShopController : MonoBehaviour
                 crashLevel++;
                 UpdateLabels();
             }
-        }        
+        }
     }
 
     public void OverdriveUpgradeButton()
@@ -173,7 +172,7 @@ public class ShopController : MonoBehaviour
                 overdriveLevel++;
                 UpdateLabels();
             }
-        }        
+        }
     }
 
     private void WaveComplete()
@@ -199,7 +198,7 @@ public class ShopController : MonoBehaviour
             playerHealth.ResetHealth();
             EnemySpawnManager.Instance.NextWave();
             shopCanvas.SetActive(false);
-        }        
+        }
     }
 
     private void SaveToGlobalGO()

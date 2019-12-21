@@ -37,11 +37,11 @@ public class GunController : MonoBehaviour
         }
 
         if (isFiring)
-        {            
+        {
             if (shotCounter <= 0)
             {
                 shotCounter = secondsBetweenShots;
-                Bullet newBullet = Instantiate(bullet, gunLocation.position, gunLocation.rotation) as Bullet;               
+                Bullet newBullet = Instantiate(bullet, gunLocation.position, gunLocation.rotation) as Bullet;
                 if (this.gameObject.CompareTag("Player"))
                 {
                     OnPlayerShoot();
@@ -79,7 +79,7 @@ public class GunController : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (this.gameObject.CompareTag("Player")) 
+        if (this.gameObject.CompareTag("Player"))
         {
             GamewideControl.instance.SecondsBetweenShots = this.secondsBetweenShots;
         }

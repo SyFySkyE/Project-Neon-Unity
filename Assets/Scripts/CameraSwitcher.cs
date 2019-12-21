@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CameraSwitcher : MonoBehaviour
 {
@@ -17,7 +15,7 @@ public class CameraSwitcher : MonoBehaviour
         {
             boss.OnSpawn += Boss_OnSpawn;
             boss.OnDestroy += Boss_OnDestroy;
-        }                
+        }
     }
 
     private void Boss_OnDestroy()

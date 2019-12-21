@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Boss : MonoBehaviour
@@ -24,7 +23,7 @@ public class Boss : MonoBehaviour
     [SerializeField] private Transform[] gunPositions;
     [SerializeField] private int numberOfBulletsToFire = 20;
     [SerializeField] private float shootTime = 3f;
- 
+
     [SerializeField] private GameObject player;
     [SerializeField] private bool isMoving = false;
     [SerializeField] private float moveSpeed = 5f;
@@ -62,11 +61,11 @@ public class Boss : MonoBehaviour
     }
 
     private IEnumerator StartAttacking()
-    {        
-        yield return new WaitForSeconds(secondsBetweenAttack);        
+    {
+        yield return new WaitForSeconds(secondsBetweenAttack);
         switch (currentPhase)
         {
-            case BossPhaseState.First:                
+            case BossPhaseState.First:
                 ShootLaser();
                 break;
             case BossPhaseState.Second:
@@ -81,14 +80,14 @@ public class Boss : MonoBehaviour
     }
 
     private void ShootLaser()
-    {     
+    {
         preLaser.Play();
         StartCoroutine(ChargeLaser());
     }
 
     private IEnumerator ChargeLaser()
     {
-        audioSource.PlayOneShot(laserChargeSfx, laserChargeSfxVolume);        
+        audioSource.PlayOneShot(laserChargeSfx, laserChargeSfxVolume);
         yield return new WaitForSeconds(timeBeforeLaserShot);
         audioSource.Stop();
         audioSource.PlayOneShot(laserFireSfx, laserFireSfxVolume);
@@ -112,11 +111,11 @@ public class Boss : MonoBehaviour
         {
             yield return new WaitForSeconds(h);
             for (int i = 0; i < numberOfBulletsToFire; i++)
-            {                
+            {
                 int randomGun = Random.Range(0, gunPositions.Length);
                 Instantiate(bullet, gunPositions[randomGun].position, gunPositions[randomGun].rotation);
             }
-        }        
+        }
     }
 
     private void OnDisable()
@@ -134,7 +133,7 @@ public class Boss : MonoBehaviour
         else
         {
             topBody.transform.LookAt(player.transform, Vector3.forward);
-        }        
+        }
         if (isMoving)
         {
             transform.position = Vector3.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);

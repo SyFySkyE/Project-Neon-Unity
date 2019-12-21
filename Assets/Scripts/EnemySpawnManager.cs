@@ -22,7 +22,7 @@ public class EnemySpawnManager : MonoBehaviour
     [SerializeField] private int wave1EnemiesToSpawn = 5;
     [SerializeField] private int wave2EnemiesToSpawn = 10;
     [SerializeField] private int wave3EnemiesToSpawn = 15;
-        
+
     [SerializeField] private GameSceneManager sceneManagement;
 
     private int numberOfEnemiesSpawned = 0;
@@ -48,7 +48,7 @@ public class EnemySpawnManager : MonoBehaviour
         if (boss)
         {
             boss.GetComponent<Boss>().OnDestroy += EnemySpawnManager_OnDestroy;
-        }        
+        }
     }
 
     private void EnemySpawnManager_OnDestroy()
@@ -73,7 +73,7 @@ public class EnemySpawnManager : MonoBehaviour
             {
                 StartCoroutine(SpawnEnemy());
             }
-        }       
+        }
     }
 
     private void InstantiateRandomEnemyAndLoc()
@@ -85,8 +85,8 @@ public class EnemySpawnManager : MonoBehaviour
             GameObject nextEnemy = Instantiate(enemyPrefabs[randomEnemyIndex], placesToSpawn[randomLocIndex].position, Quaternion.identity) as GameObject;
             numberOfEnemiesAlive++;
             numberOfEnemiesSpawned++;
-        }        
-    }    
+        }
+    }
 
     public void OnEnemyDeath()
     {
@@ -94,7 +94,7 @@ public class EnemySpawnManager : MonoBehaviour
         {
             numberOfEnemiesAlive--;
         }
-        
+
         if (numberOfEnemiesAlive <= 0 && numberOfEnemiesSpawned >= enemiesThisWave)
         {
             OnWaveComplete();
@@ -107,7 +107,7 @@ public class EnemySpawnManager : MonoBehaviour
         StartCoroutine(SpawnEnemy());
     }
 
-    public void NextWave() 
+    public void NextWave()
     {
         switch (waveNumber)
         {

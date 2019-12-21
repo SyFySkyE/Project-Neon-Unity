@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Tutorial : MonoBehaviour
@@ -57,7 +56,7 @@ public class Tutorial : MonoBehaviour
             tutText.text = overdriveTut;
             tutText2.text = "";
             StartCoroutine(FadeText());
-        }        
+        }
     }
 
     private void PlayerAbility_OnCrashChange(int obj)
@@ -79,7 +78,7 @@ public class Tutorial : MonoBehaviour
             hasDashBeenBought = true;
             tutText2.text = "";
             StartCoroutine(FadeText());
-        }        
+        }
     }
 
     private void Instance_OnWaveComplete()
@@ -142,10 +141,10 @@ public class Tutorial : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {        
+    {
         tutText.text = "";
-        tutTrigger = GetComponent<BoxCollider>();        
-    }    
+        tutTrigger = GetComponent<BoxCollider>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -176,7 +175,7 @@ public class Tutorial : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (!hasShootTutHappened)
-        {            
+        {
             tutorialCam.Priority = 11; // TODO messy
             StartCoroutine(EnemyTrapPlayer());
             hasShootTutHappened = true;
@@ -185,7 +184,7 @@ public class Tutorial : MonoBehaviour
 
     private IEnumerator EnemyTrapPlayer()
     {
-        startLight.SetActive(false);        
+        startLight.SetActive(false);
         yield return new WaitForSeconds(secondsBeforeSceneFade);
         foreach (GameObject light in levelLights)
         {

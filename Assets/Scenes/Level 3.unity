@@ -42036,6 +42036,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3529893945020866867, guid: b2c7b3aa50e0f14428250d033dfc3175,
         type: 3}
+    - target: {fileID: 526345290955972754, guid: 7b57ed8ac873ded4bab018f1c77060b2,
+        type: 3}
+      propertyPath: crashRechargeTime
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 526345290955972749, guid: 7b57ed8ac873ded4bab018f1c77060b2,
         type: 3}
       propertyPath: flinchBlowback

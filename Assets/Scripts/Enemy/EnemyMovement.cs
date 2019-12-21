@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.AI;
+﻿using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -9,7 +6,7 @@ public class EnemyMovement : MonoBehaviour
 
     private PlayerMovement player;
     private Rigidbody enemyRb;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,9 +18,9 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         if (player) // Null check if player died
-        {             
+        {
             transform.LookAt(player.transform); // Looks at player Y, if player Y changes this can get borked
-        }        
+        }
     }
 
     private void FixedUpdate()
@@ -37,6 +34,6 @@ public class EnemyMovement : MonoBehaviour
         {
             player.GetComponent<PlayerComboSystem>().AddToCombo();
             player.GetComponent<PlayerPoints>().IncrementPoints();
-        }        
+        }
     }
 }

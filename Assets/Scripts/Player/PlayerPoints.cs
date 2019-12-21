@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerPoints : MonoBehaviour
 {
@@ -28,7 +26,7 @@ public class PlayerPoints : MonoBehaviour
 
     public int GetPoints()
     {
-        return this.points; 
+        return this.points;
     }
 
     public void SubtractPoints(int amountToSubtract)

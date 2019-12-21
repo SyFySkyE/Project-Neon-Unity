@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using TMPro;
 using UnityEngine;
-using TMPro;
 
 public class GameHUDObserver : MonoBehaviour
 {
@@ -59,7 +57,7 @@ public class GameHUDObserver : MonoBehaviour
     {
         moneyLabel.text = arg1.ToString();
         totalMoneyLabel.text = arg2.ToString();
-        
+
         FadeMoneyText();
     }
 

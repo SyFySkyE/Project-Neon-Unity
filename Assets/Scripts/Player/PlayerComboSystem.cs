@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerComboSystem : MonoBehaviour
@@ -23,7 +22,7 @@ public class PlayerComboSystem : MonoBehaviour
     {
         StopAllCoroutines();
         combo++;
-        OnComboChange(combo);        
+        OnComboChange(combo);
         StartCoroutine(ComboDecay());
     }
 
@@ -32,6 +31,6 @@ public class PlayerComboSystem : MonoBehaviour
         yield return new WaitForSeconds(timeDecayInSeconds);
         playerPoints.AddPoints(combo * comboMultiplier);
         combo = 0;
-        OnComboChange(combo);        
+        OnComboChange(combo);
     }
 }

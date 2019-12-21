@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
@@ -14,7 +13,7 @@ public class PlayerHealth : MonoBehaviour
 
     [SerializeField] private AudioClip deathSfx;
     [SerializeField] private float deathSfxVolume = 0.5f;
-        
+
     private Animator playerAnim;
     private Rigidbody playerRb;
     private AudioSource audioSource;
@@ -73,17 +72,16 @@ public class PlayerHealth : MonoBehaviour
             isVulnerable = false; // Gets reset to true on playerHurtAnim
             playerRb.AddForce(-transform.forward * flinchBlowback, ForceMode.VelocityChange);
             if (this.currentHp <= 0)
-            {                
-                StartCoroutine(DeathRoutine());
+            {
+                DeathRoutine();
             }
-        }        
+        }
     }
 
-    private IEnumerator DeathRoutine()
+    private void DeathRoutine()
     {
         playerAnim.SetTrigger("Death");
         audioSource.PlayOneShot(deathSfx, deathSfxVolume);
-        yield return new WaitForSeconds(secBeforeDeath);
         OnDeath();
     }
 
@@ -129,5 +127,12 @@ public class PlayerHealth : MonoBehaviour
         {
             transform.position = Vector3.zero;
         }
+#if UNITY_EDITOR
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            this.currentHp = 0;
+            HurtPlayer();
+        }
+#endif
     }
 }

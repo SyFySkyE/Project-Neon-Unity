@@ -56,15 +56,21 @@ public class PlayerMovement : MonoBehaviour
     private void PlayerHealth_OnDeath()
     {
         isDead = true;
+        Debug.Log("Player died and should stop moving");
     }
 
     // Update is called once per frame
     void Update()
     {
         if (canAim && !isDead)
-        {            
+        {
             UpdateInput();
             UpdateMovement();
+        }
+
+        if (isDead)
+        {
+            inputVelocity = Vector3.zero;
         }
     }
 
@@ -72,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
     {
         UpdateControlMethod();
         if (!usingController)
-        {            
+        {
             MakeCameraRay();
         }
         else
@@ -94,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void UpdateInput()
-    {        
+    {
         if (isBossActive)
         {
             input = new Vector3(Input.GetAxis("Vertical"), 0f, -Input.GetAxis("Horizontal"));
@@ -103,7 +109,7 @@ public class PlayerMovement : MonoBehaviour
         {
             input = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
         }
-        
+
         inputVelocity = input * speed;
         if (input != Vector3.zero)
         {
@@ -112,7 +118,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             playerAnim.SetBool("IsMoving", false);
-        }        
+        }
     }
 
     private void MakeCameraRay()
@@ -147,9 +153,9 @@ public class PlayerMovement : MonoBehaviour
         }
         if (playerDir.sqrMagnitude > 0f) // If controller is receiving input
         {
-            usingController = true;            
+            usingController = true;
             transform.rotation = Quaternion.LookRotation(playerDir, Vector3.up);
-        }        
+        }
     }
 
     private void FixedUpdate()
@@ -157,7 +163,7 @@ public class PlayerMovement : MonoBehaviour
         if (canMove)
         {
             playerRb.AddForce(inputVelocity, ForceMode.Impulse);
-        }        
+        }
     }
 
     public void EnableMove()
