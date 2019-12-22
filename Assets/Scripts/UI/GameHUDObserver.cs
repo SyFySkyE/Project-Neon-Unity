@@ -35,7 +35,7 @@ public class GameHUDObserver : MonoBehaviour
     {
         if (obj)
         {
-            oDLabel.text = "Q / L2!";
+            oDLabel.text = "F / L2!";
         }
         else
         {
