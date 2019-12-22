@@ -193,7 +193,6 @@ public class PlayerMovement : MonoBehaviour
     public void EnableCutsceneRestrictions()
     {
         playerParticles.SetActive(false);
-        playerCollider.enabled = false;
         canMove = false;
         canAim = false;
     }
@@ -201,7 +200,6 @@ public class PlayerMovement : MonoBehaviour
     public void DisableCustsceneRestrictions()
     {
         playerParticles.SetActive(true);
-        playerCollider.enabled = true;
         canMove = true;
         canAim = true;
         playerAnim.applyRootMotion = true;
