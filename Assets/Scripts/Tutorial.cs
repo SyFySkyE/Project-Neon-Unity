@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class Tutorial : MonoBehaviour
 {
     [SerializeField] private TMPro.TextMeshProUGUI tutText;
     [SerializeField] private TMPro.TextMeshProUGUI tutText2;
+    [SerializeField] private PlayableDirector fireTutorial;
     [SerializeField] private GameObject dashBuyButton;
     [SerializeField] private GameObject crashBuyButton;
     [SerializeField] private GameObject odBuyButton;
@@ -45,7 +47,7 @@ public class Tutorial : MonoBehaviour
         EnemySpawnManager.Instance.OnWaveComplete += Instance_OnWaveComplete;
         playerAbility.OnDashChange += PlayerAbility_OnDashChange;
         playerAbility.OnCrashChange += PlayerAbility_OnCrashChange;
-        playerAbility.OnODChange += PlayerAbility_OnODChange;
+        playerAbility.OnODChange += PlayerAbility_OnODChange;        
     }
 
     private void PlayerAbility_OnODChange(bool obj)
