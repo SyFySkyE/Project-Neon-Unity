@@ -18443,7 +18443,7 @@ GameObject:
   - component: {fileID: 1646044262}
   - component: {fileID: 1646044261}
   m_Layer: 0
-  m_Name: Shoot Tutorial
+  m_Name: Shoot Tutorial Timeline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18530,6 +18530,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8185c92fac04d044ca46ce50ad3b0e5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyToSpawn: {fileID: 0}
+  enemySpawnLoc: {fileID: 0}
 --- !u!65 &1646044263
 BoxCollider:
   m_ObjectHideFlags: 0

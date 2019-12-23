@@ -5,6 +5,9 @@ using UnityEngine.Playables;
 
 public class ShootTutorial : MonoBehaviour
 {
+    [SerializeField] private GameObject enemyToSpawn;
+    [SerializeField] private Transform enemySpawnLoc;
+
     private BoxCollider cutsceneTrigger;
     private PlayableDirector shootCutsceneTimeline;
 
@@ -20,6 +23,7 @@ public class ShootTutorial : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             shootCutsceneTimeline.Play();
+            cutsceneTrigger.enabled = false;
         }
     }
 }
