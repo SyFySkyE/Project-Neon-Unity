@@ -29,6 +29,7 @@ public class EnemySpawnManager : MonoBehaviour
     private int numberOfEnemiesAlive = 0;
 
     public event System.Action OnWaveComplete;
+    public event System.Action OnNextWave;
 
     static EnemySpawnManager instance;
     public static EnemySpawnManager Instance
@@ -104,6 +105,7 @@ public class EnemySpawnManager : MonoBehaviour
     public void RestartWave()
     {
         numberOfEnemiesSpawned = 0;
+        OnNextWave();
         StartCoroutine(SpawnEnemy());
     }
 

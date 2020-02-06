@@ -3294,8 +3294,8 @@ Transform:
   m_LocalPosition: {x: 61.4, y: 0, z: -50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 797936298}
-  m_RootOrder: 4
+  m_Father: {fileID: 2086670431}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 165.85, y: -0.000015258789, z: -0.000015258789}
 --- !u!108 &274403197
 Light:
@@ -3307,8 +3307,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 9
   m_Type: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.1
+  m_Color: {r: 0.10196077, g: 0.66387725, b: 0.7372549, a: 1}
+  m_Intensity: 0.8
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -3347,7 +3347,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -8377,7 +8377,6 @@ Transform:
   - {fileID: 436591251}
   - {fileID: 1268716810}
   - {fileID: 496579435}
-  - {fileID: 274403196}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -23600,7 +23599,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1854989013}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -24363,7 +24362,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.009903, y: -262}
+  m_AnchoredPosition: {x: -0.009903, y: -364}
   m_SizeDelta: {x: 1920, y: 84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1933982424
@@ -24740,8 +24739,6 @@ PlayableDirector:
     value: {fileID: 1994864282}
   - key: {fileID: 6561687232507763246, guid: 70140be3afa03c943a5fbfdda67c6db1, type: 2}
     value: {fileID: 1476792234}
-  - key: {fileID: 8392122194614712916, guid: 70140be3afa03c943a5fbfdda67c6db1, type: 2}
-    value: {fileID: 1989756067}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1954048281
@@ -24816,6 +24813,17 @@ MonoBehaviour:
           m_CallState: 2
         - m_Target: {fileID: 1476792232}
           m_MethodName: EnableShoot
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1989756069}
+          m_MethodName: StartTutorial
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -25636,6 +25644,7 @@ Transform:
   - {fileID: 609369370}
   - {fileID: 1106875499}
   - {fileID: 1916666385}
+  - {fileID: 274403196}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

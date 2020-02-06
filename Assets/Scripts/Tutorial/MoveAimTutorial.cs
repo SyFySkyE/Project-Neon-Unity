@@ -8,11 +8,19 @@ public class MoveAimTutorial : MonoBehaviour
     [SerializeField] private GameObject aimText;
     [SerializeField] private float textFadeInSeconds = 3f;
 
-    private IEnumerator Start()
+    public void StartTutorial()
+    {
+        StartCoroutine(TutorialText());
+    }
+
+    private IEnumerator TutorialText()
     {
         moveText.SetActive(true);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(textFadeInSeconds);
         moveText.SetActive(false);
+        aimText.SetActive(true);
+        yield return new WaitForSeconds(textFadeInSeconds);
+        aimText.SetActive(false);
     }
 
     private void OnDestroy() // If the player dies
