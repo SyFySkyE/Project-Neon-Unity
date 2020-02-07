@@ -28,6 +28,9 @@ public class PlayerAbilities : MonoBehaviour
     [SerializeField] private AudioClip overdriveSfx;
     [SerializeField] private float overdriveSfxVolume = 0.5f;
 
+    [Header("Should null except for tutorial level")]
+    [SerializeField] private AbilityTutorial tutorial;
+
     private bool isOverdriveActive = false;
     private bool canOverdrive = false;
 
@@ -39,6 +42,9 @@ public class PlayerAbilities : MonoBehaviour
     public event System.Action<int> OnDashChange;
     public event System.Action<int> OnCrashChange;
     public event System.Action<bool> OnODChange;
+    public event System.Action OnDashEnable;
+    public event System.Action OnCrashEnable;
+    public event System.Action OnOdEnable;
 
     private void Start()
     {
@@ -124,6 +130,10 @@ public class PlayerAbilities : MonoBehaviour
     {
         numberOfDashes++;
         OnDashChange(numberOfDashes);
+        if (tutorial)
+        {
+            OnDashEnable();
+        }
     }
 
     private void Crash()
@@ -156,6 +166,10 @@ public class PlayerAbilities : MonoBehaviour
     {
         numberOfCrashes++;
         OnCrashChange(numberOfCrashes);
+        if (tutorial)
+        {
+            OnCrashEnable();
+        }
     }
 
     private void Overdrive()
@@ -199,6 +213,10 @@ public class PlayerAbilities : MonoBehaviour
         canOverdrive = true;
         overdrivePeriod += overdriveUpgradeAmount;
         OnODChange(true);
+        if (tutorial)
+        {
+            OnOdEnable();
+        }
     }
 
     private void OverdriveStart()
