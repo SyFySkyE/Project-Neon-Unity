@@ -82,6 +82,8 @@ public class AbilityTutorial : MonoBehaviour
     {
         currentTutorial += 1;
         isEndOfWave = true;
+        isTutorialPassed = false;
+        nextWaveButton.SetActive(false);
         switch (currentTutorial)
         {
             case AbilityType.Dash:
@@ -96,6 +98,7 @@ public class AbilityTutorial : MonoBehaviour
                 crashGlow.SetActive(true);
                 buyCrashText.SetActive(true);
                 instructionText.text = moneyTutText;
+                moniesText.SetActive(true);
                 buyDashButton.SetActive(false);
                 buyCrashButton.SetActive(true);
                 buyODButton.SetActive(false);
@@ -103,10 +106,17 @@ public class AbilityTutorial : MonoBehaviour
             case AbilityType.Overdrive:
                 overdriveGlow.SetActive(true);
                 buyODText.SetActive(true);
+                comboText.SetActive(true);
                 instructionText.text = comboTutText;
                 buyDashButton.SetActive(false);
                 buyCrashButton.SetActive(false);
                 buyODButton.SetActive(true);
+                break;
+            default:
+                nextWaveButton.SetActive(true);
+                buyODButton.SetActive(true);
+                buyCrashButton.SetActive(true);
+                buyDashButton.SetActive(true);
                 break;
         }
     }
