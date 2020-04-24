@@ -5275,6 +5275,11 @@ PrefabInstance:
       propertyPath: tutorial
       value: 
       objectReference: {fileID: 1989756070}
+    - target: {fileID: 526345290955972754, guid: 7b57ed8ac873ded4bab018f1c77060b2,
+        type: 3}
+      propertyPath: overdrivePeriod
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 526345290955972749, guid: 7b57ed8ac873ded4bab018f1c77060b2,
         type: 3}
       propertyPath: flinchBlowback
@@ -40242,11 +40247,11 @@ MonoBehaviour:
   dashCanvasObj: {fileID: 1634903425}
   crashCanvasObj: {fileID: 1311984539}
   odCanvasObj: {fileID: 1281544993}
-  moneyTutText: On every kill, you receive monies. Your current monies is shown in
-    the top right.
+  moneyTutText: On every kill, you receive scrap. Your current scrap amount is shown
+    in the top right.
   waveTutText: At the end of each wave, you'll have a chance to upgrade your abilities
   comboTutText: The faster you kill, the higher your combo in the top left gets. The
-    higher the combo, the more monies you get.
+    higher the combo, the more scrap you get.
   instructionText: {fileID: 1863807995}
   useDashText: L1 | Left Shift to Dash
   useCrashText: R2 | Space to Crash
@@ -41497,6 +41502,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 168066029914012150, guid: 41669f5cbca7bad4289447333eab5057,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 168066029914012150, guid: 41669f5cbca7bad4289447333eab5057,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 168066029914012150, guid: 41669f5cbca7bad4289447333eab5057,
+        type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41669f5cbca7bad4289447333eab5057, type: 3}

@@ -43808,17 +43808,12 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4434333894466545085, guid: 575bab7e23e044441b88577045b8553a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4434333894618794497, guid: 575bab7e23e044441b88577045b8553a,
         type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4434333894654952949, guid: 575bab7e23e044441b88577045b8553a,
+    - target: {fileID: 4434333894466545085, guid: 575bab7e23e044441b88577045b8553a,
         type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -43927,6 +43922,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4434333894654952949, guid: 575bab7e23e044441b88577045b8553a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4434333894457785766, guid: 575bab7e23e044441b88577045b8553a,
         type: 3}
@@ -44545,14 +44545,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 182614433, guid: 5f8852d3a18104b4392cc4fd70a545ea, type: 3}
+      propertyPath: antialiasingMode
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7607395493897121819, guid: 5f8852d3a18104b4392cc4fd70a545ea,
         type: 3}
       propertyPath: near clip plane
       value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 182614433, guid: 5f8852d3a18104b4392cc4fd70a545ea, type: 3}
-      propertyPath: antialiasingMode
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f8852d3a18104b4392cc4fd70a545ea, type: 3}
